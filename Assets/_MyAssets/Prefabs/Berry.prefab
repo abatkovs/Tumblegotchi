@@ -109,6 +109,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f259caf689ce5542ae4eaa8e1bd7e02, type: 2}
   - {fileID: 11400000, guid: 2db2747847d47b7448f87d4ce1075b2b, type: 2}
   currentGrowthStage: {fileID: 11400000, guid: 2a3bc07cde2ce3f488fad27befac7b40, type: 2}
+  growthAfterGathering: {fileID: 11400000, guid: 4d263163feaf2f14982203e4052afb6b, type: 2}
+  ageAfterPickingBerries: 0
   drone: {fileID: 3837991481684402658}
   age: 0
   hasSeed: 0

@@ -11,10 +11,10 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public MenuOptions CurrentlySelectedMenuOption { get; private set; } = MenuOptions.Garden;
     [field: SerializeField] public ActiveScene CurrentlyActiveScene { get; private set; } = ActiveScene.Main;
 
-    [SerializeField] private int berries;
-    [SerializeField] private int currency;
+    [field: FormerlySerializedAs("berries")] [field: SerializeField] public int Berries { get; private set; }
+    [field: FormerlySerializedAs("currency")] [field: SerializeField] public int JellyDew { get; private set; }
     [SerializeField] private ValueToSprite berriesUI;
-    [SerializeField] private ValueToSprite currencyUI;
+    [FormerlySerializedAs("currencyUI")] [SerializeField] private ValueToSprite jellyDewUI;
 
     public event Action<ActiveScene> OnSceneSwitch;
     
@@ -25,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        berriesUI.SetSpriteNumbers(berries);
-        currencyUI.SetSpriteNumbers(currency);
+        berriesUI.SetSpriteNumbers(Berries);
+        jellyDewUI.SetSpriteNumbers(JellyDew);
     }
 
     public void SwitchActiveMenuSelection(MenuOptions selection)
@@ -39,6 +39,22 @@ public class GameManager : MonoBehaviour
         OnSceneSwitch?.Invoke(scene);
         CurrentlyActiveScene = scene;
         CurrentlySelectedMenuOption = MenuOptions.None;
+    }
+
+    public void AddBerries(int berryYield)
+    {
+        var min = 0;
+        var max = 99;
+        Berries = Mathf.Clamp(Berries + berryYield, min, max);
+        berriesUI.SetSpriteNumbers(Berries);
+    }
+
+    public void AddJellyDew(int jellyDewYield)
+    {
+        var min = 0;
+        var max = 99;
+        JellyDew = Mathf.Clamp(JellyDew + jellyDewYield, min, max);
+        jellyDewUI.SetSpriteNumbers(JellyDew);
     }
 }
 

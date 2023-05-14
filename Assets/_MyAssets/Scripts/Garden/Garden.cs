@@ -23,5 +23,10 @@ public class Garden : MonoBehaviour
             bush.ToggleDrone(false);
         }
     }
+
+    public void GatherBerries()
+    {
+        berryBushes[selectedBush].GatherBerries();
+    }
     
 }

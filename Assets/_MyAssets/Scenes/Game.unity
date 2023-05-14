@@ -3916,6 +3916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 2114000467}
   sceneSwitcher: {fileID: 1557104742}
+  garden: {fileID: 1580080123}
 --- !u!1 &2147158806
 GameObject:
   m_ObjectHideFlags: 0
