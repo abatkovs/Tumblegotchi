@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748638577fba4ff7bb33fc4d58e0a502, type: 3}
+  m_Name: Twig
+  m_EditorClassIdentifier: 
+  <AgeThreshold>k__BackingField: 10
+  <Sprite>k__BackingField: {fileID: -1788770473, guid: ca0bfa7ce2874f74696c88d9d8140434, type: 3}

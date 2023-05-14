@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BerryBush : MonoBehaviour
+public class Garden : MonoBehaviour
 {
 
 }
