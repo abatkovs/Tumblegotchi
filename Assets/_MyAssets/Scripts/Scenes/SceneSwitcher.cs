@@ -29,7 +29,7 @@ public class SceneSwitcher : MonoBehaviour
 
     public void BackToMain()
     {
-        if (GameManager.Instance.CurrentlySelectedMenuOption == MenuOptions.Garden)
+        if (GameManager.Instance.CurrentlyActiveScene == ActiveScene.Garden)
         {
             sceneTransitionAnimator.SetTrigger(_gardenToMain);
             GameManager.Instance.SwitchActiveScene(ActiveScene.Main);

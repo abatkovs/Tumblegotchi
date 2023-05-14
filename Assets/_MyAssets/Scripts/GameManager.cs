@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ValueToSprite berriesUI;
     [SerializeField] private ValueToSprite currencyUI;
 
-    public event Action OnMenuSelectionChange;
+    public event Action<ActiveScene> OnSceneSwitch;
     
     private void Awake()
     {
@@ -36,12 +36,15 @@ public class GameManager : MonoBehaviour
 
     public void SwitchActiveScene(ActiveScene scene)
     {
+        OnSceneSwitch?.Invoke(scene);
         CurrentlyActiveScene = scene;
+        CurrentlySelectedMenuOption = MenuOptions.None;
     }
 }
 
 public enum MenuOptions
 {
+    None,
     Garden,
     Feed,
     Pet,

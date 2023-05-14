@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48bcaf79d8c2ad3448ea4a3d9b86b015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentlySelectedMenuOption>k__BackingField: 0
+  <CurrentlySelectedMenuOption>k__BackingField: 1
   <CurrentlyActiveScene>k__BackingField: 0
   berries: 0
   currency: 0
@@ -4141,18 +4141,6 @@ PrefabInstance:
     - target: {fileID: 2358550367918342754, guid: 617f2362daeb7c14fb452de7b20543f8, type: 3}
       propertyPath: m_Name
       value: Selection
-      objectReference: {fileID: 0}
-    - target: {fileID: 7118776879874659189, guid: 617f2362daeb7c14fb452de7b20543f8, type: 3}
-      propertyPath: inactiveColor.b
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7118776879874659189, guid: 617f2362daeb7c14fb452de7b20543f8, type: 3}
-      propertyPath: inactiveColor.g
-      value: 0.6039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 7118776879874659189, guid: 617f2362daeb7c14fb452de7b20543f8, type: 3}
-      propertyPath: inactiveColor.r
-      value: 0.6039216
       objectReference: {fileID: 0}
     - target: {fileID: 7965631783097839371, guid: 617f2362daeb7c14fb452de7b20543f8, type: 3}
       propertyPath: m_RootOrder

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748638577fba4ff7bb33fc4d58e0a502, type: 3}
   m_Name: Grown2
   m_EditorClassIdentifier: 
-  <AgeThreshold>k__BackingField: 300
+  <AgeThreshold>k__BackingField: 60
   <Sprite>k__BackingField: {fileID: 567401107, guid: ca0bfa7ce2874f74696c88d9d8140434, type: 3}
+  <BerryYield>k__BackingField: 3
