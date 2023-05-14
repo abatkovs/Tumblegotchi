@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Selection : MonoBehaviour
 {
@@ -9,36 +10,41 @@ public class Selection : MonoBehaviour
     [SerializeField] private Color inactiveColor = Color.white;
     [SerializeField] private List<SpriteRenderer> selectionSprites;
 
-    private int _selectedAction;
+    [Space(25)]
+    [SerializeField] private MenuOptions selectedAction;
     
     
     private void Start()
     {
         ClearSelection();
-        SetSelection(_selectedAction);
+        selectedAction = GameManager.Instance.CurrentlySelectedMenuOption;
+        SetSelection(selectedAction);
     }
 
-    [ContextMenu("Clear")]
     private void ClearSelection()
     {
         foreach (var sprite in selectionSprites)
         {
-            sprite.color = Color.white;
+            sprite.color = inactiveColor;
         }
     }
 
-    private void SetSelection(int selection)
+    private void SetSelection(MenuOptions selection)
     {
         ClearSelection();
-        selectionSprites[selection].color = activeColor;
+        selectionSprites[(int)selection].color = activeColor;
+        GameManager.Instance.SwitchActiveMenuSelection(selection);
     }
 
+    /// <summary>
+    /// Cycle over menu options
+    /// </summary>
     public void CycleSelection()
     {
-        _selectedAction++;
+        selectedAction++;
         var selectionCount = selectionSprites.Count;
-        if (_selectedAction >= selectionCount) _selectedAction = 0;
-        SetSelection(_selectedAction);
+        if ((int) selectedAction >= selectionCount) selectedAction = 0;
+        SetSelection(selectedAction);
     }
 
 }

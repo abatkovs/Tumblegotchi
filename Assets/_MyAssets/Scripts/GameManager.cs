@@ -7,12 +7,17 @@ using UnityEngine.Serialization;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
+
+    [field: SerializeField] public MenuOptions CurrentlySelectedMenuOption { get; private set; } = MenuOptions.Garden;
+    [field: SerializeField] public ActiveScene CurrentlyActiveScene { get; private set; } = ActiveScene.Main;
+
     [SerializeField] private int berries;
     [SerializeField] private int currency;
     [SerializeField] private ValueToSprite berriesUI;
     [SerializeField] private ValueToSprite currencyUI;
 
+    public event Action OnMenuSelectionChange;
+    
     private void Awake()
     {
         Instance = this;
@@ -23,4 +28,29 @@ public class GameManager : MonoBehaviour
         berriesUI.SetSpriteNumbers(berries);
         currencyUI.SetSpriteNumbers(currency);
     }
+
+    public void SwitchActiveMenuSelection(MenuOptions selection)
+    {
+        CurrentlySelectedMenuOption = selection;
+    }
+
+    public void SwitchActiveScene(ActiveScene scene)
+    {
+        CurrentlyActiveScene = scene;
+    }
+}
+
+public enum MenuOptions
+{
+    Garden,
+    Feed,
+    Pet,
+    Shop,
+}
+
+public enum ActiveScene
+{
+    Main,
+    Garden,
+    Shop,
 }

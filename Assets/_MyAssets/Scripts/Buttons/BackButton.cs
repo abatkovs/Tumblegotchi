@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BackButton : BaseActionButton
 {
+    [SerializeField] private SceneSwitcher sceneSwitcher;
     protected override void Action()
     {
-        Debug.Log("GoBack");
+        sceneSwitcher.BackToMain();
     }
 }

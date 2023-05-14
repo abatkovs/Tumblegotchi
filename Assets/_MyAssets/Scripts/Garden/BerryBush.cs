@@ -55,4 +55,10 @@ public class BerryBush : MonoBehaviour
             }
         }
     }
+
+    public void ToggleDrone(bool value)
+    {
+        isDroneVisible = value;
+        drone.SetActive(value);
+    }
 }
