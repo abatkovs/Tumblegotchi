@@ -2097,6 +2097,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d10374c42db074badfa567c4a47999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1195776943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 851659193573564917, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+  m_PrefabInstance: {fileID: 1600596700636829910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6267be72d1ecc64449f832d0151a893e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214613644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3930,6 +3941,7 @@ MonoBehaviour:
   sceneSwitcher: {fileID: 1557104742}
   garden: {fileID: 1580080123}
   feeding: {fileID: 1195776942}
+  petting: {fileID: 1195776943}
 --- !u!1 &2147158806
 GameObject:
   m_ObjectHideFlags: 0

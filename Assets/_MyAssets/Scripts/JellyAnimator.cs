@@ -9,6 +9,8 @@ public class JellyAnimator : MonoBehaviour
 
     private int _idleAnim = Animator.StringToHash("Idle");
     private int _feedAnim = Animator.StringToHash("FeedJelly");
+    private int _startPettingAnim = Animator.StringToHash("StartPetting");
+    private int _pettingAnim = Animator.StringToHash("Petting");
     
     void Start()
     {
@@ -24,5 +26,15 @@ public class JellyAnimator : MonoBehaviour
     public void PlayFeedAnim()
     {
         _animator.CrossFade(_feedAnim,0,0);
+    }
+
+    public void PlayStartPettingAnim()
+    {
+        _animator.CrossFade(_startPettingAnim,0,0);
+    }
+
+    public void PlayPettingAnim()
+    {
+        _animator.CrossFade(_pettingAnim,0,0);
     }
 }

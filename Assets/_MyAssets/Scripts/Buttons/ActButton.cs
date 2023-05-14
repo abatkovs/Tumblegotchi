@@ -8,6 +8,7 @@ public class ActButton : BaseActionButton
     [SerializeField] private SceneSwitcher sceneSwitcher;
     [SerializeField] private Garden garden;
     [SerializeField] private Feeding feeding;
+    [SerializeField] private Petting petting;
 
     private GameManager _gameManager;
 
@@ -22,6 +23,7 @@ public class ActButton : BaseActionButton
         var selectedMenuOption = _gameManager.CurrentlySelectedMenuOption;
         if(selectedMenuOption == MenuOptions.Garden) sceneSwitcher.SwitchScene();
         if(selectedMenuOption == MenuOptions.Feed) feeding.StartFeedingJelly();
+        if(selectedMenuOption == MenuOptions.Pet) petting.StartPetting();
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
             //Try collect berries
