@@ -2306,6 +2306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1256186293}
   sceneSwitcher: {fileID: 1557104742}
+  feeding: {fileID: 1195776942}
 --- !u!1 &1268164274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2858565806455962474, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}

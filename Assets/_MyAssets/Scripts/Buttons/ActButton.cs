@@ -11,6 +11,7 @@ public class ActButton : BaseActionButton
 
     private GameManager _gameManager;
 
+    //TODO: Add small delay between button presses
     private void Start()
     {
         _gameManager = GameManager.Instance;
