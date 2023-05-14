@@ -123,7 +123,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 12
-        y: 32
+        y: 64
         width: 40
         height: 32
       alignment: 7
@@ -144,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -165,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -186,7 +186,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -207,7 +207,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -228,7 +228,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -249,7 +249,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 7
@@ -261,6 +261,132 @@ TextureImporter:
       bones: []
       spriteID: 75bb4c66beb9d804eb973ddbaecfba42
       internalID: 502883660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f1c68d6effc3c4a8cc3db561cecc92
+      internalID: -1658513627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b585a6c87e03c64db5e5553bc293888
+      internalID: 1656042047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23211faa4aab0643bfe3dff8192ba08
+      internalID: -225083353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f74194229c5ee18459b837da8a72eac7
+      internalID: -697593069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e0930de07a48b4896fd73205419114
+      internalID: -1523678607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sheet_Foreground_Interactions_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569c7d2557e74024ca1d6c51003fc834
+      internalID: 1864867912
       vertices: []
       indices: 
       edges: []
@@ -278,12 +404,18 @@ TextureImporter:
     nameFileIdTable:
       Sheet_Foreground_Interactions_0: -300484764
       Sheet_Foreground_Interactions_1: 606758697
+      Sheet_Foreground_Interactions_10: -225083353
+      Sheet_Foreground_Interactions_11: -697593069
+      Sheet_Foreground_Interactions_12: -1523678607
+      Sheet_Foreground_Interactions_13: 1864867912
       Sheet_Foreground_Interactions_2: -1667850683
       Sheet_Foreground_Interactions_3: 1264199570
       Sheet_Foreground_Interactions_4: -1157374230
       Sheet_Foreground_Interactions_5: 198063746
       Sheet_Foreground_Interactions_6: -758207701
       Sheet_Foreground_Interactions_7: 502883660
+      Sheet_Foreground_Interactions_8: -1658513627
+      Sheet_Foreground_Interactions_9: 1656042047
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

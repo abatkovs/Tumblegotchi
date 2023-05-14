@@ -1046,10 +1046,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <CurrentlySelectedMenuOption>k__BackingField: 1
   <CurrentlyActiveScene>k__BackingField: 0
-  berries: 0
-  currency: 0
+  <Berries>k__BackingField: 5
+  <JellyDew>k__BackingField: 0
   berriesUI: {fileID: 657729346}
-  currencyUI: {fileID: 1235579593}
+  jellyDewUI: {fileID: 1235579593}
 --- !u!4 &657729345 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 725219837820067138, guid: 878e4482e8e93af4bac2e8a75dd5dd07, type: 3}
@@ -2086,6 +2086,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195776942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 629151397368406586, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+  m_PrefabInstance: {fileID: 1600596700636829910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d10374c42db074badfa567c4a47999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214613644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3917,6 +3928,7 @@ MonoBehaviour:
   button: {fileID: 2114000467}
   sceneSwitcher: {fileID: 1557104742}
   garden: {fileID: 1580080123}
+  feeding: {fileID: 1195776942}
 --- !u!1 &2147158806
 GameObject:
   m_ObjectHideFlags: 0
