@@ -10,6 +10,8 @@ public class Shop : MonoBehaviour
 
     private GameManager _gameManager;
 
+    public event Action OnItemBuy;
+
     private void Start()
     {
         _gameManager = GameManager.Instance;
@@ -56,7 +58,9 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            Debug.Log("Buy item");
+            //TODO: switch playground items
+            OnItemBuy?.Invoke();
+            if(item.IsItemBought) return;
             item.BuyItem();
         }
         

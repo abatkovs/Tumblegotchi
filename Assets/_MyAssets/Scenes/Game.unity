@@ -5190,6 +5190,7 @@ GameObject:
   - component: {fileID: 2077901106}
   - component: {fileID: 2077901107}
   - component: {fileID: 2077901108}
+  - component: {fileID: 2077901109}
   m_Layer: 0
   m_Name: ShopCrystal
   m_TagString: Untagged
@@ -5285,6 +5286,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2077901109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077901105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d4466b6f19119f4991aad35009808c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shop: {fileID: 376832085}
 --- !u!1 &2080288608
 GameObject:
   m_ObjectHideFlags: 0
@@ -5538,6 +5552,10 @@ PrefabInstance:
     - target: {fileID: 1140230683979179784, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3506578239493531936, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3933082719659846541, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_Name

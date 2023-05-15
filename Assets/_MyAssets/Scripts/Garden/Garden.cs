@@ -12,7 +12,7 @@ public class Garden : MonoBehaviour
     private int _unlockedPlants = 1;
     private void Start()
     {
-        saplingItem.OnSapplingBuy += AddSapling;
+        saplingItem.OnSaplingBuy += AddSapling;
     }
 
     public void CycleSelection()

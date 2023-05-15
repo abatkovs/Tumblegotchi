@@ -15,15 +15,16 @@ public class ShopItem : MonoBehaviour
     [Space]
     [SerializeField] private bool isItemStackable;
     [SerializeField] private int maxItemStackSize = 1;
+    
+    public bool IsItemBought;
 
     private int _currentStackSize = 1;
     private int _currentItemPrice;
     private ValueToSprite _priceUI;
     private GameManager _gameManager;
-    private bool _isItemBought;
 
-    public event Action OnSapplingBuy;
-
+    public event Action OnSaplingBuy;
+    
     private void Start()
     {
         if(_gameManager == null) _gameManager = GameManager.Instance;
@@ -56,7 +57,7 @@ public class ShopItem : MonoBehaviour
             _currentStackSize++;
             _gameManager.AddJellyDew(-_currentItemPrice);
             _priceUI.SetSpriteNumbers(ItemPrice * _currentStackSize);
-            OnSapplingBuy?.Invoke();
+            OnSaplingBuy?.Invoke();
             if (_currentStackSize == 6)
             {
                 _priceUI.SetSpriteNumbers(0);
@@ -65,12 +66,12 @@ public class ShopItem : MonoBehaviour
         }
         
         _gameManager.AddJellyDew(-_currentItemPrice);
-        _priceUI.SetSpriteNumbers(_currentItemPrice);
         
         if (!isItemStackable)
         {
-            _isItemBought = true;
-            ItemPrice = 0;
+            IsItemBought = true;
+            _currentItemPrice = 0;
+            _priceUI.SetSpriteNumbers(_currentItemPrice);
         }
     }
 }
