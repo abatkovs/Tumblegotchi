@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [field: SerializeField] public bool LockButtons { get; set; }
     [field: SerializeField] public MenuOptions CurrentlySelectedMenuOption { get; private set; } = MenuOptions.Garden;
     [field: SerializeField] public ActiveScene CurrentlyActiveScene { get; private set; } = ActiveScene.Main;
 
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         OnSceneSwitch?.Invoke(scene);
         CurrentlyActiveScene = scene;
-        CurrentlySelectedMenuOption = MenuOptions.None;
+        if(scene != ActiveScene.Main) CurrentlySelectedMenuOption = MenuOptions.None;
     }
 
     public void AddBerries(int berryYield)
@@ -55,6 +56,11 @@ public class GameManager : MonoBehaviour
         var max = 99;
         JellyDew = Mathf.Clamp(JellyDew + jellyDewYield, min, max);
         jellyDewUI.SetSpriteNumbers(JellyDew);
+    }
+
+    public void UpdateSelection()
+    {
+        SwitchActiveMenuSelection(CurrentlySelectedMenuOption);
     }
 }
 

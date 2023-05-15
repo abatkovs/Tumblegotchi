@@ -20,10 +20,25 @@ public class ActButton : BaseActionButton
 
     protected override void Action()
     {
+        if(GameManager.Instance.LockButtons) return;
+        
         var selectedMenuOption = _gameManager.CurrentlySelectedMenuOption;
-        if(selectedMenuOption == MenuOptions.Garden) sceneSwitcher.SwitchScene();
-        if(selectedMenuOption == MenuOptions.Feed) feeding.StartFeedingJelly();
-        if(selectedMenuOption == MenuOptions.Pet) petting.StartPetting();
+        switch (selectedMenuOption)
+        {
+            case MenuOptions.Garden:
+                sceneSwitcher.SwitchScene();
+                break;
+            case MenuOptions.Feed:
+                feeding.StartFeedingJelly();
+                break;
+            case MenuOptions.Pet:
+                petting.StartPetting();
+                break;
+            case MenuOptions.Shop:
+                sceneSwitcher.SwitchScene();
+                break;
+        }
+
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
             //Try collect berries

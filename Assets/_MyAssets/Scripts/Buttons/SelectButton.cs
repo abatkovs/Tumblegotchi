@@ -9,6 +9,7 @@ public class SelectButton : BaseActionButton
     [SerializeField] protected Garden garden;
     protected override void Action()
     {
+        if(GameManager.Instance.LockButtons) return;
         if (GameManager.Instance.CurrentlyActiveScene == ActiveScene.Garden)
         {
             CycleGardenSelection();

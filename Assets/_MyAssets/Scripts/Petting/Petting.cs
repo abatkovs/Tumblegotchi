@@ -8,9 +8,9 @@ public class Petting : MonoBehaviour
     public enum PettingState
     {
         Idle,
+        InitPetting,
         StartPetting,
         Petting,
-        FinishPetting,
     }
     
     [SerializeField] private SpriteRenderer handItem;
@@ -27,14 +27,24 @@ public class Petting : MonoBehaviour
 
     public void StartPetting()
     {
-        if (CurrentPettingState == PettingState.StartPetting)
-        {
-            _shouldStartPettingAgain = true;
-        }
         if (CurrentPettingState == PettingState.Idle)
+        {
+            CurrentPettingState = PettingState.InitPetting;
+            handItem.enabled = true;
+            return;
+        }
+
+        handItem.enabled = false;
+
+        if (CurrentPettingState == PettingState.InitPetting)
         {
             CurrentPettingState = PettingState.StartPetting;
             _animator.PlayStartPettingAnim();
+        }
+        
+        if (CurrentPettingState == PettingState.StartPetting)
+        {
+            _shouldStartPettingAgain = true;
         }
     }
 
@@ -53,5 +63,12 @@ public class Petting : MonoBehaviour
     {
         CurrentPettingState = PettingState.Idle;
         _animator.PlayIdleAnim();
+    }
+
+    public void ResetPettingState()
+    {
+        CurrentPettingState = PettingState.Idle;
+        _animator.PlayIdleAnim();
+        handItem.enabled = false;
     }
 }

@@ -22,7 +22,7 @@ public class Selection : MonoBehaviour
         
         GameManager.Instance.OnSceneSwitch += GM_OnOnSceneSwitch;
     }
-
+    
     private void OnDestroy()
     {
         GameManager.Instance.OnSceneSwitch -= GM_OnOnSceneSwitch;
@@ -37,7 +37,7 @@ public class Selection : MonoBehaviour
         }
         
         ClearSelection();
-        SetSelection(MenuOptions.Garden);
+        SetSelection(GameManager.Instance.CurrentlySelectedMenuOption);
     }
 
     private void ClearSelection()

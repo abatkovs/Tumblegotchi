@@ -7,32 +7,61 @@ public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private Animator sceneTransitionAnimator;
 
-    private int _mainToGardenTrigger = Animator.StringToHash("ToGarden");
-    private int _gardenToMain = Animator.StringToHash("GardenToMain");
+    private int _mainToGardenAnim = Animator.StringToHash("MainToGarden");
+    private int _gardenToMainAnim = Animator.StringToHash("GardenToMain");
+    private int _mainToShopAnim = Animator.StringToHash("MainToShop");
+    private int _shopToMainAnim = Animator.StringToHash("ShopToMain");
     
     [SerializeField] private BaseScene mainScene;
     [SerializeField] private BaseScene gardenScene;
 
+    private GameManager _gameManager;
+
     private void Start()
     {
+        _gameManager = GameManager.Instance;
         if (sceneTransitionAnimator == null) sceneTransitionAnimator = GetComponent<Animator>();
     }
 
     public void SwitchScene()
     {
-        if (GameManager.Instance.CurrentlySelectedMenuOption == MenuOptions.Garden)
+        if (_gameManager.CurrentlySelectedMenuOption == MenuOptions.Garden)
         {
-            sceneTransitionAnimator.SetTrigger(_mainToGardenTrigger);
-            GameManager.Instance.SwitchActiveScene(ActiveScene.Garden);
+            sceneTransitionAnimator.CrossFade(_mainToGardenAnim,0,0);
+            _gameManager.SwitchActiveScene(ActiveScene.Garden);
+            _gameManager.LockButtons = true;
+        }
+
+        if (_gameManager.CurrentlySelectedMenuOption == MenuOptions.Shop)
+        {
+            sceneTransitionAnimator.CrossFade(_mainToShopAnim,0,0);
+            _gameManager.SwitchActiveScene(ActiveScene.Shop);
+            _gameManager.LockButtons = true;
         }
     }
 
     public void BackToMain()
     {
-        if (GameManager.Instance.CurrentlyActiveScene == ActiveScene.Garden)
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
-            sceneTransitionAnimator.SetTrigger(_gardenToMain);
-            GameManager.Instance.SwitchActiveScene(ActiveScene.Main);
+            sceneTransitionAnimator.CrossFade(_gardenToMainAnim,0,0);
+            _gameManager.SwitchActiveMenuSelection(MenuOptions.Garden);
+            _gameManager.SwitchActiveScene(ActiveScene.Main);
+            _gameManager.LockButtons = true;
         }
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
+        {
+            sceneTransitionAnimator.CrossFade(_shopToMainAnim,0,0);
+            _gameManager.SwitchActiveMenuSelection(MenuOptions.Shop);
+            _gameManager.SwitchActiveScene(ActiveScene.Main);
+            _gameManager.LockButtons = true;
+        }
+    }
+
+    public void FinishedSwitchingScene()
+    {
+        _gameManager.UpdateSelection();
+        _gameManager.LockButtons = false;
     }
 }
