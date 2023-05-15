@@ -16,11 +16,14 @@ public class Feeding : MonoBehaviour
     [SerializeField] private int requiredBerriesForFeeding = 1;
     [SerializeField] private SpriteRenderer foodItem;
     [SerializeField] private Sprite food;
+    
     private GameManager _gameManager;
     private JellyStats _stats;
     private JellyAnimator _animator;
 
     public FeedingState CurrentFeedingState { get; private set; }
+
+    
 
     private void Start()
     {
