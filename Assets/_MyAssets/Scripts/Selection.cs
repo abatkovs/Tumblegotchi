@@ -9,23 +9,26 @@ public class Selection : MonoBehaviour
     [SerializeField] private Color activeColor = Color.black;
     [SerializeField] private Color inactiveColor = Color.white;
     [SerializeField] private List<SpriteRenderer> selectionSprites;
-
+    [SerializeField] private SoundData selectionSound;
     [Space(25)]
     [SerializeField] private MenuOptions selectedAction = MenuOptions.Garden;
-    
-    
+
+    private SoundManager _soundManager;
+    private GameManager _gameManager;
     private void Start()
     {
         ClearSelection();
-        selectedAction = GameManager.Instance.CurrentlySelectedMenuOption;
+        _soundManager = SoundManager.Instance;
+        _gameManager = GameManager.Instance;
+        selectedAction = _gameManager.CurrentlySelectedMenuOption;
         SetSelection(selectedAction);
         
-        GameManager.Instance.OnSceneSwitch += GM_OnOnSceneSwitch;
+        _gameManager.OnSceneSwitch += GM_OnOnSceneSwitch;
     }
     
     private void OnDestroy()
     {
-        GameManager.Instance.OnSceneSwitch -= GM_OnOnSceneSwitch;
+        _gameManager.OnSceneSwitch -= GM_OnOnSceneSwitch;
     }
 
     private void GM_OnOnSceneSwitch(ActiveScene sceneSwitchedTo)
@@ -37,7 +40,7 @@ public class Selection : MonoBehaviour
         }
         
         ClearSelection();
-        SetSelection(GameManager.Instance.CurrentlySelectedMenuOption);
+        SetSelection(_gameManager.CurrentlySelectedMenuOption);
     }
 
     private void ClearSelection()
@@ -61,6 +64,7 @@ public class Selection : MonoBehaviour
     /// </summary>
     public void CycleSelection()
     {
+        
         selectedAction++;
         var selectionCount = selectionSprites.Count;
         if ((int) selectedAction >= selectionCount) selectedAction = MenuOptions.Garden;
