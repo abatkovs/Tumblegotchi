@@ -20,6 +20,7 @@ public class ShopItem : MonoBehaviour
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = itemSprite;
         _priceUI.SetSpriteNumbers(ItemPrice);
+        ToggleSelection(false);
     }
 
     public void ToggleSelection(bool value)
