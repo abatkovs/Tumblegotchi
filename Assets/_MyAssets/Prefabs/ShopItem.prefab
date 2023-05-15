@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 7174326667439514115}
   - component: {fileID: 7858056758186622081}
   - component: {fileID: 8595720298945784872}
+  - component: {fileID: 452203820798428492}
   m_Layer: 0
   m_Name: ShopItem
   m_TagString: Untagged
@@ -185,6 +186,33 @@ MonoBehaviour:
   <ItemPrice>k__BackingField: 0
   spriteRenderer: {fileID: 7858056758186622081}
   itemSprite: {fileID: 0}
+  selectedColor: {r: 0, g: 0, b: 0, a: 1}
+  inactiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+--- !u!114 &452203820798428492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5984686223343730989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c79be5aaef1a404e8a3c410268674cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numbersSprites:
+  - {fileID: 1997420416, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -1510859886, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -967698905, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -1553879194, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -940999157, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -1709389124, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -1805299543, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -526983393, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -1294873690, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  - {fileID: -2111199990, guid: 30c315350c42b624a86a348070b222db, type: 3}
+  number1Sprite: {fileID: 1702735698264570418}
+  number2Sprite: {fileID: 3502821693860671406}
 --- !u!1 &6178676608143577045
 GameObject:
   m_ObjectHideFlags: 0

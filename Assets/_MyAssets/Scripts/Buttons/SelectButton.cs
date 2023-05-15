@@ -6,13 +6,28 @@ using UnityEngine;
 public class SelectButton : BaseActionButton
 {
     [SerializeField] protected Selection selection;
-    [SerializeField] protected Garden garden;
+    [SerializeField] private Garden garden;
+    [SerializeField] private Shop shop;
+
+    private GameManager _gameManager;
+
+    private void Start()
+    {
+        _gameManager = GameManager.Instance;
+    }
+
     protected override void Action()
     {
-        if(GameManager.Instance.LockButtons) return;
-        if (GameManager.Instance.CurrentlyActiveScene == ActiveScene.Garden)
+        if(_gameManager.LockButtons) return;
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
             CycleGardenSelection();
+            return;
+        }
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
+        {
+            CycleShopSelection();
             return;
         }
         selection.CycleSelection();
@@ -21,5 +36,10 @@ public class SelectButton : BaseActionButton
     private void CycleGardenSelection()
     {
         garden.CycleSelection();
+    }
+
+    private void CycleShopSelection()
+    {
+        shop.CycleSelection();
     }
 }

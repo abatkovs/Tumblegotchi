@@ -23,6 +23,10 @@ public class ValueToSprite : MonoBehaviour
         sr.sprite = numbersSprites[value];
     }
 
+    /// <summary>
+    /// Set sprites according to provided value
+    /// </summary>
+    /// <param name="value">0 - 99</param>
     public void SetSpriteNumbers(int value)
     {
         var n = Mathf.Clamp(value, _minValue, _maxValue);
