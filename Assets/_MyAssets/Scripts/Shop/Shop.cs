@@ -8,14 +8,17 @@ public class Shop : MonoBehaviour
     [SerializeField] private List<ShopItem> shopItems;
     [SerializeField] private int selectedItem;
 
+    private GameManager _gameManager;
+
     private void Start()
     {
-        GameManager.Instance.OnSceneSwitch += GM_OnOnSceneSwitch;
+        _gameManager = GameManager.Instance;
+        _gameManager.OnSceneSwitch += GM_OnOnSceneSwitch;
     }
 
     private void OnDestroy()
     {
-        GameManager.Instance.OnSceneSwitch -= GM_OnOnSceneSwitch;
+        _gameManager.OnSceneSwitch -= GM_OnOnSceneSwitch;
     }
 
     private void GM_OnOnSceneSwitch(ActiveScene obj)
@@ -42,5 +45,20 @@ public class Shop : MonoBehaviour
         {
             item.ToggleSelection(false);
         }
+    }
+
+    public void TryBuyItem()
+    {
+        var item = shopItems[selectedItem];
+        if (item.ItemPrice > _gameManager.JellyDew)
+        {
+            Debug.Log($"Can't buy item: {item}");
+        }
+        else
+        {
+            Debug.Log("Buy item");
+            item.BuyItem();
+        }
+        
     }
 }

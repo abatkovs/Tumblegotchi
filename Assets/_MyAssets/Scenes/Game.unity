@@ -1350,7 +1350,7 @@ MonoBehaviour:
   <CurrentlySelectedMenuOption>k__BackingField: 1
   <CurrentlyActiveScene>k__BackingField: 0
   <Berries>k__BackingField: 5
-  <JellyDew>k__BackingField: 0
+  <JellyDew>k__BackingField: 90
   berriesUI: {fileID: 657729346}
   jellyDewUI: {fileID: 1235579593}
 --- !u!4 &657729345 stripped
@@ -1706,6 +1706,18 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: -1272001514, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: itemStackSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: isItemStackable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: maxItemStackSize
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 5
@@ -4828,6 +4840,7 @@ MonoBehaviour:
   garden: {fileID: 1580080123}
   feeding: {fileID: 1195776942}
   petting: {fileID: 1195776943}
+  shop: {fileID: 376832085}
 --- !u!1 &2147158806
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class ActButton : BaseActionButton
     [SerializeField] private Garden garden;
     [SerializeField] private Feeding feeding;
     [SerializeField] private Petting petting;
+    [SerializeField] private Shop shop;
 
     private GameManager _gameManager;
 
@@ -27,22 +28,27 @@ public class ActButton : BaseActionButton
         {
             case MenuOptions.Garden:
                 sceneSwitcher.SwitchScene();
-                break;
+                return;
             case MenuOptions.Feed:
                 feeding.StartFeedingJelly();
-                break;
+                return;
             case MenuOptions.Pet:
                 petting.StartPetting();
-                break;
+                return;
             case MenuOptions.Shop:
                 sceneSwitcher.SwitchScene();
-                break;
+                return;
         }
 
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
             //Try collect berries
             garden.GatherBerries();
+        }
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
+        {
+            shop.TryBuyItem();
         }
     }
 }
