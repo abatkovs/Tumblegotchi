@@ -22,6 +22,8 @@ public class ShopItem : MonoBehaviour
     private GameManager _gameManager;
     private bool _isItemBought;
 
+    public event Action OnSapplingBuy;
+
     private void Start()
     {
         if(_gameManager == null) _gameManager = GameManager.Instance;
@@ -42,7 +44,6 @@ public class ShopItem : MonoBehaviour
     //TODO: Fix this mess idk...
     public void BuyItem()
     {
-        int nextItemPrice = 0;
         if (_currentStackSize > maxItemStackSize)
         {
             isItemStackable = false;
@@ -55,6 +56,7 @@ public class ShopItem : MonoBehaviour
             _currentStackSize++;
             _gameManager.AddJellyDew(-_currentItemPrice);
             _priceUI.SetSpriteNumbers(ItemPrice * _currentStackSize);
+            OnSapplingBuy?.Invoke();
             if (_currentStackSize == 6)
             {
                 _priceUI.SetSpriteNumbers(0);

@@ -16,7 +16,7 @@ public class BerryBush : MonoBehaviour
     [SerializeField] private GameObject drone;
 
     [SerializeField] private int age;
-    [SerializeField] private bool hasSeed;
+    [SerializeField] public bool hasSeed;
     [SerializeField] private bool isDroneVisible;
 
 
@@ -76,5 +76,11 @@ public class BerryBush : MonoBehaviour
             spriteRenderer.sprite = currentGrowthStage.Sprite;
             StartGrowing();
         }
+    }
+
+    public void PlantSeed()
+    {
+        hasSeed = true;
+        StartGrowing();
     }
 }

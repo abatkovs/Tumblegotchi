@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,15 @@ using UnityEngine;
 public class Garden : MonoBehaviour
 {
     [SerializeField] private List<BerryBush> berryBushes;
-
     [SerializeField] private int selectedBush;
+    [SerializeField] private ShopItem saplingItem;
+
+    private int _unlockedPlants = 1;
+    private void Start()
+    {
+        saplingItem.OnSapplingBuy += AddSapling;
+    }
+
     public void CycleSelection()
     {
         selectedBush++;
@@ -27,6 +35,17 @@ public class Garden : MonoBehaviour
     public void GatherBerries()
     {
         berryBushes[selectedBush].GatherBerries();
+    }
+
+    public void AddSapling()
+    {
+        Debug.Log("Add sapling to garden");
+        _unlockedPlants++;
+        for (int i = 0; i < _unlockedPlants; i++)
+        {
+            if(berryBushes[i].hasSeed) continue;
+            berryBushes[i].PlantSeed();
+        }
     }
     
 }
