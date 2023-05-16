@@ -5711,6 +5711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1981871053}
+  source2: {fileID: 0}
 --- !u!82 &1981871055
 AudioSource:
   m_ObjectHideFlags: 0

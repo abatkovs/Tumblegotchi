@@ -354,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe930be6657208f408f2859aaa74ecba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgJelly: {fileID: 0}
 --- !u!114 &8743874594446733695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,9 +367,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca026d3e113405459e02881e86e1675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hunger: 0
+  maxHunger: 100
+  currentHunger: 0
+  hungerDecreaseAmount: 1
+  hungerInterval: 1
   mood: 0
-  sleepy: 0
+  sleepyMax: 100
+  sleepThreshold: 100
+  currentSleepy: 0
+  sleepIncreaseAmount: 1
+  sleepyIncreaseInterval: 1
   love: 0
   feedValue: 5
   jellyDewAwardedForFeeding: 1
@@ -401,6 +409,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eatSound: {fileID: 0}
   dewDropSound: {fileID: 0}
+  pet1: {fileID: 0}
+  pet2: {fileID: 0}
+  swallow: {fileID: 0}
 --- !u!114 &851659193573564917
 MonoBehaviour:
   m_ObjectHideFlags: 0
