@@ -6372,6 +6372,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 90108362}
     m_Modifications:
     - target: {fileID: 183415341566375844, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: pet1
+      value: 
+      objectReference: {fileID: 11400000, guid: 8e3001ceb94307d4e8adfcf9f86fd298, type: 2}
+    - target: {fileID: 183415341566375844, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: pet2
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e3825d5caea22a40b4de13b1069da89, type: 2}
+    - target: {fileID: 183415341566375844, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: eatSound
       value: 
       objectReference: {fileID: 11400000, guid: 2815436eeb592a24b896da4e76c3051d, type: 2}
