@@ -124,8 +124,9 @@ MonoBehaviour:
   moveToTarget: {fileID: 0}
   edgeOffset: {x: 0.57, y: 0}
   newMoveToLocation: {x: 0, y: 0}
-  walkInterval: 5
+  walkInterval: 8
   currentWalkInterval: 0
+  _animator: {fileID: 5989522279402904070}
 --- !u!114 &5989522279402904070
 MonoBehaviour:
   m_ObjectHideFlags: 0

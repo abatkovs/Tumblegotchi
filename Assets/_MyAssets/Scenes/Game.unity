@@ -2658,6 +2658,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2326805720054730441, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
   m_PrefabInstance: {fileID: 7475371371456169452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1002574657 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+  m_PrefabInstance: {fileID: 7475371371456169452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eed4c743040bca48a2fa66d1e01204b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1021676421
 GameObject:
   m_ObjectHideFlags: 0
@@ -6429,6 +6440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3226887219251903814, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: bgJelly
+      value: 
+      objectReference: {fileID: 1002574657}
     - target: {fileID: 3506578239493531936, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_Size.x
       value: 0.4
@@ -6644,10 +6659,6 @@ PrefabInstance:
       propertyPath: moveToTarget
       value: 
       objectReference: {fileID: 1515500877}
-    - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
-      propertyPath: walkInterval
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

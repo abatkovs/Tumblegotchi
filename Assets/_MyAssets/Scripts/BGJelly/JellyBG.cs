@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class JellyBG : MonoBehaviour
 {
@@ -16,15 +17,16 @@ public class JellyBG : MonoBehaviour
 
     [SerializeField] private float walkInterval = 5f;
     [SerializeField] private float currentWalkInterval;
+    
+    [FormerlySerializedAs("_animator")] [SerializeField] private JellyBGAnimator animator;
 
     private BGJellyState _state;
-    private JellyBGAnimator _animator;
     private SpriteRenderer _spriteRenderer;
 
-    private void Start()
+    private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<JellyBGAnimator>();
+        animator = GetComponent<JellyBGAnimator>();
         currentWalkInterval = walkInterval;
     }
 
@@ -54,7 +56,7 @@ public class JellyBG : MonoBehaviour
         if (Vector3.Distance(transform.position, moveToTarget.position) < 0.001f)
         {
             _state = BGJellyState.Idle;
-            _animator.PlayIdleAnim();
+            animator.PlayIdleAnim();
         }
     }
 
@@ -62,7 +64,7 @@ public class JellyBG : MonoBehaviour
     private void SetRandomMovePosition()
     {
         _state = BGJellyState.Walking;
-        _animator.PlayWalkAnim();
+        animator.PlayWalkAnim();
         moveToTarget.localPosition = new Vector2(Random.Range(-edgeOffset.x, edgeOffset.x), transform.localPosition.y);
         FlipSpriteToMoveDirection();
     }
@@ -71,4 +73,25 @@ public class JellyBG : MonoBehaviour
     {
         _spriteRenderer.flipX = transform.position.x > moveToTarget.position.x;
     }
+
+    public void ActivateJelly()
+    {
+        _state = BGJellyState.Walking;
+        gameObject.SetActive(true);
+        transform.position = new Vector2(-0.57f, 0.084f);
+        animator.PlayWalkInAnim();
+    }
+    
+    public void DeactivateJelly()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void SetIdleState()
+    {
+        _state = BGJellyState.Idle;
+        animator.PlayIdleAnim();
+    }
+
+
 }

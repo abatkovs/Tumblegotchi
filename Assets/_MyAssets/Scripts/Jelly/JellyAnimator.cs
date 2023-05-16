@@ -12,6 +12,7 @@ public class JellyAnimator : AnimatorCross
     private int _startPettingAnim = Animator.StringToHash("StartPetting");
     private int _pettingAnim = Animator.StringToHash("Petting");
     private int _walkAnim = Animator.StringToHash("Walk");
+    private int _walkOnScreenAnim = Animator.StringToHash("WalkOnScreen");
 
     private SoundManager _soundManager;
     void Start()
@@ -44,6 +45,11 @@ public class JellyAnimator : AnimatorCross
     {
         PlayAnim(_walkAnim);
     }
+    
+    public void PlayWalkOnScreenAnim()
+    {
+        PlayAnim(_walkOnScreenAnim);
+    }
 
     public void PlayEatSound()
     {
@@ -54,4 +60,6 @@ public class JellyAnimator : AnimatorCross
     {
         _soundManager.PlaySound(dewDropSound);
     }
+
+
 }

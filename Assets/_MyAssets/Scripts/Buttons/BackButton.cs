@@ -26,7 +26,13 @@ public class BackButton : BaseActionButton
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Main)
         {
             sceneSwitcher.SwitchToPlayground();
-            _gameManager.ToggleSelectionButton(false);
+            _gameManager.ToggleSelectionButton(true);
+            return;
+        }
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Playground)
+        {
+            sceneSwitcher.PlaygroundToMain();
             return;
         }
         

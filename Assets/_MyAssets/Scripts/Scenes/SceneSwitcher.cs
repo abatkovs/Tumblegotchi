@@ -43,21 +43,35 @@ public class SceneSwitcher : MonoBehaviour
         _gameManager.SwitchActiveScene(ActiveScene.Playground);
         jellyAnimator.PlayWalkOffScreenAnim();
     }
+    
+    public void PlaygroundToMain()
+    {
+        jellyAnimator.PlayWalkOnScreenAnim();
+    }
 
     public void BackToMain()
     {
-        if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
+        GardenToMain();
+        ShopToMain();
+    }
+
+    private void ShopToMain()
+    {
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
         {
-            sceneTransitionAnimator.CrossFade(_gardenToMainAnim,0,0);
-            _gameManager.SwitchActiveMenuSelection(MenuOptions.Garden);
+            sceneTransitionAnimator.CrossFade(_shopToMainAnim, 0, 0);
+            _gameManager.SwitchActiveMenuSelection(MenuOptions.Shop);
             _gameManager.SwitchActiveScene(ActiveScene.Main);
             _gameManager.LockButtons = true;
         }
+    }
 
-        if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
+    private void GardenToMain()
+    {
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
-            sceneTransitionAnimator.CrossFade(_shopToMainAnim,0,0);
-            _gameManager.SwitchActiveMenuSelection(MenuOptions.Shop);
+            sceneTransitionAnimator.CrossFade(_gardenToMainAnim, 0, 0);
+            _gameManager.SwitchActiveMenuSelection(MenuOptions.Garden);
             _gameManager.SwitchActiveScene(ActiveScene.Main);
             _gameManager.LockButtons = true;
         }
