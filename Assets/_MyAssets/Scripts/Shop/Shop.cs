@@ -7,13 +7,17 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private List<ShopItem> shopItems;
     [SerializeField] private int selectedItem;
+    [Space]
+    [SerializeField] private SoundData cantBuySound;
 
     private GameManager _gameManager;
+    private SoundManager _soundManager;
 
     public event Action OnItemBuy;
 
     private void Start()
     {
+        _soundManager = SoundManager.Instance;
         _gameManager = GameManager.Instance;
         _gameManager.OnSceneSwitch += GM_OnOnSceneSwitch;
     }
@@ -55,6 +59,7 @@ public class Shop : MonoBehaviour
         if (item.CurrentItemPrice > _gameManager.JellyDew)
         {
             Debug.Log($"Can't buy item not enough money: {item}");
+            _soundManager.PlaySound(cantBuySound);
         }
         else
         {

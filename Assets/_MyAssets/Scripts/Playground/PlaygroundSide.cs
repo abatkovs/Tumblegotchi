@@ -18,6 +18,7 @@ public class PlaygroundSide : MonoBehaviour
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<PlaygroundAnimator>();
+        _animator.RemoveController();
         _spriteRenderer.sprite = null;
     }
 
