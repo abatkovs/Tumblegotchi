@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Playground;
 using UnityEngine;
 
 public class PlaygroundSide : MonoBehaviour
 {
 
-    public Sprite CurrentSprite { get; private set; }
+    public PlaygroundItem CurrentItem { get; private set; }
     
     private SpriteRenderer _spriteRenderer;
     private PlaygroundAnimator _animator;
@@ -20,10 +21,10 @@ public class PlaygroundSide : MonoBehaviour
         _spriteRenderer.sprite = null;
     }
 
-    public void SetPlaygroundSprite(Sprite sprite)
+    public void SetPlaygroundItem(PlaygroundItem item)
     {
-        _spriteRenderer.sprite = sprite;
-        CurrentSprite = sprite;
+        _spriteRenderer.sprite = item.ItemSprite;
+        CurrentItem = item;
     }
     
 }

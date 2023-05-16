@@ -54,13 +54,18 @@ public class Shop : MonoBehaviour
         var item = shopItems[selectedItem];
         if (item.CurrentItemPrice > _gameManager.JellyDew)
         {
-            Debug.Log($"Can't buy item: {item}");
+            Debug.Log($"Can't buy item not enough money: {item}");
         }
         else
         {
-            //TODO: switch playground items
+            
+            if (item.IsItemBought)
+            {
+                OnItemBuy?.Invoke();
+                item.UpdatePlaygroundItems();
+                return;
+            }
             OnItemBuy?.Invoke();
-            if(item.IsItemBought) return;
             item.BuyItem();
         }
         

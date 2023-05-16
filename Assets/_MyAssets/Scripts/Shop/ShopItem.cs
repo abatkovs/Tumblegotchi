@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Playground;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,7 +18,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private bool isItemStackable;
     [SerializeField] private int maxItemStackSize = 1;
     [SerializeField] private bool isPlaygroundItem = true;
-    [SerializeField] private Sprite playgroundSprite;
+    [SerializeField] private PlaygroundItem playgroundItem;
     
     public bool IsItemBought;
 
@@ -67,7 +68,7 @@ public class ShopItem : MonoBehaviour
     {
         if (isPlaygroundItem)
         {
-            _gameManager.Playground.SetPlaygroundSprites(playgroundSprite);
+            _gameManager.Playground.SetPlaygroundSprites(playgroundItem);
         }
         if (CurrentStackSize > maxItemStackSize)
         {
@@ -97,6 +98,14 @@ public class ShopItem : MonoBehaviour
             IsItemBought = true;
             CurrentItemPrice = 0;
             _priceUI.SetSpriteNumbers(CurrentItemPrice);
+        }
+    }
+
+    public void UpdatePlaygroundItems()
+    {
+        if (isPlaygroundItem)
+        {
+            _gameManager.Playground.SetPlaygroundSprites(playgroundItem);
         }
     }
 }

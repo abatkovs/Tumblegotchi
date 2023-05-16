@@ -224,6 +224,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -678146478, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: fdaccbee14e9d2c48a41e10883cfa5e9, type: 2}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
       objectReference: {fileID: 1329661803, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
@@ -569,7 +573,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &98597976
 MonoBehaviour:
@@ -655,6 +659,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: -405350110, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: bbf8303afc983254986461da6cf80f5a, type: 2}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
@@ -973,7 +981,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &297049221
 MonoBehaviour:
@@ -4443,6 +4451,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1916536427, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: fdbfe49ce9a915e459894c9ad2fd0d65, type: 2}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
       objectReference: {fileID: 1856737663, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
@@ -4799,6 +4811,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: -1428072004, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: bf2387231e36d8844bd8b7a43ce31bb3, type: 2}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
@@ -5863,6 +5879,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1352584163, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 828024856de04734ba3716b13d0e1356, type: 2}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
       objectReference: {fileID: -1016650565, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
@@ -6084,6 +6104,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: 215604328, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: 260857a9ec47dcc47a4b8fee5361a666, type: 2}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
@@ -6906,6 +6930,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: 1058199308, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundItem
+      value: 
+      objectReference: {fileID: 11400000, guid: e8763c55470655f4a9b421ba207cefb7, type: 2}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: playgroundSprite
       value: 
