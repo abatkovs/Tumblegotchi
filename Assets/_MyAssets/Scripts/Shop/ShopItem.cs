@@ -16,6 +16,8 @@ public class ShopItem : MonoBehaviour
     [Space]
     [SerializeField] private bool isItemStackable;
     [SerializeField] private int maxItemStackSize = 1;
+    [SerializeField] private bool isPlaygroundItem = true;
+    [SerializeField] private Sprite playgroundSprite;
     
     public bool IsItemBought;
 
@@ -63,6 +65,10 @@ public class ShopItem : MonoBehaviour
     //TODO: Fix this mess idk...
     public void BuyItem()
     {
+        if (isPlaygroundItem)
+        {
+            _gameManager.Playground.SetPlaygroundSprites(playgroundSprite);
+        }
         if (CurrentStackSize > maxItemStackSize)
         {
             isItemStackable = false;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [field: SerializeField] public Playground Playground { get; private set; }
     [field: SerializeField] public bool LockButtons { get; set; }
     [field: SerializeField] public bool LockSelectionButton { get; private set; }
     [field: SerializeField] public MenuOptions CurrentlySelectedMenuOption { get; private set; } = MenuOptions.Garden;

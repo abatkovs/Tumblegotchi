@@ -20,7 +20,7 @@ public class JellyBG : MonoBehaviour
     
     [FormerlySerializedAs("_animator")] [SerializeField] private JellyBGAnimator animator;
 
-    private BGJellyState _state;
+    [SerializeField] private BGJellyState state;
     private SpriteRenderer _spriteRenderer;
 
     private void Awake()
@@ -38,7 +38,7 @@ public class JellyBG : MonoBehaviour
 
     private void CountdownForNewWalkPosition()
     {
-        if(_state == BGJellyState.Walking) return;
+        if(state != BGJellyState.Idle) return;
         currentWalkInterval -= Time.deltaTime;
         if (currentWalkInterval < 0)
         {
@@ -49,13 +49,13 @@ public class JellyBG : MonoBehaviour
 
     private void MoveJelly()
     {
-        if(_state != BGJellyState.Walking) return;
+        if(state != BGJellyState.Walking) return;
         var step =  moveSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, moveToTarget.position, step);
         
         if (Vector3.Distance(transform.position, moveToTarget.position) < 0.001f)
         {
-            _state = BGJellyState.Idle;
+            state = BGJellyState.Idle;
             animator.PlayIdleAnim();
         }
     }
@@ -63,7 +63,7 @@ public class JellyBG : MonoBehaviour
     //TODO: Make sure he moves considerable amount
     private void SetRandomMovePosition()
     {
-        _state = BGJellyState.Walking;
+        state = BGJellyState.Walking;
         animator.PlayWalkAnim();
         moveToTarget.localPosition = new Vector2(Random.Range(-edgeOffset.x, edgeOffset.x), transform.localPosition.y);
         FlipSpriteToMoveDirection();
@@ -76,10 +76,11 @@ public class JellyBG : MonoBehaviour
 
     public void ActivateJelly()
     {
-        _state = BGJellyState.Walking;
+        state = BGJellyState.Walking;
         gameObject.SetActive(true);
-        transform.position = new Vector2(-0.57f, 0.084f);
-        animator.PlayWalkInAnim();
+        transform.localPosition = new Vector2(-0.71f, 0.084f);
+        SetRandomMovePosition();
+        animator.PlayWalkAnim();
     }
     
     public void DeactivateJelly()
@@ -89,9 +90,14 @@ public class JellyBG : MonoBehaviour
 
     public void SetIdleState()
     {
-        _state = BGJellyState.Idle;
+        state = BGJellyState.Idle;
         animator.PlayIdleAnim();
     }
 
+    public void NudgeJelly()
+    {
+        Vector2 nudgeOffset = new Vector2(-0.05f,0f);
+        transform.localPosition = (Vector2)transform.localPosition + nudgeOffset;
+    }
 
 }

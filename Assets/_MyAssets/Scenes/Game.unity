@@ -224,6 +224,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -678146478, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 1329661803, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 25
       objectReference: {fileID: 0}
@@ -492,13 +496,14 @@ GameObject:
   m_Component:
   - component: {fileID: 98597974}
   - component: {fileID: 98597975}
+  - component: {fileID: 98597976}
   m_Layer: 0
-  m_Name: Right
+  m_Name: RightPlayground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &98597974
 Transform:
   m_ObjectHideFlags: 0
@@ -566,6 +571,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &98597976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98597973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94309b81b03d68e4d8af59e4473a2102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &120418958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,6 +655,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: -405350110, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 816737953, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 20
@@ -879,8 +900,9 @@ GameObject:
   m_Component:
   - component: {fileID: 297049219}
   - component: {fileID: 297049220}
+  - component: {fileID: 297049221}
   m_Layer: 0
-  m_Name: Left
+  m_Name: LeftPlayground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -953,6 +975,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &297049221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297049218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94309b81b03d68e4d8af59e4473a2102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &306449725
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,6 +1838,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48bcaf79d8c2ad3448ea4a3d9b86b015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Playground>k__BackingField: {fileID: 1870538059}
   <LockButtons>k__BackingField: 0
   <LockSelectionButton>k__BackingField: 0
   <CurrentlySelectedMenuOption>k__BackingField: 1
@@ -2295,6 +2330,10 @@ PrefabInstance:
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: isItemStackable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: isPlaygroundItem
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: maxItemStackSize
@@ -4404,6 +4443,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1916536427, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 1856737663, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 20
       objectReference: {fileID: 0}
@@ -4756,6 +4799,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: -1428072004, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 1836174656, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 5
@@ -5319,6 +5366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caa105c3f7925345a695577096956af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playgroundLeft: {fileID: 297049221}
+  playgroundRight: {fileID: 98597976}
 --- !u!1 &1882611564
 GameObject:
   m_ObjectHideFlags: 0
@@ -5814,6 +5863,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -1352584163, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: -1016650565, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 20
       objectReference: {fileID: 0}
@@ -6031,6 +6084,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: 215604328, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 1307519392, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 15
@@ -6617,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326805720054730441, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.57
+      value: -0.708
       objectReference: {fileID: 0}
     - target: {fileID: 2326805720054730441, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6849,6 +6906,10 @@ PrefabInstance:
       propertyPath: itemSprite
       value: 
       objectReference: {fileID: 1058199308, guid: 915bcb304ec4d2344836f3ad495f0ca6, type: 3}
+    - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
+      propertyPath: playgroundSprite
+      value: 
+      objectReference: {fileID: 652962640, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
     - target: {fileID: 8595720298945784872, guid: 52ac16abcc13fb542bdc9e0f5366d975, type: 3}
       propertyPath: <ItemPrice>k__BackingField
       value: 10
