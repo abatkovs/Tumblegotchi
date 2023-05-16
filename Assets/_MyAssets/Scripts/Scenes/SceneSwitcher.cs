@@ -6,15 +6,13 @@ using UnityEngine;
 public class SceneSwitcher : MonoBehaviour
 {
     [SerializeField] private Animator sceneTransitionAnimator;
+    [SerializeField] private JellyAnimator jellyAnimator;
 
     private int _mainToGardenAnim = Animator.StringToHash("MainToGarden");
     private int _gardenToMainAnim = Animator.StringToHash("GardenToMain");
     private int _mainToShopAnim = Animator.StringToHash("MainToShop");
     private int _shopToMainAnim = Animator.StringToHash("ShopToMain");
     
-    [SerializeField] private BaseScene mainScene;
-    [SerializeField] private BaseScene gardenScene;
-
     private GameManager _gameManager;
 
     private void Start()
@@ -38,6 +36,12 @@ public class SceneSwitcher : MonoBehaviour
             _gameManager.SwitchActiveScene(ActiveScene.Shop);
             _gameManager.LockButtons = true;
         }
+    }
+
+    public void SwitchToPlayground()
+    {
+        _gameManager.SwitchActiveScene(ActiveScene.Playground);
+        jellyAnimator.PlayWalkOffScreenAnim();
     }
 
     public void BackToMain()

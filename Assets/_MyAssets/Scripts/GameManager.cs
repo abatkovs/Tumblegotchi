@@ -84,4 +84,5 @@ public enum ActiveScene
     Main,
     Garden,
     Shop,
+    Playground,
 }

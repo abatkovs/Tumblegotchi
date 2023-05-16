@@ -21,7 +21,14 @@ public class BackButton : BaseActionButton
 
     protected override void Action()
     {
-        if(GameManager.Instance.LockButtons) return;
+        if(_gameManager.LockButtons) return;
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Main)
+        {
+            sceneSwitcher.SwitchToPlayground();
+            _gameManager.ToggleSelectionButton(false);
+            return;
+        }
         
         if (feeding.CurrentFeedingState == Feeding.FeedingState.StartFeeding)
         {
