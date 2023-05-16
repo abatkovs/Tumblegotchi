@@ -9,6 +9,7 @@ public class ShopItem : MonoBehaviour
     [field: SerializeField] public int ItemPrice { get; private set; }
     
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private List<SpriteRenderer> currencySprites;
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private Color selectedColor = Color.black;
     [SerializeField] private Color inactiveColor = Color.gray;
@@ -39,8 +40,24 @@ public class ShopItem : MonoBehaviour
 
     public void ToggleSelection(bool value)
     {
-        if (value) spriteRenderer.color = selectedColor;
-        if (!value) spriteRenderer.color = inactiveColor;
+        if (value)
+        {
+            ChangeSpriteColors(selectedColor);
+        }
+
+        if (!value)
+        {
+            ChangeSpriteColors(inactiveColor);
+        }
+    }
+
+    private void ChangeSpriteColors(Color color)
+    {
+        spriteRenderer.color = color;
+        foreach (var cur in currencySprites)
+        {
+            cur.color = color;
+        }
     }
 
     //TODO: Fix this mess idk...

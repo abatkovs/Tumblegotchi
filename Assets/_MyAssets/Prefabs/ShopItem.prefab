@@ -117,7 +117,7 @@ Transform:
   m_Children:
   - {fileID: 5769225552540513529}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7858056758186622081
 SpriteRenderer:
@@ -185,9 +185,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemPrice>k__BackingField: 0
   spriteRenderer: {fileID: 7858056758186622081}
+  currencySprites:
+  - {fileID: 7626929632309484243}
+  - {fileID: 1702735698264570418}
+  - {fileID: 3502821693860671406}
   itemSprite: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 1}
   inactiveColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  isItemStackable: 0
+  maxItemStackSize: 1
+  IsItemBought: 0
 --- !u!114 &452203820798428492
 MonoBehaviour:
   m_ObjectHideFlags: 0
