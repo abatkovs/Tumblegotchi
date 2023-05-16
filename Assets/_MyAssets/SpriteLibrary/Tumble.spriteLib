@@ -17,74 +17,13 @@ MonoBehaviour:
     m_Hash: 969240499
     m_CategoryList: []
     m_OverrideEntries:
-    - m_Name: Sheet Jellies Fore_0
-      m_Hash: 664057105
-      m_Sprite: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_1
-      m_Hash: 278103431
-      m_Sprite: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_2
-      m_Hash: 161141821
-      m_Sprite: {fileID: 943650822, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 943650822, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_3
-      m_Hash: 1050535083
-      m_Sprite: {fileID: 1555793626, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1555793626, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_4
-      m_Hash: 553218312
-      m_Sprite: {fileID: 132748527, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 132748527, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_5
-      m_Hash: 402538910
-      m_Sprite: {fileID: -130076696, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -130076696, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_6
-      m_Hash: 251072548
-      m_Sprite: {fileID: 1096895286, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1096895286, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_7
-      m_Hash: 972038322
-      m_Sprite: {fileID: -1792877627, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -1792877627, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_8
-      m_Hash: 693058851
-      m_Sprite: {fileID: 1425314249, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1425314249, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_9
-      m_Hash: 508038581
-      m_Sprite: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_10
-      m_Hash: 118970919
-      m_Sprite: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    m_FromMain: 0
-    m_EntryOverrideCount: 11
-  - m_Name: Tumble
-    m_Hash: 559940881
-    m_CategoryList: []
-    m_OverrideEntries:
-    - m_Name: Sheet Jellies Fore_11
-      m_Hash: 806382257
+    - m_Name: Idle
+      m_Hash: 1008081451
       m_Sprite: {fileID: 1999031406, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1999031406, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_12
-      m_Hash: 689519371
+    - m_Name: Idle_0
+      m_Hash: 288431053
       m_Sprite: {fileID: 344717905, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 344717905, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
@@ -136,5 +75,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 11
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638198722151824370
+  m_ModificationHash: 638198741758901920
   m_Version: 1
