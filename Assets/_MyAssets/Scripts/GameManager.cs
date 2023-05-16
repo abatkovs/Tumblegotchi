@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [field: SerializeField] public bool LockButtons { get; set; }
+    [field: SerializeField] public bool LockSelectionButton { get; private set; }
     [field: SerializeField] public MenuOptions CurrentlySelectedMenuOption { get; private set; } = MenuOptions.Garden;
     [field: SerializeField] public ActiveScene CurrentlyActiveScene { get; private set; } = ActiveScene.Main;
 
@@ -61,6 +62,11 @@ public class GameManager : MonoBehaviour
     public void UpdateSelection()
     {
         SwitchActiveMenuSelection(CurrentlySelectedMenuOption);
+    }
+
+    public void ToggleSelectionButton(bool value)
+    {
+        LockSelectionButton = value;
     }
 }
 

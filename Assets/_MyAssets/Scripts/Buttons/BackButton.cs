@@ -11,10 +11,12 @@ public class BackButton : BaseActionButton
     [SerializeField] private SoundData selectionSound;
 
     private SoundManager _soundManager;
+    private GameManager _gameManager;
 
     private void Start()
     {
         _soundManager = SoundManager.Instance;
+        _gameManager = GameManager.Instance;
     }
 
     protected override void Action()
@@ -25,6 +27,7 @@ public class BackButton : BaseActionButton
         {
             feeding.ResetFeedingState();
             _soundManager.PlaySound(selectionSound);
+            _gameManager.ToggleSelectionButton(false);
             return;
         }
 
@@ -32,6 +35,7 @@ public class BackButton : BaseActionButton
         {
             petting.ResetPettingState();
             _soundManager.PlaySound(selectionSound);
+            _gameManager.ToggleSelectionButton(false);
             return;
         }
         

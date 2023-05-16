@@ -42,6 +42,7 @@ public class Feeding : MonoBehaviour
         {
             CurrentFeedingState = FeedingState.StartFeeding;
             foodItem.enabled = true;
+            _gameManager.ToggleSelectionButton(true);
             return;
         }
         
@@ -51,12 +52,16 @@ public class Feeding : MonoBehaviour
         CurrentFeedingState = FeedingState.Feeding;
     }
 
+    /// <summary>
+    /// Animation event
+    /// </summary>
     public void FinishFeedingAnimation()
     {
         Debug.Log("Finish feeding");
         _stats.FeedJelly();
         _animator.PlayIdleAnim();
         CurrentFeedingState = FeedingState.Idle;
+        _gameManager.ToggleSelectionButton(false);
     }
 
     public void ResetFeedingState()
@@ -64,5 +69,6 @@ public class Feeding : MonoBehaviour
         _animator.PlayIdleAnim();
         CurrentFeedingState = FeedingState.Idle;
         foodItem.enabled = false;
+        _gameManager.ToggleSelectionButton(false);
     }
 }

@@ -52,7 +52,7 @@ public class Shop : MonoBehaviour
     public void TryBuyItem()
     {
         var item = shopItems[selectedItem];
-        if (item.ItemPrice > _gameManager.JellyDew)
+        if (item.CurrentItemPrice > _gameManager.JellyDew)
         {
             Debug.Log($"Can't buy item: {item}");
         }

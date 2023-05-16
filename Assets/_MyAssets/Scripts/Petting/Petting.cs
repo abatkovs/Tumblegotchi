@@ -20,8 +20,11 @@ public class Petting : MonoBehaviour
     private JellyAnimator _animator;
     private bool _shouldStartPettingAgain;
 
+    private GameManager _gameManager;
+    
     private void Start()
     {
+        _gameManager = GameManager.Instance;
         _animator = GetComponent<JellyAnimator>();
     }
 
@@ -31,6 +34,7 @@ public class Petting : MonoBehaviour
         {
             CurrentPettingState = PettingState.InitPetting;
             handItem.enabled = true;
+            _gameManager.ToggleSelectionButton(true);
             return;
         }
 
@@ -59,10 +63,14 @@ public class Petting : MonoBehaviour
         _animator.PlayPettingAnim();
     }
 
+    /// <summary>
+    /// Animation event
+    /// </summary>
     public void FinishPetting()
     {
         CurrentPettingState = PettingState.Idle;
         _animator.PlayIdleAnim();
+        _gameManager.ToggleSelectionButton(false);
     }
 
     public void ResetPettingState()
@@ -70,5 +78,6 @@ public class Petting : MonoBehaviour
         CurrentPettingState = PettingState.Idle;
         _animator.PlayIdleAnim();
         handItem.enabled = false;
+        _gameManager.ToggleSelectionButton(false);
     }
 }

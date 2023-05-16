@@ -18,8 +18,9 @@ public class ShopItem : MonoBehaviour
     
     public bool IsItemBought;
 
-    private int _currentStackSize = 1;
-    private int _currentItemPrice;
+    public int CurrentStackSize { get; private set; } = 1;
+    public int CurrentItemPrice { get; private set; }
+    
     private ValueToSprite _priceUI;
     private GameManager _gameManager;
 
@@ -33,7 +34,7 @@ public class ShopItem : MonoBehaviour
         spriteRenderer.sprite = itemSprite;
         _priceUI.SetSpriteNumbers(ItemPrice);
         ToggleSelection(false);
-        _currentItemPrice = ItemPrice;
+        CurrentItemPrice = ItemPrice;
     }
 
     public void ToggleSelection(bool value)
@@ -45,33 +46,34 @@ public class ShopItem : MonoBehaviour
     //TODO: Fix this mess idk...
     public void BuyItem()
     {
-        if (_currentStackSize > maxItemStackSize)
+        if (CurrentStackSize > maxItemStackSize)
         {
             isItemStackable = false;
-            _currentItemPrice = 0;
-            _priceUI.SetSpriteNumbers(_currentItemPrice);
+            CurrentItemPrice = 0;
+            _priceUI.SetSpriteNumbers(CurrentItemPrice);
         }
         if (isItemStackable)
         {
-            _currentItemPrice = ItemPrice * _currentStackSize;
-            _currentStackSize++;
-            _gameManager.AddJellyDew(-_currentItemPrice);
-            _priceUI.SetSpriteNumbers(ItemPrice * _currentStackSize);
+            CurrentItemPrice = ItemPrice * CurrentStackSize;
+            CurrentStackSize++;
+            _gameManager.AddJellyDew(-CurrentItemPrice);
+            _priceUI.SetSpriteNumbers(ItemPrice * CurrentStackSize);
+            CurrentItemPrice = ItemPrice * CurrentStackSize;
             OnSaplingBuy?.Invoke();
-            if (_currentStackSize == 6)
+            if (CurrentStackSize == 6)
             {
                 _priceUI.SetSpriteNumbers(0);
             }
             return;
         }
         
-        _gameManager.AddJellyDew(-_currentItemPrice);
+        _gameManager.AddJellyDew(-CurrentItemPrice);
         
         if (!isItemStackable)
         {
             IsItemBought = true;
-            _currentItemPrice = 0;
-            _priceUI.SetSpriteNumbers(_currentItemPrice);
+            CurrentItemPrice = 0;
+            _priceUI.SetSpriteNumbers(CurrentItemPrice);
         }
     }
 }

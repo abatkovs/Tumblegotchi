@@ -21,6 +21,7 @@ public class SelectButton : BaseActionButton
 
     protected override void Action()
     {
+        if(_gameManager.LockSelectionButton) return;
         if(_gameManager.LockButtons) return;
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Garden)
         {
