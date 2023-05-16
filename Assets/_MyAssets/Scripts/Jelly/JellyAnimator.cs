@@ -8,6 +8,7 @@ public class JellyAnimator : AnimatorCross
     [SerializeField] private SoundData dewDropSound;
     [SerializeField] private SoundData pet1;
     [SerializeField] private SoundData pet2;
+    [SerializeField] private SoundData swallow;
     
     private int _idleAnim = Animator.StringToHash("Idle");
     private int _feedAnim = Animator.StringToHash("FeedJelly");
@@ -71,6 +72,11 @@ public class JellyAnimator : AnimatorCross
     public void PlayPet2Sound()
     {
         _soundManager.PlaySound(pet2);
+    }
+
+    public void PlaySwallowSound()
+    {
+        _soundManager.PlaySound(swallow);
     }
 
 }

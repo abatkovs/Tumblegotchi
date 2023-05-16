@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlaygroundAnimator : AnimatorCross
+public class PlaygroundAnimator : MonoBehaviour
 {
     private Animator _animator;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
     }

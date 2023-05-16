@@ -10,15 +10,15 @@ public class PlaygroundSide : MonoBehaviour
     public PlaygroundItem CurrentItem { get; private set; }
     
     private SpriteRenderer _spriteRenderer;
-    private PlaygroundAnimator _animator;
+    private PlaygroundAnimator _pgAnimator;
 
     private bool _isEmpty = true;
 
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<PlaygroundAnimator>();
-        _animator.RemoveController();
+        _pgAnimator = GetComponent<PlaygroundAnimator>();
+        _pgAnimator.RemoveController();
         _spriteRenderer.sprite = null;
     }
 
