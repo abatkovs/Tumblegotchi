@@ -55,6 +55,7 @@ public class BackButton : BaseActionButton
         }
         
         sceneSwitcher.BackToMain();
+        petting.ResetPettingState();
         _soundManager.PlaySound(selectionSound);
     }
 }
