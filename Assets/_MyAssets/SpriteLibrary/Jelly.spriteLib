@@ -27,53 +27,53 @@ MonoBehaviour:
       m_Sprite: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_2
-      m_Hash: 161141821
+    - m_Name: Flat
+      m_Hash: 897058170
       m_Sprite: {fileID: 943650822, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 943650822, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_3
-      m_Hash: 1050535083
+    - m_Name: Sleep
+      m_Hash: 250801576
       m_Sprite: {fileID: 1555793626, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1555793626, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_4
-      m_Hash: 553218312
+    - m_Name: Sleep_0
+      m_Hash: 575014174
       m_Sprite: {fileID: 132748527, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 132748527, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_5
-      m_Hash: 402538910
+    - m_Name: Move
+      m_Hash: 252483654
       m_Sprite: {fileID: -130076696, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -130076696, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_6
-      m_Hash: 251072548
+    - m_Name: Move_0
+      m_Hash: 47505201
       m_Sprite: {fileID: 1096895286, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1096895286, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_7
-      m_Hash: 972038322
+    - m_Name: Eat
+      m_Hash: 580811258
       m_Sprite: {fileID: -1792877627, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -1792877627, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_8
-      m_Hash: 693058851
+    - m_Name: Eat_0
+      m_Hash: 497615353
       m_Sprite: {fileID: 1425314249, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1425314249, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_9
-      m_Hash: 508038581
+    - m_Name: Egg
+      m_Hash: 813342626
       m_Sprite: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - m_Name: Sheet Jellies Fore_10
-      m_Hash: 118970919
+    - m_Name: Egg_0
+      m_Hash: 648168204
       m_Sprite: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 11
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638198739497353479
+  m_ModificationHash: 638198529314711323
   m_Version: 1
