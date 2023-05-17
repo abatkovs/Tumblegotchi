@@ -5210,6 +5210,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RightPlayground
       objectReference: {fileID: 0}
+    - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_labelHash
+      value: 0.009161512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_CategoryHash
+      value: 0.0003765799
+      objectReference: {fileID: 0}
     - target: {fileID: 5527162741123504789, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6746,6 +6754,14 @@ PrefabInstance:
     - target: {fileID: 803703590755578451, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_Name
       value: LeftPlayground
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_labelHash
+      value: 0.009161512
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_CategoryHash
+      value: 0.0003765799
       objectReference: {fileID: 0}
     - target: {fileID: 5527162741123504789, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_RootOrder
