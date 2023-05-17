@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerUpHandler
+public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] private Color exitColor = Color.white;
     [SerializeField] private Color enterColor = Color.gray;
@@ -13,9 +13,20 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     [SerializeField] private Sprite buttonPressedSprite;
 
     [SerializeField] private bool changeSprite;
+    [SerializeField] private bool changePosition;
+    [SerializeField] private bool changeColor;
+
+    [SerializeField] private Vector2 posOffset;
+
+    private Vector2 _startingPosition;
 
     public event Action OnButtonClicked;
-    
+
+    private void Start()
+    {
+        _startingPosition = transform.position;
+    }
+
     public void OnPointerEnter (PointerEventData eventData)
     {
         if (changeSprite)
@@ -29,6 +40,12 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public void OnPointerExit (PointerEventData eventData)
     {
+        if (changePosition)
+        {
+            ResetPosition();
+            return;
+        }
+        
         if (changeSprite)
         {
             buttonSprite.sprite = null;
@@ -43,8 +60,20 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         OnButtonClicked?.Invoke();
     }
 
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        transform.position += 
+    }
+    
     public void OnPointerUp(PointerEventData eventData)
     {
-        //buttonSprite.sprite = null;
+        ResetPosition();
     }
+
+    private void ResetPosition()
+    {
+        transform.position = _startingPosition;
+    }
+
+
 }

@@ -38,7 +38,8 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float sleepThreshold = 60; //goes to sleep at this value
     [SerializeField] private float currentSleepy = 0;
     [SerializeField] private float sleepIncreaseAmount = 1f;
-    [SerializeField] private float sleepyIncreaseInterval = 1f;
+    [SerializeField] private float sleepDecreaseAmount = 5f;
+    [FormerlySerializedAs("sleepyIncreaseInterval")] [SerializeField] private float sleepIntervals = 1f;
     [Space]
     [SerializeField] private float love; //xp for all purposes
     [Space]
@@ -89,7 +90,7 @@ public class JellyStats : MonoBehaviour
 
     private IEnumerator BecomeSleepier()
     {
-        yield return new WaitForSeconds(sleepyIncreaseInterval);
+        yield return new WaitForSeconds(sleepIntervals);
         currentSleepy += sleepIncreaseAmount;
         if (currentSleepy >= sleepThreshold)
         {
@@ -99,12 +100,26 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeSleepier());
     }
 
+    private IEnumerator Sleeping()
+    {
+        yield return new WaitForSeconds(sleepIntervals);
+        currentSleepy -= sleepDecreaseAmount;
+        if (currentSleepy <= 0)
+        {
+            CurrentJellyState = JellyState.Idle;
+            StartCoroutine(BecomeSleepier());
+            yield break;
+        }
+        StartCoroutine(Sleeping());
+    }
+
     private void StartSleeping()
     {
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
         IsJellyAsleep = true;
         _animator.PlaySleepAnim();
         CurrentJellyState = JellyState.Sleeping;
+        StartCoroutine(Sleeping());
     }
 
     public void ChangeMoodLevel(int amount)

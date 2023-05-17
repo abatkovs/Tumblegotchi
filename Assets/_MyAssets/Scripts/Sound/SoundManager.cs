@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource source;
     [SerializeField] private AudioSource source2;
 
+    [SerializeField] private AudioLevels audioLevels;
+
     private void Awake()
     {
         Instance = this;
@@ -35,6 +37,9 @@ public class SoundManager : MonoBehaviour
         PlayAudioFromSource(source2, soundToPlay);
     }
 
-
+    public void ChangeAudioLevel(int amount)
+    {
+        audioLevels.ChangeSoundLevel(amount);
+    }
     
 }
