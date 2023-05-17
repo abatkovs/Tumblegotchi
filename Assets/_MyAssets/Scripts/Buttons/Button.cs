@@ -29,6 +29,7 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public void OnPointerEnter (PointerEventData eventData)
     {
+        if(changePosition) return;
         if (changeSprite)
         {
             buttonSprite.sprite = buttonPressedSprite;
@@ -62,7 +63,7 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        transform.position += 
+        transform.localPosition += (Vector3) posOffset;
     }
     
     public void OnPointerUp(PointerEventData eventData)

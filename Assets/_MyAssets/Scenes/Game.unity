@@ -186,7 +186,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20050596}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -472,6 +472,9 @@ MonoBehaviour:
   buttonSprite: {fileID: 93227857}
   buttonPressedSprite: {fileID: 0}
   changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
 --- !u!60 &93227856
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1544,6 +1547,7 @@ GameObject:
   - component: {fileID: 391441093}
   - component: {fileID: 391441095}
   - component: {fileID: 391441094}
+  - component: {fileID: 391441096}
   m_Layer: 0
   m_Name: VolumeDown
   m_TagString: Untagged
@@ -1630,8 +1634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90be715ef923edf489a79a1c1508d75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
+  button: {fileID: 391441095}
   amount: -1
+  selectSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
+  audioLevels: {fileID: 1476419719}
 --- !u!114 &391441095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1646,9 +1652,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitColor: {r: 1, g: 1, b: 1, a: 1}
   enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  buttonSprite: {fileID: 0}
+  buttonSprite: {fileID: 391441093}
   buttonPressedSprite: {fileID: 0}
-  changeSprite: 1
+  changeSprite: 0
+  changePosition: 1
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!60 &391441096
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391441091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.51}
+    newSize: {x: 0.24, y: 0.51}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.16499999}
+      - {x: -0.04, y: 0.195}
+      - {x: -0.08, y: 0.205}
+      - {x: -0.12, y: 0.175}
+      - {x: -0.12, y: -0.175}
+      - {x: -0.04, y: -0.235}
+      - {x: 0.04, y: -0.235}
+      - {x: 0.049999997, y: -0.21499999}
+      - {x: 0.049999997, y: -0.095}
+      - {x: 0.03, y: 0.085}
+  m_UseDelaunayMesh: 0
 --- !u!1 &428730572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3242,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951966208}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3838,6 +3902,9 @@ MonoBehaviour:
   buttonSprite: {fileID: 1180519223}
   buttonPressedSprite: {fileID: 0}
   changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
 --- !u!60 &1180519222
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4610,7 +4677,9 @@ MonoBehaviour:
   - {fileID: 878344074}
   - {fileID: 336653654}
   - {fileID: 892840443}
-  currentSoundLevel: 0
+  currentSoundLevel: 5
+  visibilityTimer: 1
+  timer: 0
 --- !u!1 &1515500876
 GameObject:
   m_ObjectHideFlags: 0
@@ -5769,6 +5838,7 @@ GameObject:
   - component: {fileID: 1782763157}
   - component: {fileID: 1782763159}
   - component: {fileID: 1782763158}
+  - component: {fileID: 1782763160}
   m_Layer: 0
   m_Name: VolumeUp
   m_TagString: Untagged
@@ -5857,6 +5927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1782763159}
   amount: 1
+  selectSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
+  audioLevels: {fileID: 1476419719}
 --- !u!114 &1782763159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5871,9 +5943,67 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitColor: {r: 1, g: 1, b: 1, a: 1}
   enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  buttonSprite: {fileID: 0}
+  buttonSprite: {fileID: 1782763157}
   buttonPressedSprite: {fileID: 0}
-  changeSprite: 1
+  changeSprite: 0
+  changePosition: 1
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!60 &1782763160
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782763155}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.24, y: 0.51}
+    newSize: {x: 0.24, y: 0.51}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0.16499999}
+      - {x: -0.04, y: 0.195}
+      - {x: -0.08, y: 0.205}
+      - {x: -0.12, y: 0.175}
+      - {x: -0.12, y: -0.175}
+      - {x: -0.04, y: -0.235}
+      - {x: 0.04, y: -0.235}
+      - {x: 0.049999997, y: -0.21499999}
+      - {x: 0.049999997, y: -0.095}
+      - {x: 0.03, y: 0.085}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1798108236
 GameObject:
   m_ObjectHideFlags: 0
@@ -5913,7 +6043,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798108236}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6823,8 +6953,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e14a3be72ec984b8f90f2ba6966dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 46498e421c936d04a9718103940e60d3, type: 2}
+  mixerSoundLevels:
+  - soundLevel: -80
+  - soundLevel: -20
+  - soundLevel: -10
+  - soundLevel: -5
+  - soundLevel: 0
+  - soundLevel: 5
+  - soundLevel: 10
   source: {fileID: 1981871053}
   source2: {fileID: 1981871055}
+  audioLevels: {fileID: 1476419719}
 --- !u!82 &1981871055
 AudioSource:
   m_ObjectHideFlags: 0
