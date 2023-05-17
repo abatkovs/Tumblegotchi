@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Jelly
+    m_Hash: 969240499
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Idle
+      m_Hash: 1008081451
+      m_Sprite: {fileID: 178784792, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 178784792, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Idle_0
+      m_Hash: 288431053
+      m_Sprite: {fileID: 651209809, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 651209809, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Walk
+      m_Hash: 765711723
+      m_Sprite: {fileID: -1625563335, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1625563335, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Walk2
+      m_Hash: 10003720
+      m_Sprite: {fileID: -895909447, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -895909447, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Roll
+      m_Hash: 243768816
+      m_Sprite: {fileID: 1488415665, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1488415665, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Roll_0
+      m_Hash: 2220811
+      m_Sprite: {fileID: -1835867348, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -1835867348, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Roll_1
+      m_Hash: 925291421
+      m_Sprite: {fileID: 779214636, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 779214636, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Roll_2
+      m_Hash: 774865447
+      m_Sprite: {fileID: 1841573039, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1841573039, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Dizzy
+      m_Hash: 135267455
+      m_Sprite: {fileID: 2019274532, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 2019274532, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Dizzy_0
+      m_Hash: 904481528
+      m_Sprite: {fileID: 1440563573, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1440563573, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Happy
+      m_Hash: 1059892429
+      m_Sprite: {fileID: -774373978, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -774373978, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Happy_0
+      m_Hash: 991386148
+      m_Sprite: {fileID: -872193963, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -872193963, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Upset
+      m_Hash: 79424500
+      m_Sprite: {fileID: 1664090990, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1664090990, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    - m_Name: Upset_0
+      m_Hash: 489371706
+      m_Sprite: {fileID: -763731193, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -763731193, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 14
+  m_PrimaryLibraryGUID: 
+  m_ModificationHash: 638198559336397458
+  m_Version: 1

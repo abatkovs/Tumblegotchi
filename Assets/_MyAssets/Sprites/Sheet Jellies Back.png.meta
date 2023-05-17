@@ -125,9 +125,9 @@ TextureImporter:
         x: 0
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -146,9 +146,9 @@ TextureImporter:
         x: 16
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -167,9 +167,9 @@ TextureImporter:
         x: 32
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -188,9 +188,9 @@ TextureImporter:
         x: 48
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,9 +209,9 @@ TextureImporter:
         x: 64
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -230,9 +230,9 @@ TextureImporter:
         x: 80
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,9 +251,9 @@ TextureImporter:
         x: 96
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -272,9 +272,9 @@ TextureImporter:
         x: 112
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -293,9 +293,9 @@ TextureImporter:
         x: 128
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -314,9 +314,9 @@ TextureImporter:
         x: 144
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -335,9 +335,9 @@ TextureImporter:
         x: 160
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,9 +356,9 @@ TextureImporter:
         x: 176
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -377,9 +377,9 @@ TextureImporter:
         x: 192
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,9 +398,9 @@ TextureImporter:
         x: 208
         y: 192
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -419,9 +419,9 @@ TextureImporter:
         x: 0
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -440,9 +440,9 @@ TextureImporter:
         x: 16
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -461,9 +461,9 @@ TextureImporter:
         x: 32
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -482,9 +482,9 @@ TextureImporter:
         x: 48
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -503,9 +503,9 @@ TextureImporter:
         x: 64
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -524,9 +524,9 @@ TextureImporter:
         x: 80
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -545,9 +545,9 @@ TextureImporter:
         x: 96
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -566,9 +566,9 @@ TextureImporter:
         x: 112
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -587,9 +587,9 @@ TextureImporter:
         x: 128
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -608,9 +608,9 @@ TextureImporter:
         x: 144
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -629,9 +629,9 @@ TextureImporter:
         x: 160
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -650,9 +650,9 @@ TextureImporter:
         x: 176
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -671,9 +671,9 @@ TextureImporter:
         x: 192
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -692,9 +692,9 @@ TextureImporter:
         x: 208
         y: 160
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -711,11 +711,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -732,11 +732,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -753,11 +753,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -774,11 +774,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -795,11 +795,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -815,12 +815,12 @@ TextureImporter:
       name: Sheet Jellies Back_33
       rect:
         serializedVersion: 2
-        x: 128
-        y: 144
+        x: 80
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -836,12 +836,12 @@ TextureImporter:
       name: Sheet Jellies Back_34
       rect:
         serializedVersion: 2
-        x: 144
-        y: 144
+        x: 96
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -857,12 +857,12 @@ TextureImporter:
       name: Sheet Jellies Back_35
       rect:
         serializedVersion: 2
-        x: 160
-        y: 144
+        x: 112
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -878,12 +878,12 @@ TextureImporter:
       name: Sheet Jellies Back_36
       rect:
         serializedVersion: 2
-        x: 176
-        y: 144
+        x: 128
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -899,12 +899,12 @@ TextureImporter:
       name: Sheet Jellies Back_37
       rect:
         serializedVersion: 2
-        x: 192
-        y: 144
+        x: 144
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -920,12 +920,12 @@ TextureImporter:
       name: Sheet Jellies Back_38
       rect:
         serializedVersion: 2
-        x: 208
-        y: 144
+        x: 160
+        y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -941,12 +941,12 @@ TextureImporter:
       name: Sheet Jellies Back_39
       rect:
         serializedVersion: 2
-        x: 0
+        x: 176
         y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -962,12 +962,12 @@ TextureImporter:
       name: Sheet Jellies Back_40
       rect:
         serializedVersion: 2
-        x: 16
+        x: 192
         y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -983,12 +983,12 @@ TextureImporter:
       name: Sheet Jellies Back_41
       rect:
         serializedVersion: 2
-        x: 32
+        x: 208
         y: 128
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1004,12 +1004,12 @@ TextureImporter:
       name: Sheet Jellies Back_42
       rect:
         serializedVersion: 2
-        x: 48
-        y: 128
+        x: 0
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1025,12 +1025,12 @@ TextureImporter:
       name: Sheet Jellies Back_43
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 16
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1046,12 +1046,12 @@ TextureImporter:
       name: Sheet Jellies Back_44
       rect:
         serializedVersion: 2
-        x: 80
-        y: 128
+        x: 32
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1067,12 +1067,12 @@ TextureImporter:
       name: Sheet Jellies Back_45
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
+        x: 48
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1088,12 +1088,12 @@ TextureImporter:
       name: Sheet Jellies Back_46
       rect:
         serializedVersion: 2
-        x: 112
-        y: 128
+        x: 64
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1109,12 +1109,12 @@ TextureImporter:
       name: Sheet Jellies Back_47
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 80
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1130,12 +1130,12 @@ TextureImporter:
       name: Sheet Jellies Back_48
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
+        x: 96
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1151,12 +1151,12 @@ TextureImporter:
       name: Sheet Jellies Back_49
       rect:
         serializedVersion: 2
-        x: 160
-        y: 128
+        x: 112
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1172,12 +1172,12 @@ TextureImporter:
       name: Sheet Jellies Back_50
       rect:
         serializedVersion: 2
-        x: 176
-        y: 128
+        x: 128
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1193,12 +1193,12 @@ TextureImporter:
       name: Sheet Jellies Back_51
       rect:
         serializedVersion: 2
-        x: 192
-        y: 128
+        x: 144
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1214,12 +1214,12 @@ TextureImporter:
       name: Sheet Jellies Back_52
       rect:
         serializedVersion: 2
-        x: 208
-        y: 128
+        x: 160
+        y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1235,12 +1235,12 @@ TextureImporter:
       name: Sheet Jellies Back_53
       rect:
         serializedVersion: 2
-        x: 0
+        x: 176
         y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1256,12 +1256,12 @@ TextureImporter:
       name: Sheet Jellies Back_54
       rect:
         serializedVersion: 2
-        x: 16
+        x: 192
         y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1277,12 +1277,12 @@ TextureImporter:
       name: Sheet Jellies Back_55
       rect:
         serializedVersion: 2
-        x: 32
+        x: 208
         y: 96
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1298,12 +1298,12 @@ TextureImporter:
       name: Sheet Jellies Back_56
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 0
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1319,12 +1319,12 @@ TextureImporter:
       name: Sheet Jellies Back_57
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 16
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1340,12 +1340,12 @@ TextureImporter:
       name: Sheet Jellies Back_58
       rect:
         serializedVersion: 2
-        x: 80
-        y: 96
+        x: 32
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1361,12 +1361,12 @@ TextureImporter:
       name: Sheet Jellies Back_59
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 48
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1382,12 +1382,12 @@ TextureImporter:
       name: Sheet Jellies Back_60
       rect:
         serializedVersion: 2
-        x: 112
-        y: 96
+        x: 64
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1403,12 +1403,12 @@ TextureImporter:
       name: Sheet Jellies Back_61
       rect:
         serializedVersion: 2
-        x: 128
-        y: 96
+        x: 80
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1424,12 +1424,12 @@ TextureImporter:
       name: Sheet Jellies Back_62
       rect:
         serializedVersion: 2
-        x: 144
-        y: 96
+        x: 96
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1445,12 +1445,12 @@ TextureImporter:
       name: Sheet Jellies Back_63
       rect:
         serializedVersion: 2
-        x: 160
-        y: 96
+        x: 112
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1466,12 +1466,12 @@ TextureImporter:
       name: Sheet Jellies Back_64
       rect:
         serializedVersion: 2
-        x: 176
-        y: 96
+        x: 128
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1487,12 +1487,12 @@ TextureImporter:
       name: Sheet Jellies Back_65
       rect:
         serializedVersion: 2
-        x: 192
-        y: 96
+        x: 144
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1508,12 +1508,12 @@ TextureImporter:
       name: Sheet Jellies Back_66
       rect:
         serializedVersion: 2
-        x: 208
-        y: 96
+        x: 160
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1529,12 +1529,12 @@ TextureImporter:
       name: Sheet Jellies Back_67
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 176
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1550,12 +1550,12 @@ TextureImporter:
       name: Sheet Jellies Back_68
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
+        x: 192
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1571,12 +1571,12 @@ TextureImporter:
       name: Sheet Jellies Back_69
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
+        x: 208
+        y: 64
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1592,12 +1592,12 @@ TextureImporter:
       name: Sheet Jellies Back_70
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 0
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1613,12 +1613,12 @@ TextureImporter:
       name: Sheet Jellies Back_71
       rect:
         serializedVersion: 2
-        x: 64
-        y: 80
+        x: 16
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1634,12 +1634,12 @@ TextureImporter:
       name: Sheet Jellies Back_72
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
+        x: 32
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1655,12 +1655,12 @@ TextureImporter:
       name: Sheet Jellies Back_73
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
+        x: 48
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1676,12 +1676,12 @@ TextureImporter:
       name: Sheet Jellies Back_74
       rect:
         serializedVersion: 2
-        x: 144
-        y: 80
+        x: 64
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1697,12 +1697,12 @@ TextureImporter:
       name: Sheet Jellies Back_75
       rect:
         serializedVersion: 2
-        x: 160
-        y: 80
+        x: 80
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1718,12 +1718,12 @@ TextureImporter:
       name: Sheet Jellies Back_76
       rect:
         serializedVersion: 2
-        x: 176
-        y: 80
+        x: 96
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1739,12 +1739,12 @@ TextureImporter:
       name: Sheet Jellies Back_77
       rect:
         serializedVersion: 2
-        x: 192
-        y: 80
+        x: 112
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1760,12 +1760,12 @@ TextureImporter:
       name: Sheet Jellies Back_78
       rect:
         serializedVersion: 2
-        x: 208
-        y: 80
+        x: 128
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1781,12 +1781,12 @@ TextureImporter:
       name: Sheet Jellies Back_79
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
+        x: 144
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1802,12 +1802,12 @@ TextureImporter:
       name: Sheet Jellies Back_80
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
+        x: 160
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1823,12 +1823,12 @@ TextureImporter:
       name: Sheet Jellies Back_81
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 176
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1844,12 +1844,12 @@ TextureImporter:
       name: Sheet Jellies Back_82
       rect:
         serializedVersion: 2
-        x: 48
-        y: 64
+        x: 192
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1865,12 +1865,12 @@ TextureImporter:
       name: Sheet Jellies Back_83
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 208
+        y: 32
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1886,12 +1886,12 @@ TextureImporter:
       name: Sheet Jellies Back_84
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
+        x: 0
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1907,12 +1907,12 @@ TextureImporter:
       name: Sheet Jellies Back_85
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 16
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1928,12 +1928,12 @@ TextureImporter:
       name: Sheet Jellies Back_86
       rect:
         serializedVersion: 2
-        x: 112
-        y: 64
+        x: 32
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1949,12 +1949,12 @@ TextureImporter:
       name: Sheet Jellies Back_87
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 48
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1970,12 +1970,12 @@ TextureImporter:
       name: Sheet Jellies Back_88
       rect:
         serializedVersion: 2
-        x: 144
-        y: 64
+        x: 64
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1991,12 +1991,12 @@ TextureImporter:
       name: Sheet Jellies Back_89
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
+        x: 80
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2012,12 +2012,12 @@ TextureImporter:
       name: Sheet Jellies Back_90
       rect:
         serializedVersion: 2
-        x: 176
-        y: 64
+        x: 96
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2033,12 +2033,12 @@ TextureImporter:
       name: Sheet Jellies Back_91
       rect:
         serializedVersion: 2
-        x: 192
-        y: 64
+        x: 112
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2054,12 +2054,12 @@ TextureImporter:
       name: Sheet Jellies Back_92
       rect:
         serializedVersion: 2
-        x: 208
-        y: 64
+        x: 128
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2075,12 +2075,12 @@ TextureImporter:
       name: Sheet Jellies Back_93
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 144
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2096,12 +2096,12 @@ TextureImporter:
       name: Sheet Jellies Back_94
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 160
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2117,12 +2117,12 @@ TextureImporter:
       name: Sheet Jellies Back_95
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 176
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2138,12 +2138,12 @@ TextureImporter:
       name: Sheet Jellies Back_96
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 192
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2159,12 +2159,12 @@ TextureImporter:
       name: Sheet Jellies Back_97
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 208
+        y: 0
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2172,678 +2172,6 @@ TextureImporter:
       bones: []
       spriteID: 761ed5307ac1548428a53fa1de3874b4
       internalID: -1777197573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_98
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da6bc119b1f40594eb25cfae7b6ec14c
-      internalID: 1556293939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_99
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c67e318061f896744957df56deb67655
-      internalID: -1918427501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_100
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc0b51957a5357f46aa3698d4eae9caa
-      internalID: -1372096607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_101
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf89f759a63b02a4ba42b74c9264751d
-      internalID: -680910424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_102
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a660a9dcd8e9d045b74545b9867f01d
-      internalID: -779820801
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_103
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50b22629540d69b4387c91409509f239
-      internalID: 2085387794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_104
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b021d9b4848d9043a390fb3f9a1656a
-      internalID: -2133028990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_105
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38e2e47b81fd7c14abd1eff96ab82e47
-      internalID: 1774851155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_106
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ddad7c838d2b804983fa06e483b12b7
-      internalID: -487274935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_107
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b8ec7be59829524893deaacddb85de2
-      internalID: -72506597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_108
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d680a6680927bcb4fa5c8d7a4b46abd4
-      internalID: 90932054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_109
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddffac017570adb438c4cbcce562b413
-      internalID: -1612107697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_110
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 62e64e2909e22bd4c9060f61ba735be3
-      internalID: 2099384089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_111
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da9b5224b1009f04e9ee9457b8006429
-      internalID: 1983300015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_112
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 334e5e0b050cc7446ad0389d421120dd
-      internalID: -1011651523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_113
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b3f6f5b1fe386f46bdc65c03366a6db
-      internalID: 855391545
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_114
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 529de86f7f6529d4198042b87d893ab9
-      internalID: -1167657068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_115
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 166a376e175c30a43a3e6d43f2454de4
-      internalID: -1489701844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_116
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a104359cfa8b194ab936dcf754709fa
-      internalID: 259237932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_117
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2c537271804a99d4f80df1493825b3d8
-      internalID: -614008350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_118
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bea47af7b5863584c8c5b1c093d32d51
-      internalID: -930945743
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_119
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c448ed5ca867b04ba70b9004edd5f4f
-      internalID: -321744534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_120
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2679e3e5c5ab88c4a985f4bccfdb3593
-      internalID: 337771160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_121
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b18453ead31ae7c43bf40c14fd97653d
-      internalID: -926843542
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_122
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c2f9f3e7e4d8f640a37335a22953284
-      internalID: -332679294
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_123
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f02f09cfcbc46d4e8d8eee55184a759
-      internalID: 2046910561
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_124
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0752922976aa9c438533d96be8889a5
-      internalID: -1051488484
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_125
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3ae91e0e36a3d74c8908fbf2186ef34
-      internalID: -1652371745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_126
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a854c1f7c615b9247ac8e97dc3d5bba0
-      internalID: 1254093505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_127
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cc5d26f071072849bb9cc0b6f7ee425
-      internalID: -1428938814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_128
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3a141d9861f588479e0f68d87fe5e79
-      internalID: -2054300651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sheet Jellies Back_129
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07792d17e6f7c554a853ff1b41632790
-      internalID: -1566286776
       vertices: []
       indices: 
       edges: []
@@ -2862,38 +2190,8 @@ TextureImporter:
       Sheet Jellies Back_0: -1570449413
       Sheet Jellies Back_1: -489749348
       Sheet Jellies Back_10: -566210971
-      Sheet Jellies Back_100: -1372096607
-      Sheet Jellies Back_101: -680910424
-      Sheet Jellies Back_102: -779820801
-      Sheet Jellies Back_103: 2085387794
-      Sheet Jellies Back_104: -2133028990
-      Sheet Jellies Back_105: 1774851155
-      Sheet Jellies Back_106: -487274935
-      Sheet Jellies Back_107: -72506597
-      Sheet Jellies Back_108: 90932054
-      Sheet Jellies Back_109: -1612107697
       Sheet Jellies Back_11: 814547215
-      Sheet Jellies Back_110: 2099384089
-      Sheet Jellies Back_111: 1983300015
-      Sheet Jellies Back_112: -1011651523
-      Sheet Jellies Back_113: 855391545
-      Sheet Jellies Back_114: -1167657068
-      Sheet Jellies Back_115: -1489701844
-      Sheet Jellies Back_116: 259237932
-      Sheet Jellies Back_117: -614008350
-      Sheet Jellies Back_118: -930945743
-      Sheet Jellies Back_119: -321744534
       Sheet Jellies Back_12: 1584121530
-      Sheet Jellies Back_120: 337771160
-      Sheet Jellies Back_121: -926843542
-      Sheet Jellies Back_122: -332679294
-      Sheet Jellies Back_123: 2046910561
-      Sheet Jellies Back_124: -1051488484
-      Sheet Jellies Back_125: -1652371745
-      Sheet Jellies Back_126: 1254093505
-      Sheet Jellies Back_127: -1428938814
-      Sheet Jellies Back_128: -2054300651
-      Sheet Jellies Back_129: -1566286776
       Sheet Jellies Back_13: 1591649623
       Sheet Jellies Back_14: -769374464
       Sheet Jellies Back_15: 632710508
@@ -2987,8 +2285,6 @@ TextureImporter:
       Sheet Jellies Back_95: -684345033
       Sheet Jellies Back_96: 1889872719
       Sheet Jellies Back_97: -1777197573
-      Sheet Jellies Back_98: 1556293939
-      Sheet Jellies Back_99: -1918427501
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
