@@ -6647,6 +6647,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 90108362}
     m_Modifications:
+    - target: {fileID: 806015301165775918, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     - target: {fileID: 1140230683979179784, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -6695,6 +6699,10 @@ PrefabInstance:
       propertyPath: bgJelly
       value: 
       objectReference: {fileID: 1002574657}
+    - target: {fileID: 3506578239493531936, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3506578239493531936, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
