@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -9,22 +10,27 @@ public class JellyBG : MonoBehaviour
     {
         Idle,
         Walking,
+        Playing,
     }
 
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private Transform moveToTarget;
     
     [SerializeField] private Vector2 edgeOffset;
-    [SerializeField] private Vector2 newMoveToLocation;
 
     [SerializeField] private float walkInterval = 5f;
     [SerializeField] private float currentWalkInterval;
     
+    [SerializeField] private float playInterval = 20f;
+    [SerializeField] private float currentPlayInterval;
+    
     [FormerlySerializedAs("_animator")] [SerializeField] private JellyBGAnimator animator;
+
+    [SerializeField] private List<PlaygroundSide> playgrounds;
 
     [SerializeField] private BGJellyState state;
     
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
     private Vector2 _startingPosition = new Vector2(-0.71f, 0.01f);
     private bool _isWalkingBack;
 
@@ -35,12 +41,25 @@ public class JellyBG : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<JellyBGAnimator>();
         currentWalkInterval = walkInterval;
+        currentPlayInterval = playInterval;
     }
 
     private void Update()
     {
         MoveJelly();
         CountdownForNewWalkPosition();
+        CountDownForPlaying();
+    }
+
+    private void CountDownForPlaying()
+    {
+        if(state != BGJellyState.Idle) return;
+        currentPlayInterval -= Time.deltaTime;
+        if (currentPlayInterval <= 0)
+        {
+            InteractWithPlayground();
+            currentPlayInterval = playInterval;
+        }
     }
 
     private void CountdownForNewWalkPosition()
@@ -77,7 +96,7 @@ public class JellyBG : MonoBehaviour
         }
     }
 
-    //TODO: Make sure he moves considerable amount
+    //TODO: Make sure he moves considerable amount for tamagochi like effect
     private void SetRandomMovePosition()
     {
         state = BGJellyState.Walking;
@@ -91,10 +110,20 @@ public class JellyBG : MonoBehaviour
         _spriteRenderer.flipX = transform.position.x > moveToTarget.position.x;
     }
 
+    [ContextMenu("Play")]
+    private void InteractWithPlayground()
+    {
+        if(playgrounds[0].CurrentItem == null) return;
+        state = BGJellyState.Playing;
+        _spriteRenderer.enabled = false;
+        playgrounds[0].StartAnimation(this);
+    }
+
     public void ActivateJelly()
     {
         state = BGJellyState.Walking;
         _isWalkingBack = false;
+        _spriteRenderer.enabled = true;
         gameObject.SetActive(true);
         transform.localPosition = _startingPosition;
         SetRandomMovePosition();

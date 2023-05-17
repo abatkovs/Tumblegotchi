@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Swingset
   m_EditorClassIdentifier: 
   <ItemSprite>k__BackingField: {fileID: 1856737663, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <EnterAnimationString>k__BackingField: SwingsetEnter
+  <WaitAnimationString>k__BackingField: SwingsetWaitPlayerInput
+  <PlayAnimationString>k__BackingField: SwingsetMove
+  <DizzyAnimationString>k__BackingField: SwingsetJump
+  <UpsetAnimationString>k__BackingField: SwingsetUpset

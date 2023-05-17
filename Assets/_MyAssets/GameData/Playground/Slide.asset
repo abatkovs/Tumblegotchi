@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Slide
   m_EditorClassIdentifier: 
   <ItemSprite>k__BackingField: {fileID: 1329661803, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <EnterAnimationString>k__BackingField: SlideEnter
+  <WaitAnimationString>k__BackingField: SlideWaitPlayerInput
+  <PlayAnimationString>k__BackingField: SlideDown
+  <DizzyAnimationString>k__BackingField: SlideDizzy
+  <UpsetAnimationString>k__BackingField: SlideUpset

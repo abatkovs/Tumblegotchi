@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: TetherBall
   m_EditorClassIdentifier: 
   <ItemSprite>k__BackingField: {fileID: 652962640, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <EnterAnimationString>k__BackingField: TetherballHit
+  <WaitAnimationString>k__BackingField: TetherballWaitPlayerInput
+  <PlayAnimationString>k__BackingField: TetherballLoop
+  <DizzyAnimationString>k__BackingField: TetherballStop
+  <UpsetAnimationString>k__BackingField: TetherballUpset

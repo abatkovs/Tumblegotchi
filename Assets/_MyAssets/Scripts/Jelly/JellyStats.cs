@@ -32,6 +32,8 @@ public class JellyStats : MonoBehaviour
         Adult,
     }
 
+    [SerializeField] private GameObject code;
+
     public JellyState CurrentJellyState { get; private set; }
     [SerializeField] private SpriteLibrary spriteLibrary;
     [SerializeField] private JellyEvolutionData evolutionData;
@@ -73,7 +75,11 @@ public class JellyStats : MonoBehaviour
         _gameManager = GameManager.Instance;
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
+    }
 
+    private void OnEnable()
+    {
+        Debug.Log("Enable stats");
         StartCoroutine(BecomeHungrier());
         StartCoroutine(BecomeSleepier());
     }
@@ -115,6 +121,7 @@ public class JellyStats : MonoBehaviour
         {
             SheetAdult();
             jellyAge = JellyAge.Adult;
+            code.SetActive(true);
             return;
         }
     }

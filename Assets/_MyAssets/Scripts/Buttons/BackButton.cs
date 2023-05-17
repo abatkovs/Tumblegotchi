@@ -35,6 +35,7 @@ public class BackButton : BaseActionButton
         {
             sceneSwitcher.PlaygroundToMain();
             jelly.MoveBGJellyToForeground();
+            
             return;
         }
         

@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: TireSwing
   m_EditorClassIdentifier: 
   <ItemSprite>k__BackingField: {fileID: 1307519392, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <EnterAnimationString>k__BackingField: TireSwingEnter
+  <WaitAnimationString>k__BackingField: TireSwingWaitPlayerInput
+  <PlayAnimationString>k__BackingField: TireSwingPush
+  <DizzyAnimationString>k__BackingField: TireSwingJump
+  <UpsetAnimationString>k__BackingField: TireSwingUpset
