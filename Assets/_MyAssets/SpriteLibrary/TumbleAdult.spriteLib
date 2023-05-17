@@ -64,16 +64,16 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 143085984, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     - m_Name: Egg
       m_Hash: 813342626
-      m_Sprite: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+      m_Sprite: {fileID: 1722815119, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: 1512762832, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+      m_SpriteOverride: {fileID: 1722815119, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     - m_Name: Egg_0
       m_Hash: 648168204
-      m_Sprite: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+      m_Sprite: {fileID: 741281373, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
       m_FromMain: 0
-      m_SpriteOverride: {fileID: -2010577517, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+      m_SpriteOverride: {fileID: 741281373, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 11
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638198532091740786
+  m_ModificationHash: 638198537073889402
   m_Version: 1
