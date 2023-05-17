@@ -56,6 +56,7 @@ public class JellyStats : MonoBehaviour
     [Space]
     [SerializeField] private float love; //xp for all purposes
     [SerializeField] private float loveNeededForEvolution = 20;
+    [SerializeField] private float feedingLoveIncrease = 1f;
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
@@ -85,7 +86,7 @@ public class JellyStats : MonoBehaviour
     private void CheckIfJellyCanEvolve()
     {
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
-        if (love > loveNeededForEvolution)
+        if (love >= loveNeededForEvolution)
         {
             love = 0;
             StartEvolving();
@@ -150,6 +151,7 @@ public class JellyStats : MonoBehaviour
         }
         currentHunger += feedValue;
         _gameManager.AddJellyDew(jellyDewAwardedForFeeding);
+        IncreaseLove(feedingLoveIncrease);
     }
 
     private void RefuseFood()
