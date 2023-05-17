@@ -6773,7 +6773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_labelHash
-      value: 0.009161512
+      value: 1.8625731e-11
       objectReference: {fileID: 0}
     - target: {fileID: 1538795866162143178, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_SpriteHash
@@ -6787,6 +6787,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 2932406293701649734, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_SpriteLibraryAsset
+      value: 
+      objectReference: {fileID: 7108339969198208228, guid: e24845cb3bc73d5488518df8e7c2bc18, type: 3}
     - target: {fileID: 5281353005104464471, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6846,7 +6850,7 @@ PrefabInstance:
     - target: {fileID: 8393588364593126549, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1019579918, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
+      objectReference: {fileID: 314961426, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
     - target: {fileID: 8393588364593126549, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_Enabled
       value: 0
