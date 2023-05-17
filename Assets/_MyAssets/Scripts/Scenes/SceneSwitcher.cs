@@ -63,7 +63,7 @@ public class SceneSwitcher : MonoBehaviour
     
     public void PlaygroundToMain()
     {
-        jellyAnimator.PlayWalkOnScreenAnim();
+        
     }
 
     public void BackToMain()

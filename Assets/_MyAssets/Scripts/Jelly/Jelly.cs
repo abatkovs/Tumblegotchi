@@ -14,6 +14,12 @@ public class Jelly : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _animator = GetComponent<JellyAnimator>();
+        bgJelly.OnFinishMovingBack += BgJelly_OnOnFinishMovingBack;
+    }
+
+    private void BgJelly_OnOnFinishMovingBack()
+    {
+        _animator.PlayWalkOnScreenAnim();
     }
 
     public void ActivateBGJelly()
@@ -21,9 +27,9 @@ public class Jelly : MonoBehaviour
         bgJelly.ActivateJelly();
     }
 
-    public void DeactivateBGJelly()
+    public void MoveBGJellyToForeground()
     {
-        bgJelly.DeactivateJelly();
+        bgJelly.MoveJellyBack();
     }
 
     public void FinishTransition()

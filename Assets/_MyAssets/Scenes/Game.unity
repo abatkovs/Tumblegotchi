@@ -3485,6 +3485,7 @@ MonoBehaviour:
   feeding: {fileID: 1195776942}
   petting: {fileID: 1195776943}
   selectionSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
+  jelly: {fileID: 1600596700636829914}
 --- !u!1 &1268164274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2858565806455962474, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
@@ -6743,6 +6744,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1600596700636829914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3226887219251903814, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+  m_PrefabInstance: {fileID: 1600596700636829910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe930be6657208f408f2859aaa74ecba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2321255696160607056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6837,7 +6849,7 @@ PrefabInstance:
       objectReference: {fileID: -1019579918, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
     - target: {fileID: 8393588364593126549, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8393588364593126549, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_SortingOrder
@@ -7012,7 +7024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2326805720054730441, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.084
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2326805720054730441, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: m_LocalPosition.z

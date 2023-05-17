@@ -12,6 +12,18 @@ public class JellyStats : MonoBehaviour
         Happy,
         Happier,
     }
+
+    public enum JellyState
+    {
+        Idle,
+        Fed,
+        Pet,
+        Walking,
+        Sleeping,
+    }
+
+    public JellyState CurrentJellyState { get; private set; }
+    
     [SerializeField] private float maxHunger = 100;
     [SerializeField] private float currentHunger;
     [SerializeField] private float hungerDecreaseAmount = 1;
@@ -89,8 +101,10 @@ public class JellyStats : MonoBehaviour
 
     private void StartSleeping()
     {
+        if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
         IsJellyAsleep = true;
         _animator.PlaySleepAnim();
+        CurrentJellyState = JellyState.Sleeping;
     }
 
     public void ChangeMoodLevel(int amount)

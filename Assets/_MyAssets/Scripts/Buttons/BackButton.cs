@@ -9,6 +9,7 @@ public class BackButton : BaseActionButton
     [SerializeField] private Feeding feeding;
     [SerializeField] private Petting petting;
     [SerializeField] private SoundData selectionSound;
+    [SerializeField] private Jelly jelly;
 
     private SoundManager _soundManager;
     private GameManager _gameManager;
@@ -33,6 +34,7 @@ public class BackButton : BaseActionButton
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Playground)
         {
             sceneSwitcher.PlaygroundToMain();
+            jelly.MoveBGJellyToForeground();
             return;
         }
         
