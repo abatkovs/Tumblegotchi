@@ -3122,6 +3122,7 @@ MonoBehaviour:
   - {fileID: 7108339969198208228, guid: b93e022a7c4a2ce4ba7c8cd7ff77c62c, type: 3}
   - {fileID: 7108339969198208228, guid: 7e288d996d84eea4e86b59d4bed70076, type: 3}
   - {fileID: 7108339969198208228, guid: cc9abc3c99cb706448ebf79755620686, type: 3}
+  selectedLibrary: 0
 --- !u!114 &1180519221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6694,9 +6695,21 @@ PrefabInstance:
       propertyPath: bgJelly
       value: 
       objectReference: {fileID: 1002574657}
+    - target: {fileID: 3506578239493531936, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3933082719659846541, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_Name
       value: Jelly
+      objectReference: {fileID: 0}
+    - target: {fileID: 4503372199306623167, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7167027926392533515, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

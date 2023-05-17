@@ -80,6 +80,102 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.33333334
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.3333334
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 2
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SpriteHash
+    path: JellyAnimatedVisuals
+    classID: 114
+    script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+    flags: 1
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: JellyVisuals
+    classID: 1
+    script: {fileID: 0}
+    flags: 0
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -87,27 +183,6 @@ AnimationClip:
       value: {fileID: -300484764, guid: 7c22f9271f780d442b18dd00da25b99e, type: 3}
     attribute: m_Sprite
     path: Item
-    classID: 212
-    script: {fileID: 0}
-    flags: 2
-  - serializedVersion: 2
-    curve:
-    - time: 0
-      value: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 0.33333334
-      value: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 0.6666667
-      value: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 1
-      value: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 1.3333334
-      value: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 1.6666666
-      value: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - time: 2
-      value: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    attribute: m_Sprite
-    path: JellyVisuals
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -140,16 +215,25 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3207170592
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-      isIntCurve: 0
+      path: 3298857897
+      attribute: 3843704414
+      script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 1
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
       path: 2259505893
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
+      isPPtrCurve: 0
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 3207170592
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -195,13 +279,6 @@ AnimationClip:
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: -300484764, guid: 7c22f9271f780d442b18dd00da25b99e, type: 3}
-    - {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
-    - {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
     - {fileID: -560612175, guid: 431badcb2b8272e4484a3e4b78d86846, type: 3}
     - {fileID: -1602994382, guid: 431badcb2b8272e4484a3e4b78d86846, type: 3}
     - {fileID: -560612175, guid: 431badcb2b8272e4484a3e4b78d86846, type: 3}
@@ -291,6 +368,102 @@ AnimationClip:
     attribute: m_Size.y
     path: Hearts
     classID: 212
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.33333334
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.6666667
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.3333334
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.6666666
+        value: 0.00003047113
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 2
+        value: 0.016651968
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SpriteHash
+    path: JellyAnimatedVisuals
+    classID: 114
+    script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+    flags: 1
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: JellyVisuals
+    classID: 1
     script: {fileID: 0}
     flags: 0
   m_EulerEditorCurves: []
