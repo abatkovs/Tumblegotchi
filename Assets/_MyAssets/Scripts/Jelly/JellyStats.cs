@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
+using _MyAssets.Scripts.Jelly;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.U2D.Animation;
 
 public class JellyStats : MonoBehaviour
 {
@@ -22,8 +25,18 @@ public class JellyStats : MonoBehaviour
         Sleeping,
     }
 
+    public enum JellyAge
+    {
+        Baby,
+        Young,
+        Adult,
+    }
+
     public JellyState CurrentJellyState { get; private set; }
-    
+    [SerializeField] private SpriteLibrary spriteLibrary;
+    [SerializeField] private JellyEvolutionData evolutionData;
+    [SerializeField] private JellyAge jellyAge;
+    [Space(25)]
     [SerializeField] private float maxHunger = 100;
     [SerializeField] private float currentHunger;
     [SerializeField] private float hungerDecreaseAmount = 1;
@@ -42,6 +55,7 @@ public class JellyStats : MonoBehaviour
     [FormerlySerializedAs("sleepyIncreaseInterval")] [SerializeField] private float sleepIntervals = 1f;
     [Space]
     [SerializeField] private float love; //xp for all purposes
+    [SerializeField] private float loveNeededForEvolution = 20;
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
@@ -63,6 +77,70 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeSleepier());
     }
 
+    private void Update()
+    {
+        CheckIfJellyCanEvolve();
+    }
+
+    private void CheckIfJellyCanEvolve()
+    {
+        if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
+        if (love > loveNeededForEvolution)
+        {
+            love = 0;
+            StartEvolving();
+        }
+    }
+
+    private void StartEvolving()
+    {
+        //start playing evolve animation
+        _gameManager.LockButtons = true;
+        _animator.PlayEvolutionAnim();
+    }
+
+    private void FinishEvolving()
+    {
+        _gameManager.LockButtons = false;
+        _animator.PlayIdleAnim();
+        if (jellyAge == JellyAge.Baby)
+        {
+            SheetYoung();
+            jellyAge = JellyAge.Young;
+            return;
+        }
+
+        if (jellyAge == JellyAge.Young)
+        {
+            SheetAdult();
+            jellyAge = JellyAge.Adult;
+            return;
+        }
+    }
+
+    private void SheetYoung()
+    {
+        spriteLibrary.spriteLibraryAsset = evolutionData.Young;
+    }
+
+    private void SheetAdult()
+    {
+        spriteLibrary.spriteLibraryAsset = evolutionData.Adult;
+    }
+
+    public void EvolutionAnimEvent1()
+    {
+        if (jellyAge == JellyAge.Baby) spriteLibrary.spriteLibraryAsset = evolutionData.Baby;
+        if(jellyAge == JellyAge.Young) SheetYoung();
+        if(jellyAge == JellyAge.Adult) SheetAdult();
+        }
+    
+    public void EvolutionAnimEvent2()
+    {
+        if (jellyAge == JellyAge.Baby) SheetYoung();
+        if(jellyAge == JellyAge.Young) SheetAdult();
+    }
+    
     public void FeedJelly()
     {
         if (currentHunger >= maxHunger)

@@ -7772,6 +7772,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2431733614235094482, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431733614235094482, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: m_Size.y
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 3226887219251903814, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: bgJelly
       value: 
@@ -7796,6 +7804,14 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: evolutionData
+      value: 
+      objectReference: {fileID: 11400000, guid: f27e2b2061d4bf3478cf0bbb2b4fb2c1, type: 2}
+    - target: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: spriteLibrary
+      value: 
+      objectReference: {fileID: 1600596700636829912}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

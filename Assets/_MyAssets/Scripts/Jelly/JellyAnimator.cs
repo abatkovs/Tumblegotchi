@@ -9,6 +9,7 @@ public class JellyAnimator : AnimatorCross
     [SerializeField] private SoundData pet1;
     [SerializeField] private SoundData pet2;
     [SerializeField] private SoundData swallow;
+    [SerializeField] private SoundData evolution;
     
     private int _idleAnim = Animator.StringToHash("Idle");
     private int _feedAnim = Animator.StringToHash("FeedJelly");
@@ -17,6 +18,7 @@ public class JellyAnimator : AnimatorCross
     private int _walkAnim = Animator.StringToHash("Walk");
     private int _walkOnScreenAnim = Animator.StringToHash("WalkOnScreen");
     private int _sleepAnim = Animator.StringToHash("Sleep");
+    private int _evolutionAnim = Animator.StringToHash("Evolution");
 
     private SoundManager _soundManager;
     void Start()
@@ -59,6 +61,11 @@ public class JellyAnimator : AnimatorCross
     {
         PlayAnim(_sleepAnim);
     }
+
+    public void PlayEvolutionAnim()
+    {
+        PlayAnim(_evolutionAnim);
+    }
     
 #region sound
     public void PlayEatSound()
@@ -84,6 +91,11 @@ public class JellyAnimator : AnimatorCross
     public void PlaySwallowSound()
     {
         _soundManager.PlaySound(swallow);
+    }
+
+    public void PlayEvolutionSound()
+    {
+        _soundManager.PlaySound(evolution);
     }
 #endregion
 
