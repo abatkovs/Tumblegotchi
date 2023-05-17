@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 806015301165775918}
   - component: {fileID: 2168298571078023321}
   m_Layer: 0
-  m_Name: JellyVisuals (1)
+  m_Name: JellyAnimatedVisuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,7 +474,10 @@ MonoBehaviour:
   currentHunger: 0
   hungerDecreaseAmount: 1
   hungerInterval: 1
-  mood: 0
+  maxMood: 100
+  currentMood: 0
+  moodState: 0
+  moodRange: 20
   sleepyMax: 100
   sleepThreshold: 100
   currentSleepy: 0
@@ -616,7 +619,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 1998776273, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+  m_Sprite: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

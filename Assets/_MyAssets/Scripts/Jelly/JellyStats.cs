@@ -4,13 +4,23 @@ using UnityEngine.Serialization;
 
 public class JellyStats : MonoBehaviour
 {
-    
+    public enum JellyMood
+    {
+        Angry,
+        Sad,
+        Neutral,
+        Happy,
+        Happier,
+    }
     [SerializeField] private float maxHunger = 100;
     [SerializeField] private float currentHunger;
     [SerializeField] private float hungerDecreaseAmount = 1;
     [SerializeField] private float hungerInterval = 1f;
     [Space]
-    [SerializeField] private float mood;
+    [SerializeField] private int maxMood = 100;
+    [SerializeField] private int currentMood = 0;
+    [SerializeField] private JellyMood moodState;
+    [SerializeField] private int moodRange = 20;
     [Space]
     [SerializeField] private float sleepyMax = 100;
     [SerializeField] private float sleepThreshold = 60; //goes to sleep at this value
@@ -81,6 +91,16 @@ public class JellyStats : MonoBehaviour
     {
         IsJellyAsleep = true;
         _animator.PlaySleepAnim();
+    }
+
+    public void ChangeMoodLevel(int amount)
+    {
+        var moodLevel = 0;
+        currentMood += amount;
+
+        moodLevel = currentMood / moodRange;
+
+        moodState = (JellyMood)moodLevel;
     }
 
     public void IncreaseLove(float amount)
