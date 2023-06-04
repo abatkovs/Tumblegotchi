@@ -15,5 +15,10 @@ MonoBehaviour:
   <Sound>k__BackingField:
     clip: {fileID: 8300000, guid: bff02c98c4d371044bf7b10813652188, type: 3}
     loop: 0
-  <Volume>k__BackingField: 1
-  <Pitch>k__BackingField: 1
+  <SoundEvent>k__BackingField:
+    Guid:
+      Data1: -1114157356
+      Data2: 1133543694
+      Data3: 1984339874
+      Data4: 864642043
+    Path: event:/ScreenLeft

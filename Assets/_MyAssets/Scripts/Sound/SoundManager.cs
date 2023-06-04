@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using FMODUnity;
 
 public class SoundManager : MonoBehaviour
 {
@@ -10,9 +11,9 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private List<SoundLevelOptions> mixerSoundLevels;
-    [SerializeField] private AudioSource source;
-    [SerializeField] private AudioSource source2;
-
+    [SerializeField] private StudioEventEmitter source;
+    [SerializeField] private StudioEventEmitter source2;
+    
     [SerializeField] private AudioLevels audioLevels;
 
     private int _selectedSoundLevel = 5;
@@ -22,24 +23,25 @@ public class SoundManager : MonoBehaviour
         Instance = this;
     }
     
-    private void PlayAudioFromSource(AudioSource sourceToPlayFrom, SoundData soundToPlay)
+    private void PlayAudioFromSource(StudioEventEmitter eventEmmiter, SoundData soundToPlay)
     {
-        sourceToPlayFrom.clip = soundToPlay.Sound.clip;
+        RuntimeManager.PlayOneShot(soundToPlay.SoundEvent);
+        /*sourceToPlayFrom.clip = soundToPlay.Sound.clip;
         sourceToPlayFrom.loop = soundToPlay.Sound.loop;
-        sourceToPlayFrom.volume = soundToPlay.Volume;
-        sourceToPlayFrom.pitch = soundToPlay.Pitch;
-        
-        sourceToPlayFrom.Play();
+
+        sourceToPlayFrom.Play();*/
     }
 
     public void PlaySound(SoundData soundToPlay)
     {
         PlayAudioFromSource(source, soundToPlay);
+        //
+        //PlayAudioFromSource(source, soundToPlay);
     }
 
     public void PlaySound2(SoundData soundToPlay)
     {
-        PlayAudioFromSource(source2, soundToPlay);
+        //PlayAudioFromSource(source2, soundToPlay);
     }
 
     public void ChangeAudioLevel(int amount)

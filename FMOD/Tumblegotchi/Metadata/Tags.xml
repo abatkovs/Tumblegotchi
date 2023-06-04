@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MasterTagFolder" id="{910e06cc-3566-479c-a234-b7bbe18098da}">
+		<property name="name">
+			<value>Master</value>
+		</property>
+		<relationship name="items">
+			<destination>{73b3ea65-c050-4d98-b49e-fa8c991cd75a}</destination>
+			<destination>{0b0af560-8222-40d7-badd-c2c4b9f4f1dc}</destination>
+			<destination>{504f3c2f-4c85-4c65-93af-bb33ff6a1e3a}</destination>
+			<destination>{d3f0d1aa-e40d-407c-b9a0-8d7227473e87}</destination>
+			<destination>{5d2358b6-34c1-431b-a6e8-a921fc2c67a7}</destination>
+			<destination>{1fa5efc4-f0c5-4241-8bda-ee4da477b6ef}</destination>
+			<destination>{45b0511a-1e6c-42ef-a628-65ef4143c43a}</destination>
+			<destination>{59e19866-6a98-4c67-bcde-7e2341028289}</destination>
+			<destination>{1d2dea8c-d0d5-4d8e-90b5-0ebf894e2d9f}</destination>
+			<destination>{3f04822a-bf8f-40ca-b086-66f00a769345}</destination>
+			<destination>{a457bc9e-5cab-4e86-94ef-58fe6a9a2013}</destination>
+			<destination>{cf259d7f-f694-458e-8074-0b75d6558d1d}</destination>
+		</relationship>
+	</object>
+	<object class="Tag" id="{73b3ea65-c050-4d98-b49e-fa8c991cd75a}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{0b0af560-8222-40d7-badd-c2c4b9f4f1dc}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{504f3c2f-4c85-4c65-93af-bb33ff6a1e3a}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{d3f0d1aa-e40d-407c-b9a0-8d7227473e87}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{5d2358b6-34c1-431b-a6e8-a921fc2c67a7}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{1fa5efc4-f0c5-4241-8bda-ee4da477b6ef}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{45b0511a-1e6c-42ef-a628-65ef4143c43a}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{59e19866-6a98-4c67-bcde-7e2341028289}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{1d2dea8c-d0d5-4d8e-90b5-0ebf894e2d9f}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{3f04822a-bf8f-40ca-b086-66f00a769345}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{a457bc9e-5cab-4e86-94ef-58fe6a9a2013}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+	<object class="Tag" id="{cf259d7f-f694-458e-8074-0b75d6558d1d}">
+		<property name="name">
+			<value>placeholder</value>
+		</property>
+	</object>
+</objects>

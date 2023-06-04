@@ -15,5 +15,10 @@ MonoBehaviour:
   <Sound>k__BackingField:
     clip: {fileID: 8300000, guid: e1435c21a81f11e4b8935deefa609808, type: 3}
     loop: 0
-  <Volume>k__BackingField: 1
-  <Pitch>k__BackingField: 1
+  <SoundEvent>k__BackingField:
+    Guid:
+      Data1: 1197109198
+      Data2: 1243558168
+      Data3: -2014500970
+      Data4: 43823589
+    Path: event:/DewDrop

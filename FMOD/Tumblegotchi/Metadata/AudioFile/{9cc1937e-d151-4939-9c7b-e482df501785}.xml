@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9cc1937e-d151-4939-9c7b-e482df501785}">
+		<property name="assetPath">
+			<value>bonus_3.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3680000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2ac4c60a-9476-40a7-83d3-2deb1773fd6e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e6d662f3-9417-481a-9bd7-4b7d981cc4d8}">
+		<property name="assetPath">
+			<value>hunger_call.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.3919999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2ac4c60a-9476-40a7-83d3-2deb1773fd6e}</destination>
+		</relationship>
+	</object>
+</objects>

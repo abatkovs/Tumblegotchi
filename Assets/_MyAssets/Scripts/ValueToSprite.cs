@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
-
+/// <summary>
+/// Converts integers to sprites
+/// </summary>
 public class ValueToSprite : MonoBehaviour
 {
     [SerializeField] private List<Sprite> numbersSprites;

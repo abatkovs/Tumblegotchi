@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Ball
   m_EditorClassIdentifier: 
   <ItemSprite>k__BackingField: {fileID: 1836174656, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <EnterAnimationString>k__BackingField: 
+  <EnterAnimationString>k__BackingField: BallWaitPlayerInput
   <WaitAnimationString>k__BackingField: BallWaitPlayerInput
   <PlayAnimationString>k__BackingField: BallKick
-  <DizzyAnimationString>k__BackingField: 
+  <DizzyAnimationString>k__BackingField: BallKick
   <UpsetAnimationString>k__BackingField: BallUpset

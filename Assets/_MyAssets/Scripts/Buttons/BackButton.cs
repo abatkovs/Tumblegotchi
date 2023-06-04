@@ -24,12 +24,7 @@ public class BackButton : BaseActionButton
     {
         if(_gameManager.LockButtons) return;
 
-        if (_gameManager.CurrentlyActiveScene == ActiveScene.Main)
-        {
-            sceneSwitcher.SwitchToPlayground();
-            _gameManager.ToggleSelectionButton(true);
-            return;
-        }
+
 
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Playground)
         {
@@ -52,6 +47,13 @@ public class BackButton : BaseActionButton
             petting.ResetPettingState();
             _soundManager.PlaySound(selectionSound);
             _gameManager.ToggleSelectionButton(false);
+            return;
+        }
+        
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Main)
+        {
+            sceneSwitcher.SwitchToPlayground();
+            _gameManager.ToggleSelectionButton(true);
             return;
         }
         

@@ -18,14 +18,12 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     [SerializeField] private Vector2 posOffset;
 
-    private Vector2 _startingPosition;
+    
 
     public event Action OnButtonClicked;
+    public event Action OnButtonReleased;
 
-    private void Start()
-    {
-        _startingPosition = transform.position;
-    }
+
 
     public void OnPointerEnter (PointerEventData eventData)
     {
@@ -43,7 +41,6 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     {
         if (changePosition)
         {
-            ResetPosition();
             return;
         }
         
@@ -68,13 +65,11 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     
     public void OnPointerUp(PointerEventData eventData)
     {
-        ResetPosition();
+        OnButtonReleased?.Invoke();
+        
     }
 
-    private void ResetPosition()
-    {
-        transform.position = _startingPosition;
-    }
+
 
 
 }

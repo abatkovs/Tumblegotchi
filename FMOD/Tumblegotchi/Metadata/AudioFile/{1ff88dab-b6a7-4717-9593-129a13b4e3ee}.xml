@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{1ff88dab-b6a7-4717-9593-129a13b4e3ee}">
+		<property name="assetPath">
+			<value>angry_yell.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.008</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2ac4c60a-9476-40a7-83d3-2deb1773fd6e}</destination>
+		</relationship>
+	</object>
+</objects>
