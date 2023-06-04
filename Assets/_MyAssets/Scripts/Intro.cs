@@ -5,19 +5,11 @@ using UnityEngine;
 
 public class Intro : MonoBehaviour
 {
-    [SerializeField] private SoundData introSound;
     [SerializeField] private GameObject game;
-
-    [SerializeField] private SoundManager soundManager;
 
     private void Start()
     {
         game.SetActive(false);
-    }
-
-    private void PlayIntroSound()
-    {
-        soundManager.PlaySound(introSound);
     }
 
     private void FinishIntro()

@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Audio level visuals
+/// </summary>
 public class AudioLevels : MonoBehaviour
 {
     [SerializeField] private List<SpriteRenderer> pips;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
 using UnityEngine;
 using UnityEngine.Audio;
 using FMODUnity;
@@ -16,39 +17,37 @@ public class SoundManager : MonoBehaviour
     
     [SerializeField] private AudioLevels audioLevels;
 
+    [SerializeField] private string audioBusPath = "bus:/SFX";
+    private Bus _fmodAudioBus;
     private int _selectedSoundLevel = 5;
     
     private void Awake()
     {
         Instance = this;
+        _fmodAudioBus = RuntimeManager.GetBus(audioBusPath);
+        ChangeAudioLevel(_selectedSoundLevel);
     }
     
-    private void PlayAudioFromSource(StudioEventEmitter eventEmmiter, SoundData soundToPlay)
+    private void PlayAudioFromSource(StudioEventEmitter eventEmiter, SoundData soundToPlay)
     {
         RuntimeManager.PlayOneShot(soundToPlay.SoundEvent);
-        /*sourceToPlayFrom.clip = soundToPlay.Sound.clip;
-        sourceToPlayFrom.loop = soundToPlay.Sound.loop;
-
-        sourceToPlayFrom.Play();*/
     }
 
     public void PlaySound(SoundData soundToPlay)
     {
         PlayAudioFromSource(source, soundToPlay);
-        //
-        //PlayAudioFromSource(source, soundToPlay);
     }
 
     public void PlaySound2(SoundData soundToPlay)
     {
-        //PlayAudioFromSource(source2, soundToPlay);
+        RuntimeManager.PlayOneShot(soundToPlay.SoundEvent);
     }
 
     public void ChangeAudioLevel(int amount)
     {
         _selectedSoundLevel = Mathf.Clamp(_selectedSoundLevel + amount, 0, mixerSoundLevels.Count-1);
         audioLevels.ChangeSoundLevel(amount);
-        mixer.SetFloat("Volume", mixerSoundLevels[_selectedSoundLevel].soundLevel);
+        _fmodAudioBus.setVolume(mixerSoundLevels[_selectedSoundLevel].soundLevel);
     }
     
 }

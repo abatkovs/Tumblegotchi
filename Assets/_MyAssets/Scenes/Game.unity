@@ -6201,13 +6201,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 46498e421c936d04a9718103940e60d3, type: 2}
   mixerSoundLevels:
-  - soundLevel: -80
-  - soundLevel: -20
-  - soundLevel: -10
-  - soundLevel: -5
   - soundLevel: 0
-  - soundLevel: 5
-  - soundLevel: 10
+  - soundLevel: 0.2
+  - soundLevel: 0.3
+  - soundLevel: 0.4
+  - soundLevel: 0.6
+  - soundLevel: 0.8
+  - soundLevel: 1
   source: {fileID: 1981871055}
   source2: {fileID: 0}
   audioLevels: {fileID: 1476419719}
@@ -6394,9 +6394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721642cd58cf5994f8bfd5aa76aa5f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introSound: {fileID: 11400000, guid: da9aa27397332eb4387bdc4f3c50fcd4, type: 2}
   game: {fileID: 219271993}
-  soundManager: {fileID: 1981871054}
 --- !u!95 &2022012466
 Animator:
   serializedVersion: 5
