@@ -929,7 +929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &219271994
 Transform:
   m_ObjectHideFlags: 0
@@ -1794,6 +1794,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 751431902}
   - {fileID: 1981871052}
   - {fileID: 2034420222}
   - {fileID: 219271994}
@@ -2284,6 +2285,119 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1830702194205254173, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
   m_PrefabInstance: {fileID: 2321255696160607056}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &751431901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751431902}
+  - component: {fileID: 751431903}
+  - component: {fileID: 751431904}
+  - component: {fileID: 751431905}
+  m_Layer: 0
+  m_Name: DragableZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &751431902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751431901}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 435116751}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &751431903
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751431901}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.011909664, y: 0.95574975}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0238193, y: 0.5414784}
+  m_EdgeRadius: 0
+--- !u!114 &751431904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751431901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fe1958e98f5ab49a56bcd45e9cac20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitColor: {r: 1, g: 1, b: 1, a: 1}
+  enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  buttonSprite: {fileID: 0}
+  buttonPressedSprite: {fileID: 0}
+  changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!114 &751431905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751431901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3b6daf5098c186488e222d7aea4ec3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  game: {fileID: 435116751}
+  button: {fileID: 751431904}
 --- !u!1 &758733625
 GameObject:
   m_ObjectHideFlags: 0
@@ -6160,7 +6274,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1981871052}
-  - component: {fileID: 1981871055}
   - component: {fileID: 1981871054}
   m_Layer: 0
   m_Name: SoundManager
@@ -6208,40 +6321,10 @@ MonoBehaviour:
   - soundLevel: 0.6
   - soundLevel: 0.8
   - soundLevel: 1
-  source: {fileID: 1981871055}
+  source: {fileID: 0}
   source2: {fileID: 0}
   audioLevels: {fileID: 1476419719}
---- !u!114 &1981871055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1981871051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 399284099
-      Data2: 1096353526
-      Data3: -2091696206
-      Data4: 853147680
-    Path: event:/Select
-  Event: 
-  PlayEvent: 1
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  audioBusPath: bus:/SFX
 --- !u!1001 &1982833121
 PrefabInstance:
   m_ObjectHideFlags: 0

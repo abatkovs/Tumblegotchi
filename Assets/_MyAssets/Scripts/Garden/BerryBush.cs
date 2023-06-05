@@ -22,6 +22,11 @@ public class BerryBush : MonoBehaviour
 
     private void Start()
     {
+        InitBush();
+    }
+
+    private void InitBush()
+    {
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         StartGrowing();
         if(!isDroneVisible) drone.SetActive(false);

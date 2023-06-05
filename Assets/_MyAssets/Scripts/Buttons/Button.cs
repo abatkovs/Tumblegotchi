@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,12 +23,12 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 
     public event Action OnButtonClicked;
     public event Action OnButtonReleased;
-
-
-
+    public event Action OnButtonDown;
+    
     public void OnPointerEnter (PointerEventData eventData)
     {
         if(changePosition) return;
+        if(buttonSprite == null) return;
         if (changeSprite)
         {
             buttonSprite.sprite = buttonPressedSprite;
@@ -43,7 +44,7 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         {
             return;
         }
-        
+        if(buttonSprite == null) return;
         if (changeSprite)
         {
             buttonSprite.sprite = null;
@@ -61,6 +62,7 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnPointerDown(PointerEventData eventData)
     {
         transform.localPosition += (Vector3) posOffset;
+        OnButtonDown?.Invoke();
     }
     
     public void OnPointerUp(PointerEventData eventData)
