@@ -1,5 +1,6 @@
 // -------------------------------------------------------------------------------------------------
 // Assets/Editor/JenkinsBuild.cs
+//https://gamefeelings.com/2020/02/18/jenkins-build-with-unity3d/
 // -------------------------------------------------------------------------------------------------
 using UnityEngine;
 using UnityEditor;
@@ -34,6 +35,14 @@ public class JenkinsBuild
 
         string fullPathAndName = args.targetDir + args.appName;
         BuildProject(EnabledScenes, fullPathAndName, BuildTargetGroup.Standalone, BuildTarget.StandaloneWindows64, BuildOptions.None);
+    }
+
+    public static void BuildWebGL()
+    {
+        var args = FindArgs();
+
+        string fullPathAndName = args.targetDir + args.appName;
+        BuildProject(EnabledScenes, fullPathAndName, BuildTargetGroup.WebGL, BuildTarget.WebGL, BuildOptions.None);
     }
 
     // ------------------------------------------------------------------------
