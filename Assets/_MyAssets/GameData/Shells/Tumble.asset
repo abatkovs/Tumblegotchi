@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dba2cffccfec9848bbc2371f52de355, type: 3}
   m_Name: Tumble
   m_EditorClassIdentifier: 
+  <Name>k__BackingField: Tumble
   <ScreenColor>k__BackingField: {r: 0.12125414, g: 0.3584906, b: 0.08962265, a: 0.6509804}
   <ShellSprite>k__BackingField: {fileID: 21300000, guid: d2396139888803d4ea8239d8eb88adc1, type: 3}

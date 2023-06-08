@@ -209,6 +209,11 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(Sleeping());
     }
 
+    public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)
+    {
+        evolutionData = newEvolutionData;
+    }
+
     public void ChangeMoodLevel(int amount)
     {
         var moodLevel = 0;

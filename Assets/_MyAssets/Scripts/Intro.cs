@@ -12,6 +12,9 @@ public class Intro : MonoBehaviour
         game.SetActive(false);
     }
 
+    /// <summary>
+    /// Animation event
+    /// </summary>
     private void FinishIntro()
     {
         game.SetActive(true);

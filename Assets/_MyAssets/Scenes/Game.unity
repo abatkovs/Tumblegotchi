@@ -390,7 +390,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 365118408}
   - {fileID: 428730573}
   - {fileID: 657729345}
   - {fileID: 260154480}
@@ -778,6 +777,9 @@ GameObject:
   m_Component:
   - component: {fileID: 119842457}
   - component: {fileID: 119842458}
+  - component: {fileID: 119842460}
+  - component: {fileID: 119842459}
+  - component: {fileID: 119842461}
   m_Layer: 0
   m_Name: Shell - Petra Graphite SCREEN OFF
   m_TagString: Untagged
@@ -852,6 +854,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &119842459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119842456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef63e213521385499eb6ff8c0637e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 119842460}
+  shellData: {fileID: 11400000, guid: 45da0a2f334f8da4bace44e5ca2d0b1a, type: 2}
+  jelly: {fileID: 1600596700636829915}
+  evolutionData: {fileID: 11400000, guid: 40de31a68f4f7024b904a32232ce298c, type: 2}
+  shellSprite: {fileID: 2080288610}
+  screenSprite: {fileID: 1727453069}
+  selectionScene: {fileID: 1410744338}
+  gameScene: {fileID: 435116750}
+--- !u!114 &119842460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119842456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fe1958e98f5ab49a56bcd45e9cac20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitColor: {r: 1, g: 1, b: 1, a: 1}
+  enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  buttonSprite: {fileID: 0}
+  buttonPressedSprite: {fileID: 0}
+  changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!61 &119842461
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119842456}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04258156, y: -0.21290827}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 6}
+    newSize: {x: 9.6, y: 6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2772903, y: 5.23353}
+  m_EdgeRadius: 0
 --- !u!1001 &120418958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,11 +1685,11 @@ Transform:
   m_GameObject: {fileID: 365118405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 86219346}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376832082
 GameObject:
@@ -1949,7 +2036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &435116751
 Transform:
   m_ObjectHideFlags: 0
@@ -1967,7 +2054,7 @@ Transform:
   - {fileID: 2034420222}
   - {fileID: 219271994}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &489881345
 GameObject:
@@ -4078,8 +4165,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286480127
-  m_fontColor: {r: 1, g: 0.495283, b: 0.495283, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4214,7 +4301,7 @@ Transform:
   - {fileID: 93227858}
   - {fileID: 1180519219}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1323020758
 PrefabInstance:
@@ -4319,7 +4406,7 @@ Transform:
   - {fileID: 2013916578}
   - {fileID: 1290493291}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1411808854
 GameObject:
@@ -5083,6 +5170,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1641312447}
   - component: {fileID: 1641312448}
+  - component: {fileID: 1641312450}
+  - component: {fileID: 1641312449}
+  - component: {fileID: 1641312451}
   m_Layer: 0
   m_Name: Shell - Flamephin Ember SCREEN OFF
   m_TagString: Untagged
@@ -5157,6 +5247,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1641312449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641312446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef63e213521385499eb6ff8c0637e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1641312450}
+  shellData: {fileID: 11400000, guid: 97018f57725ea1d48a3c45ee872aee24, type: 2}
+  jelly: {fileID: 1600596700636829915}
+  evolutionData: {fileID: 11400000, guid: d9f1d104f5b2d9d49bad27cdb7d82df1, type: 2}
+  shellSprite: {fileID: 2080288610}
+  screenSprite: {fileID: 1727453069}
+  selectionScene: {fileID: 1410744338}
+  gameScene: {fileID: 435116750}
+--- !u!114 &1641312450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641312446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fe1958e98f5ab49a56bcd45e9cac20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitColor: {r: 1, g: 1, b: 1, a: 1}
+  enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  buttonSprite: {fileID: 0}
+  buttonPressedSprite: {fileID: 0}
+  changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!61 &1641312451
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641312446}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04258156, y: -0.21290827}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 6}
+    newSize: {x: 9.6, y: 6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2772903, y: 5.23353}
+  m_EdgeRadius: 0
 --- !u!1001 &1649059867
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6900,6 +7075,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2013916578}
   - component: {fileID: 2013916579}
+  - component: {fileID: 2013916581}
+  - component: {fileID: 2013916580}
+  - component: {fileID: 2013916582}
   m_Layer: 0
   m_Name: Shell - Tumble Fern SCREEN OFF
   m_TagString: Untagged
@@ -6974,6 +7152,91 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2013916580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013916577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef63e213521385499eb6ff8c0637e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2013916581}
+  shellData: {fileID: 11400000, guid: 185ef7f66e752f7478ed73ff5e0838b3, type: 2}
+  jelly: {fileID: 1600596700636829915}
+  evolutionData: {fileID: 11400000, guid: f27e2b2061d4bf3478cf0bbb2b4fb2c1, type: 2}
+  shellSprite: {fileID: 2080288610}
+  screenSprite: {fileID: 1727453069}
+  selectionScene: {fileID: 1410744338}
+  gameScene: {fileID: 435116750}
+--- !u!114 &2013916581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013916577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fe1958e98f5ab49a56bcd45e9cac20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitColor: {r: 1, g: 1, b: 1, a: 1}
+  enterColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  buttonSprite: {fileID: 0}
+  buttonPressedSprite: {fileID: 0}
+  changeSprite: 0
+  changePosition: 0
+  changeColor: 0
+  posOffset: {x: 0, y: 0}
+--- !u!61 &2013916582
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013916577}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.04258156, y: -0.21290827}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9.6, y: 6}
+    newSize: {x: 9.6, y: 6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.2772903, y: 5.23353}
+  m_EdgeRadius: 0
 --- !u!1 &2022012463
 GameObject:
   m_ObjectHideFlags: 0
@@ -7083,7 +7346,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 203
+  m_SortingOrder: 99
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7218,7 +7481,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2071067034
 PrefabInstance:
@@ -7682,6 +7945,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe930be6657208f408f2859aaa74ecba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1600596700636829915 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+  m_PrefabInstance: {fileID: 1600596700636829910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cca026d3e113405459e02881e86e1675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2321255696160607056
