@@ -25,6 +25,7 @@ public class JellyStats : MonoBehaviour
         Sleeping,
     }
 
+    [Serializable]
     public enum JellyAge
     {
         Baby,
@@ -114,6 +115,7 @@ public class JellyStats : MonoBehaviour
         {
             SheetYoung();
             jellyAge = JellyAge.Young;
+            SaveManager.Instance.UpdateJellyAge(jellyAge);
             return;
         }
 
@@ -121,6 +123,7 @@ public class JellyStats : MonoBehaviour
         {
             SheetAdult();
             jellyAge = JellyAge.Adult;
+            SaveManager.Instance.UpdateJellyAge(jellyAge);
             code.SetActive(true);
             return;
         }
@@ -157,6 +160,7 @@ public class JellyStats : MonoBehaviour
             return;
         }
         currentHunger += feedValue;
+        SaveManager.Instance.UpdateJellyHunger(currentHunger);
         _gameManager.AddJellyDew(jellyDewAwardedForFeeding);
         IncreaseLove(feedingLoveIncrease);
     }
@@ -170,6 +174,7 @@ public class JellyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(hungerInterval);
         currentHunger -= hungerDecreaseAmount;
+        SaveManager.Instance.UpdateJellyHunger(currentHunger);
         StartCoroutine(BecomeHungrier());
         if (currentHunger < 20) IsJellyHungry = true;
         if (currentHunger > 30) IsJellyHungry = false;
@@ -179,6 +184,7 @@ public class JellyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(sleepIntervals);
         currentSleepy += sleepIncreaseAmount;
+        SaveManager.Instance.UpdateSleepy(currentSleepy);
         if (currentSleepy >= sleepThreshold)
         {
             StartSleeping();
@@ -218,6 +224,8 @@ public class JellyStats : MonoBehaviour
     {
         var moodLevel = 0;
         currentMood += amount;
+        
+        SaveManager.Instance.UpdateMood(currentMood);
 
         moodLevel = currentMood / moodRange;
 
@@ -227,5 +235,6 @@ public class JellyStats : MonoBehaviour
     public void IncreaseLove(float amount)
     {
         love += amount;
+        SaveManager.Instance.UpdateLove(love);
     }
 }
