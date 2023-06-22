@@ -35,7 +35,7 @@ public class ChangeAudioLevels : MonoBehaviour
     
     private void ResetPosition()
     {
-        transform.position = _startingPosition;
+        //transform.position = _startingPosition;
     }
 
 }
