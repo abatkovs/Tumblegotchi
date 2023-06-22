@@ -2358,7 +2358,7 @@ MonoBehaviour:
   <CurrentlySelectedMenuOption>k__BackingField: 1
   <CurrentlyActiveScene>k__BackingField: 0
   <Berries>k__BackingField: 5
-  <JellyDew>k__BackingField: 0
+  <JellyDew>k__BackingField: 10
   berriesUI: {fileID: 657729346}
   jellyDewUI: {fileID: 1235579593}
 --- !u!4 &657729345 stripped

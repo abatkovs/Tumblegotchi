@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        SaveManager.Instance.LoadGame();
+        Berries = SaveManager.Instance.SaveData.Berries;
+        JellyDew = SaveManager.Instance.SaveData.JellyDew;
         berriesUI.SetSpriteNumbers(Berries);
         jellyDewUI.SetSpriteNumbers(JellyDew);
     }
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         var max = 99;
         Berries = Mathf.Clamp(Berries + berryYield, min, max);
         berriesUI.SetSpriteNumbers(Berries);
+        SaveManager.Instance.SaveBerries(Berries);
     }
 
     public void AddJellyDew(int jellyDewYield)
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         var max = 99;
         JellyDew = Mathf.Clamp(JellyDew + jellyDewYield, min, max);
         jellyDewUI.SetSpriteNumbers(JellyDew);
+        SaveManager.Instance.SaveJellyDew(JellyDew);
     }
 
     public void UpdateSelection()

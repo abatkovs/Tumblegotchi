@@ -57,6 +57,7 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
     public void OnPointerClick(PointerEventData eventData)
     {
         OnButtonClicked?.Invoke();
+        SaveManager.Instance.SaveGame();
     }
 
     public void OnPointerDown(PointerEventData eventData)

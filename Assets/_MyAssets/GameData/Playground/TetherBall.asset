@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cee3983110c47d198edfd6485de65e9, type: 3}
   m_Name: TetherBall
   m_EditorClassIdentifier: 
+  <ItemID>k__BackingField: 5
   <ItemSprite>k__BackingField: {fileID: 652962640, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
   <EnterAnimationString>k__BackingField: TetherballHit
   <WaitAnimationString>k__BackingField: TetherballWaitPlayerInput

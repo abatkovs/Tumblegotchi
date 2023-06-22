@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using _MyAssets.Scripts.Playground;
 using MessagePack;
 using UnityEngine;
 
@@ -40,10 +41,10 @@ public class SaveManager : MonoBehaviour
         var file = OpenSaveFile(true);
         byte[] bytes = new byte[file.Length];
         file.Read(bytes,0, (int)file.Length);
-        var json = MessagePackSerializer.ConvertToJson(bytes);
+        //var json = MessagePackSerializer.ConvertToJson(bytes);
         var loadedData = MessagePackSerializer.Deserialize<DataSerializer>(bytes);
         file.Close();
-        Debug.Log("Loaded: " + loadedData);
+        //Debug.Log("Loaded: " + loadedData);
         //var json = MessagePackSerializer.ConvertToJson();
     }
 
@@ -91,5 +92,25 @@ public class SaveManager : MonoBehaviour
     public void UpdateLove(float love)
     {
         SaveData.Love = love;
+    }
+
+    public void SaveLeftItem(int itemID)
+    {
+        SaveData.LeftItemID = itemID;
+    }
+
+    public void SaveRightItem(int itemID)
+    {
+        SaveData.RightItemID = itemID;
+    }
+
+    public void SaveBerries(int berries)
+    {
+        SaveData.Berries = berries;
+    }
+
+    public void SaveJellyDew(int dew)
+    {
+        SaveData.JellyDew = dew;
     }
 }

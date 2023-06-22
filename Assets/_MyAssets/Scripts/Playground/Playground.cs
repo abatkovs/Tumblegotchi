@@ -14,12 +14,15 @@ public class Playground : MonoBehaviour
         if (playgroundLeft.CurrentItem == null)
         {
             playgroundLeft.SetPlaygroundItem(item);
+            SaveManager.Instance.SaveLeftItem(playgroundLeft.CurrentItem.ItemID);
             return;
         }
         if(item == playgroundLeft.CurrentItem) return;
         if (item == playgroundRight.CurrentItem) return; //TODO: Swap items.
         
         playgroundRight.SetPlaygroundItem(playgroundLeft.CurrentItem);
+        SaveManager.Instance.SaveRightItem(playgroundRight.CurrentItem.ItemID);
         playgroundLeft.SetPlaygroundItem(item);
+        SaveManager.Instance.SaveLeftItem(playgroundLeft.CurrentItem.ItemID);
     }
 }
