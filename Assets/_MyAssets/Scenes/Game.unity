@@ -555,6 +555,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!60 &93227856
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -894,6 +895,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!61 &119842461
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1114,6 +1116,7 @@ MonoBehaviour:
   changePosition: 1
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!58 &195065618
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1931,6 +1934,7 @@ MonoBehaviour:
   changePosition: 1
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!60 &391441096
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2639,6 +2643,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!114 &751431905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3026,6 +3031,10 @@ PrefabInstance:
     - target: {fileID: 2858565806455962474, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
       propertyPath: m_Name
       value: Back Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715180199040740593, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
+      propertyPath: saveGame
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310312016967012731, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
       propertyPath: m_RootOrder
@@ -3714,6 +3723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Act Button
       objectReference: {fileID: 0}
+    - target: {fileID: 4715180199040740593, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
+      propertyPath: saveGame
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8310312016967012731, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3882,6 +3895,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!60 &1180519222
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4388,7 +4402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1410744339
 Transform:
   m_ObjectHideFlags: 0
@@ -5287,6 +5301,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!61 &1641312451
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6097,6 +6112,7 @@ MonoBehaviour:
   changePosition: 1
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!60 &1782763160
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6910,6 +6926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1944250696}
   - component: {fileID: 1944250697}
+  - component: {fileID: 1944250698}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -6944,6 +6961,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb6c75999d379cc4c8376b07a2384055, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1944250698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944250695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b38575acac53dc4f992651ad5e55bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionScene: {fileID: 1410744338}
+  gameScene: {fileID: 435116750}
+  tamagotchiScene: {fileID: 219271993}
+  introScene: {fileID: 2022012463}
 --- !u!1 &1981871051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7236,6 +7269,7 @@ MonoBehaviour:
   changePosition: 0
   changeColor: 0
   posOffset: {x: 0, y: 0}
+  saveGame: 0
 --- !u!61 &2013916582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8361,6 +8395,10 @@ PrefabInstance:
     - target: {fileID: 2858565806455962474, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
       propertyPath: m_Name
       value: Select Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715180199040740593, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
+      propertyPath: saveGame
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310312016967012731, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
       propertyPath: m_RootOrder

@@ -28,9 +28,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        SaveManager.Instance.LoadGame();
-        Berries = SaveManager.Instance.SaveData.Berries;
-        JellyDew = SaveManager.Instance.SaveData.JellyDew;
         berriesUI.SetSpriteNumbers(Berries);
         jellyDewUI.SetSpriteNumbers(JellyDew);
     }

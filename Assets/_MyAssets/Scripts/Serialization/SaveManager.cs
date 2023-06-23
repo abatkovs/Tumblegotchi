@@ -7,8 +7,8 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
-
     public DataSerializer SaveData { get; private set; }
+    public bool SaveFileExists { get; private set; }
 
     private string _saveFilePath;
     
@@ -32,28 +32,38 @@ public class SaveManager : MonoBehaviour
 
         file.Write(bytes);
         file.Close();
-        Debug.Log("Saved: " + json);
     }
 
     [ContextMenu("Load")]
     public void LoadGame()
     {
         var file = OpenSaveFile(true);
+        if (file == null)
+        {
+            SaveFileExists = false;
+            return;
+        }
+        SaveFileExists = true;
         byte[] bytes = new byte[file.Length];
         file.Read(bytes,0, (int)file.Length);
-        //var json = MessagePackSerializer.ConvertToJson(bytes);
-        var loadedData = MessagePackSerializer.Deserialize<DataSerializer>(bytes);
+        SaveData = MessagePackSerializer.Deserialize<DataSerializer>(bytes);
         file.Close();
-        //Debug.Log("Loaded: " + loadedData);
-        //var json = MessagePackSerializer.ConvertToJson();
     }
 
     private FileStream OpenSaveFile(bool loading)
     {
         FileStream file = null;
-        if (!File.Exists(_saveFilePath)) file = File.Create(_saveFilePath);
+        if (!File.Exists(_saveFilePath))
+        {
+            file = File.Create(_saveFilePath);
+            file.Close();
+            return null;
+        }
         if(!loading) file = File.OpenWrite(_saveFilePath);
-        if (loading) file = File.OpenRead(_saveFilePath);
+        if (loading)
+        {
+            file = File.OpenRead(_saveFilePath);
+        }
         return file;
     }
     
