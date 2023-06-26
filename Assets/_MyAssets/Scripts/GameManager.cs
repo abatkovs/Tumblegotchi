@@ -62,6 +62,13 @@ public class GameManager : MonoBehaviour
         SaveManager.Instance.SaveJellyDew(JellyDew);
     }
 
+    public void SetBerriesAndJellyDew(int berries, int jellyDew)
+    {
+        JellyDew = jellyDew;
+        Berries = berries;
+    }
+
+
     public void UpdateSelection()
     {
         SwitchActiveMenuSelection(CurrentlySelectedMenuOption);

@@ -15,4 +15,7 @@ public class DataSerializer
     [Key(8)] public int Berries;
     [Key(9)] public int SelectedShell;
     [Key(10)] public int SelectedEvolution;
+    //garden
+    [Key(11)] public int SelectedBush;
+    [Key(12)] public int UnlockedPlants;
 }

@@ -29,7 +29,6 @@ public class SaveManager : MonoBehaviour
         byte[] bytes = MessagePackSerializer.Serialize<DataSerializer>(SaveData);
         var json = MessagePackSerializer.ConvertToJson(bytes);
         var file = OpenSaveFile(false);
-
         file.Write(bytes);
         file.Close();
     }
@@ -65,18 +64,6 @@ public class SaveManager : MonoBehaviour
             file = File.OpenRead(_saveFilePath);
         }
         return file;
-    }
-    
-    private void SaveToFile()
-    {
-        FileStream file = File.Create(_saveFilePath); 
-        /*SaveData data = new SaveData();
-        data.savedInt = intToSave;
-        data.savedFloat = floatToSave;
-        data.savedBool = boolToSave;
-        bf.Serialize(file, data);
-        file.Close();*/
-        Debug.Log("Game data saved!");
     }
 
     public void UpdateJellyAge(JellyStats.JellyAge age)
@@ -132,5 +119,11 @@ public class SaveManager : MonoBehaviour
     public void SaveEvolutionData(int evolutionDataID)
     {
         SaveData.SelectedEvolution = evolutionDataID;
+    }
+
+    public void SaveGardenData(int selectedBush, int unlockedPlants)
+    {
+        SaveData.UnlockedPlants = unlockedPlants;
+        SaveData.SelectedBush = selectedBush;
     }
 }

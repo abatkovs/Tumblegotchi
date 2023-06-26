@@ -22,6 +22,7 @@ public class Garden : MonoBehaviour
         if (selectedBush >= totalBushCount) selectedBush = 0;
         ClearSelection();
         berryBushes[selectedBush].ToggleDrone(true);
+        SaveManager.Instance.SaveGardenData(selectedBush, _unlockedPlants);
     }
 
     private void ClearSelection()
@@ -44,6 +45,16 @@ public class Garden : MonoBehaviour
         for (int i = 0; i < _unlockedPlants; i++)
         {
             if(berryBushes[i].hasSeed) continue;
+            berryBushes[i].PlantSeed();
+            SaveManager.Instance.SaveGardenData(selectedBush, _unlockedPlants);
+        }
+    }
+
+    public void LoadSaplings(int count)
+    {
+        _unlockedPlants = count;
+        for (int i = 0; i < count; i++)
+        {
             berryBushes[i].PlantSeed();
         }
     }

@@ -15,6 +15,8 @@ public class LoadGame : MonoBehaviour
     [SerializeField] private SpriteRenderer shellSprite;
     [SerializeField] private SpriteRenderer screenSprite;
     [SerializeField] private JellyStats jelly;
+    [Space(20)] 
+    [SerializeField] private Garden garden;
     
     
     private void Start()
@@ -32,10 +34,10 @@ public class LoadGame : MonoBehaviour
 
     private void SetLoadData()
     {
-        GameManager.Instance.AddBerries(SaveManager.Instance.SaveData.Berries);
-        GameManager.Instance.AddJellyDew(SaveManager.Instance.SaveData.JellyDew);
+        GameManager.Instance.SetBerriesAndJellyDew(SaveManager.Instance.SaveData.Berries, SaveManager.Instance.SaveData.JellyDew);
         LoadShellData();
         LoadEvolutionData();
+        LoadGardenData();
     }
 
     /// <summary>
@@ -68,5 +70,10 @@ public class LoadGame : MonoBehaviour
                 jelly.ChangeEvolutionData(evo);
             }
         }
+    }
+
+    private void LoadGardenData()
+    {
+        garden.LoadSaplings(SaveManager.Instance.SaveData.UnlockedPlants);
     }
 }
