@@ -123,4 +123,14 @@ public class SaveManager : MonoBehaviour
     {
         SaveData.JellyDew = dew;
     }
+
+    public void SaveSelectedShell(int shell)
+    {
+        SaveData.SelectedShell = shell;
+    }
+
+    public void SaveEvolutionData(int evolutionDataID)
+    {
+        SaveData.SelectedEvolution = evolutionDataID;
+    }
 }

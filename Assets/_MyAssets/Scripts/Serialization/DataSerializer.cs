@@ -13,4 +13,6 @@ public class DataSerializer
     [Key(6)] public int RightItemID;
     [Key(7)] public int JellyDew;
     [Key(8)] public int Berries;
+    [Key(9)] public int SelectedShell;
+    [Key(10)] public int SelectedEvolution;
 }

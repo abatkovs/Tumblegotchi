@@ -6977,6 +6977,9 @@ MonoBehaviour:
   gameScene: {fileID: 435116750}
   tamagotchiScene: {fileID: 219271993}
   introScene: {fileID: 2022012463}
+  shellSprite: {fileID: 2080288610}
+  screenSprite: {fileID: 1727453069}
+  jelly: {fileID: 1600596700636829915}
 --- !u!1 &1981871051
 GameObject:
   m_ObjectHideFlags: 0

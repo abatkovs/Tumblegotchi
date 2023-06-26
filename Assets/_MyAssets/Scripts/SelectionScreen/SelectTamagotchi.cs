@@ -40,5 +40,12 @@ public class SelectTamagotchi : MonoBehaviour
     private void SetJellyData()
     {
         jelly.ChangeEvolutionData(evolutionData);
+        SetSaveData();
+    }
+
+    private void SetSaveData()
+    {
+        SaveManager.Instance.SaveSelectedShell(shellData.ID);
+        SaveManager.Instance.SaveEvolutionData(evolutionData.ID);
     }
 }

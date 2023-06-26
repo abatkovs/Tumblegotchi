@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dba2cffccfec9848bbc2371f52de355, type: 3}
   m_Name: Petra
   m_EditorClassIdentifier: 
+  <ID>k__BackingField: 1
   <Name>k__BackingField: Petra
   <ScreenColor>k__BackingField: {r: 0.39607847, g: 0.40784317, b: 0.3647059, a: 0.6509804}
   <ShellSprite>k__BackingField: {fileID: 21300000, guid: 907ad40b43b5a284ca31d7f68803a74e, type: 3}

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Jelly;
+using UnityEditor;
 using UnityEngine;
 
 public class LoadGame : MonoBehaviour
@@ -9,6 +11,11 @@ public class LoadGame : MonoBehaviour
     [SerializeField] private GameObject gameScene;
     [SerializeField] private GameObject tamagotchiScene;
     [SerializeField] private GameObject introScene;
+    [Space(20)] 
+    [SerializeField] private SpriteRenderer shellSprite;
+    [SerializeField] private SpriteRenderer screenSprite;
+    [SerializeField] private JellyStats jelly;
+    
     
     private void Start()
     {
@@ -27,5 +34,39 @@ public class LoadGame : MonoBehaviour
     {
         GameManager.Instance.AddBerries(SaveManager.Instance.SaveData.Berries);
         GameManager.Instance.AddJellyDew(SaveManager.Instance.SaveData.JellyDew);
+        LoadShellData();
+        LoadEvolutionData();
+    }
+
+    /// <summary>
+    /// Loads look of outer shell
+    /// </summary>
+    private void LoadShellData()
+    {
+        var shells = Resources.LoadAll<ShellData>("Shells");
+        var targetShellID = SaveManager.Instance.SaveData.SelectedShell;
+        foreach (var shell in shells)
+        {
+            if (shell.ID == targetShellID)
+            {
+                shellSprite.sprite = shell.ShellSprite;
+                screenSprite.color = shell.ScreenColor;
+                break;
+            }
+        }
+    }
+
+    private void LoadEvolutionData()
+    {
+        var evolutions = Resources.LoadAll<JellyEvolutionData>("Evolutions");
+        var targetEvolution = SaveManager.Instance.SaveData.SelectedEvolution;
+
+        foreach (var evo in evolutions)
+        {
+            if (evo.ID == targetEvolution)
+            {
+                jelly.ChangeEvolutionData(evo);
+            }
+        }
     }
 }
