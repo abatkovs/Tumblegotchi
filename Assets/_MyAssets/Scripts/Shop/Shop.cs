@@ -92,7 +92,7 @@ public class Shop : MonoBehaviour
             if (item.isItemStackable)
             {
                 if(item.IsItemBought) boughtItems.Add(-1);
-                if(!item.IsItemBought) boughtItems.Add(item.CurrentStackSize * 10);
+                if(!item.IsItemBought) boughtItems.Add(item.CurrentStackSize);
             }
 
         }
@@ -101,11 +101,16 @@ public class Shop : MonoBehaviour
 
     public void LoadItems(List<int> saveDataShopItems)
     {
+        if(saveDataShopItems == null) return;
         for (int i = 0; i < shopItems.Count; i++)
         {
             if (saveDataShopItems[i] == 1)
             {
                 shopItems[i].LoadItemStatus();
+            }
+            if(shopItems[i].isItemStackable) 
+            {
+                shopItems[i].LoadItemStatus(saveDataShopItems[i], true);
             }
         }
     }

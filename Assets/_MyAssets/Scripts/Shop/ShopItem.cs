@@ -22,8 +22,9 @@ public class ShopItem : MonoBehaviour
     
     public bool IsItemBought;
 
-    public int CurrentStackSize { get; private set; } = 1;
-    public int CurrentItemPrice { get; private set; }
+    [field:Space(25)]
+    [field: SerializeField] public int CurrentStackSize { get; private set; } = 1;
+    [field: SerializeField] public int CurrentItemPrice { get; private set; }
     
     [SerializeField] private ValueToSprite _priceUI;
     private GameManager _gameManager;
@@ -36,11 +37,15 @@ public class ShopItem : MonoBehaviour
         if (_priceUI == null) _priceUI = GetComponent<ValueToSprite>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = itemSprite;
-        if(CurrentItemPrice != 0) _priceUI.SetSpriteNumbers(ItemPrice);
+        if(CurrentItemPrice != 0) _priceUI.SetSpriteNumbers(CurrentItemPrice);
         ToggleSelection(false);
-        CurrentItemPrice = ItemPrice;
+        if (CurrentItemPrice == 0)
+        {
+            CurrentItemPrice = ItemPrice;
+            _priceUI.SetSpriteNumbers(CurrentItemPrice);
+        }
     }
-
+    
     public void ToggleSelection(bool value)
     {
         if (value)
@@ -109,10 +114,10 @@ public class ShopItem : MonoBehaviour
         }
     }
 
-    public void LoadItemStatus(int count = 1)
+    public void LoadItemStatus(int count = 1, bool isStackable = false)
     {
         //Saplings
-        if (count > 1)
+        if (count > 1 && isStackable)
         {
             CurrentStackSize = count;
             CurrentItemPrice = ItemPrice * CurrentStackSize;
