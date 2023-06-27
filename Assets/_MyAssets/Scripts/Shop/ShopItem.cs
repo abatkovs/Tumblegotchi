@@ -25,7 +25,7 @@ public class ShopItem : MonoBehaviour
     public int CurrentStackSize { get; private set; } = 1;
     public int CurrentItemPrice { get; private set; }
     
-    private ValueToSprite _priceUI;
+    [SerializeField] private ValueToSprite _priceUI;
     private GameManager _gameManager;
 
     public event Action OnSaplingBuy;
@@ -36,7 +36,7 @@ public class ShopItem : MonoBehaviour
         if (_priceUI == null) _priceUI = GetComponent<ValueToSprite>();
         if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = itemSprite;
-        _priceUI.SetSpriteNumbers(ItemPrice);
+        if(CurrentItemPrice != 0) _priceUI.SetSpriteNumbers(ItemPrice);
         ToggleSelection(false);
         CurrentItemPrice = ItemPrice;
     }
@@ -107,5 +107,25 @@ public class ShopItem : MonoBehaviour
         {
             _gameManager.Playground.SetPlaygroundSprites(playgroundItem);
         }
+    }
+
+    public void LoadItemStatus(int count = 1)
+    {
+        //Saplings
+        if (count > 1)
+        {
+            CurrentStackSize = count;
+            CurrentItemPrice = ItemPrice * CurrentStackSize;
+            _priceUI.SetSpriteNumbers(ItemPrice * CurrentStackSize);
+            CurrentItemPrice = ItemPrice * CurrentStackSize;
+            if (CurrentStackSize == 6)
+            {
+                _priceUI.SetSpriteNumbers(0);
+            }
+            return;
+        }
+        IsItemBought = true;
+        CurrentItemPrice = 0;
+        _priceUI.SetSpriteNumbers(CurrentItemPrice);
     }
 }
