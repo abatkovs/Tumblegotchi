@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using _MyAssets.Scripts.Playground;
 using MessagePack;
@@ -125,5 +126,10 @@ public class SaveManager : MonoBehaviour
     {
         SaveData.UnlockedPlants = unlockedPlants;
         SaveData.SelectedBush = selectedBush;
+    }
+
+    public void SaveShopData(List<int> shopItems)
+    {
+        SaveData.ShopItems = shopItems;
     }
 }

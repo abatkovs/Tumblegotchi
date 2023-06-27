@@ -15,7 +15,7 @@ public class ShopItem : MonoBehaviour
     [SerializeField] private Color selectedColor = Color.black;
     [SerializeField] private Color inactiveColor = Color.gray;
     [Space]
-    [SerializeField] private bool isItemStackable;
+    [SerializeField] public bool isItemStackable;
     [SerializeField] private int maxItemStackSize = 1;
     [SerializeField] private bool isPlaygroundItem = true;
     [SerializeField] private PlaygroundItem playgroundItem;
@@ -64,7 +64,7 @@ public class ShopItem : MonoBehaviour
     }
 
     //TODO: Fix this mess idk...
-    public void BuyItem()
+    public void TryToBuyItem()
     {
         if (isPlaygroundItem)
         {

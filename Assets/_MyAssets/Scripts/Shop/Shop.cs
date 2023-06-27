@@ -60,19 +60,42 @@ public class Shop : MonoBehaviour
         {
             Debug.Log($"Can't buy item not enough money: {item}");
             _soundManager.PlaySound(cantBuySound);
+            SaveItems();
         }
         else
         {
-            
             if (item.IsItemBought)
             {
                 OnItemBuy?.Invoke();
                 item.UpdatePlaygroundItems();
+                SaveItems();
                 return;
             }
             OnItemBuy?.Invoke();
-            item.BuyItem();
+            item.TryToBuyItem();
+            SaveItems();
         }
         
+    }
+
+    private void SaveItems()
+    {
+        List<int> boughtItems = new List<int>();
+        foreach (var item in shopItems)
+        {
+            if (!item.isItemStackable)
+            {
+                if(item.IsItemBought) boughtItems.Add(1);
+                if(!item.IsItemBought) boughtItems.Add(0);
+            }
+
+            if (item.isItemStackable)
+            {
+                if(item.IsItemBought) boughtItems.Add(1000);
+                if(!item.IsItemBought) boughtItems.Add(item.CurrentStackSize);
+            }
+
+        }
+        SaveManager.Instance.SaveShopData(boughtItems);
     }
 }
