@@ -8,6 +8,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
+    [SerializeField] private GameManager gameManager;
     public DataSerializer SaveData { get; private set; }
     public bool SaveFileExists { get; private set; }
 
@@ -57,6 +58,7 @@ public class SaveManager : MonoBehaviour
         {
             file = File.Create(_saveFilePath);
             file.Close();
+            FirstSaveGameDataCreation();
             return null;
         }
         if(!loading) file = File.OpenWrite(_saveFilePath);
@@ -65,6 +67,14 @@ public class SaveManager : MonoBehaviour
             file = File.OpenRead(_saveFilePath);
         }
         return file;
+    }
+
+    private void FirstSaveGameDataCreation()
+    {
+        //Save default values just in case
+        SaveData.JellyDew = gameManager.JellyDew;
+        SaveData.Berries = gameManager.Berries;
+        SaveGame();
     }
 
     public void UpdateJellyStats(SavedJellyStats jellyStats)

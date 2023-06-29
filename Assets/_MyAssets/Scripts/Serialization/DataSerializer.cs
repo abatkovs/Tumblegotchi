@@ -4,6 +4,33 @@ using MessagePack;
 [MessagePackObject]
 public class DataSerializer
 {
+
+    public DataSerializer()
+    {
+        InitDefaultValues();
+    }
+
+    private void InitDefaultValues()
+    {
+        JellyAge = JellyStats.JellyAge.Baby;
+        CurrentHunger = 0;
+        CurrentMood = 0;
+        CurrentSleepy = 0;
+        Love = 0;
+        LeftItemID = 0;
+        RightItemID = 0;
+        JellyDew = 0;
+        Berries = 0;
+        SelectedShell = 0;
+        SelectedEvolution = 0;
+        SelectedBush = 0;
+        UnlockedPlants = 0;
+        ShopItems = new List<int>(8)
+        {
+            0,0,0,0,0,0,0,0,
+        };
+    }
+    
     //Jelly stats
     [Key(0)] public JellyStats.JellyAge JellyAge;
     [Key(1)] public float CurrentHunger;
