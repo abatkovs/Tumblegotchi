@@ -44,6 +44,7 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float currentHunger;
     [SerializeField] private float hungerDecreaseAmount = 1;
     [SerializeField] private float hungerInterval = 1f;
+    [SerializeField] private float hungerThreshold = 50f;
     [Space]
     [SerializeField] private int maxMood = 100;
     [SerializeField] private int currentMood = 0;
@@ -179,12 +180,12 @@ public class JellyStats : MonoBehaviour
     private IEnumerator BecomeHungrier()
     {
         yield return new WaitForSeconds(hungerInterval);
-        currentHunger -= hungerDecreaseAmount;
+        currentHunger = Mathf.Clamp(currentHunger - hungerDecreaseAmount, 0, maxHunger);
         _savedStats.CurrentHunger = currentHunger;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
         StartCoroutine(BecomeHungrier());
-        if (currentHunger < 20) IsJellyHungry = true;
-        if (currentHunger > 30) IsJellyHungry = false;
+        if (currentHunger < hungerThreshold) IsJellyHungry = true;
+        if (currentHunger > hungerThreshold) IsJellyHungry = false;
     }
 
     private IEnumerator BecomeSleepier()
