@@ -70,12 +70,15 @@ public class JellyStats : MonoBehaviour
     
     private GameManager _gameManager;
     private JellyAnimator _animator;
+
+    private SavedJellyStats _savedStats;
     
     private void Start()
     {
         _gameManager = GameManager.Instance;
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
+        _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love);
     }
 
     private void OnEnable()
@@ -115,7 +118,8 @@ public class JellyStats : MonoBehaviour
         {
             SheetYoung();
             jellyAge = JellyAge.Young;
-            SaveManager.Instance.UpdateJellyAge(jellyAge);
+            _savedStats.JellyAge = jellyAge;
+            SaveManager.Instance.UpdateJellyStats(_savedStats);
             return;
         }
 
@@ -123,7 +127,8 @@ public class JellyStats : MonoBehaviour
         {
             SheetAdult();
             jellyAge = JellyAge.Adult;
-            SaveManager.Instance.UpdateJellyAge(jellyAge);
+            _savedStats.JellyAge = jellyAge;
+            SaveManager.Instance.UpdateJellyStats(_savedStats);
             code.SetActive(true);
             return;
         }
@@ -144,7 +149,7 @@ public class JellyStats : MonoBehaviour
         if (jellyAge == JellyAge.Baby) spriteLibrary.spriteLibraryAsset = evolutionData.Baby;
         if(jellyAge == JellyAge.Young) SheetYoung();
         if(jellyAge == JellyAge.Adult) SheetAdult();
-        }
+    }
     
     public void EvolutionAnimEvent2()
     {
@@ -160,7 +165,8 @@ public class JellyStats : MonoBehaviour
             return;
         }
         currentHunger += feedValue;
-        SaveManager.Instance.UpdateJellyHunger(currentHunger);
+        _savedStats.CurrentHunger = currentHunger;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
         _gameManager.AddJellyDew(jellyDewAwardedForFeeding);
         IncreaseLove(feedingLoveIncrease);
     }
@@ -174,7 +180,8 @@ public class JellyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(hungerInterval);
         currentHunger -= hungerDecreaseAmount;
-        SaveManager.Instance.UpdateJellyHunger(currentHunger);
+        _savedStats.CurrentHunger = currentHunger;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
         StartCoroutine(BecomeHungrier());
         if (currentHunger < 20) IsJellyHungry = true;
         if (currentHunger > 30) IsJellyHungry = false;
@@ -184,7 +191,8 @@ public class JellyStats : MonoBehaviour
     {
         yield return new WaitForSeconds(sleepIntervals);
         currentSleepy += sleepIncreaseAmount;
-        SaveManager.Instance.UpdateSleepy(currentSleepy);
+        _savedStats.CurrentSleepy = currentSleepy;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
         if (currentSleepy >= sleepThreshold)
         {
             StartSleeping();
@@ -224,8 +232,9 @@ public class JellyStats : MonoBehaviour
     {
         var moodLevel = 0;
         currentMood += amount;
-        
-        SaveManager.Instance.UpdateMood(currentMood);
+
+        _savedStats.CurrentMood = currentMood;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
 
         moodLevel = currentMood / moodRange;
 
@@ -235,6 +244,37 @@ public class JellyStats : MonoBehaviour
     public void IncreaseLove(float amount)
     {
         love += amount;
-        SaveManager.Instance.UpdateLove(love);
+        _savedStats.Love = love;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
+
+    public void LoadStats()
+    {
+        var saveData = SaveManager.Instance.SaveData;
+        jellyAge = saveData.JellyAge;
+        currentHunger = saveData.CurrentHunger;
+        currentMood = saveData.CurrentMood;
+        currentSleepy = saveData.CurrentSleepy;
+        love = saveData.Love;
+        if(jellyAge == JellyAge.Young) SheetYoung();
+        if(jellyAge == JellyAge.Adult) SheetAdult();
+    }
+}
+
+public class SavedJellyStats
+{
+    public SavedJellyStats(JellyStats.JellyAge jellyAge, float currentHunger, int currentMood, float currentSleepy, float love)
+    {
+        JellyAge = jellyAge;
+        CurrentHunger = currentHunger;
+        CurrentMood = currentMood;
+        CurrentSleepy = currentSleepy;
+        Love = love;
+    }
+    
+    public JellyStats.JellyAge JellyAge;
+    public float CurrentHunger;
+    public int CurrentMood;
+    public float CurrentSleepy;
+    public float Love;
 }

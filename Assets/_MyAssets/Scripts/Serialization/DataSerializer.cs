@@ -4,15 +4,19 @@ using MessagePack;
 [MessagePackObject]
 public class DataSerializer
 {
+    //Jelly stats
     [Key(0)] public JellyStats.JellyAge JellyAge;
     [Key(1)] public float CurrentHunger;
     [Key(2)] public int CurrentMood;
     [Key(3)] public float CurrentSleepy;
     [Key(4)] public float Love;
+    //Playground
     [Key(5)] public int LeftItemID;
     [Key(6)] public int RightItemID;
+    //Currency
     [Key(7)] public int JellyDew;
     [Key(8)] public int Berries;
+    //Visuals
     [Key(9)] public int SelectedShell;
     [Key(10)] public int SelectedEvolution;
     //garden

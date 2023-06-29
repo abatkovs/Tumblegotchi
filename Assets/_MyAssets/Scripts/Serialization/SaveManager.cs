@@ -67,29 +67,13 @@ public class SaveManager : MonoBehaviour
         return file;
     }
 
-    public void UpdateJellyAge(JellyStats.JellyAge age)
+    public void UpdateJellyStats(SavedJellyStats jellyStats)
     {
-        SaveData.JellyAge = age;
-    }
-
-    public void UpdateJellyHunger(float hunger)
-    {
-        SaveData.CurrentHunger = hunger;
-    }
-
-    public void UpdateMood(int mood)
-    {
-        SaveData.CurrentMood = mood;
-    }
-
-    public void UpdateSleepy(float sleepy)
-    {
-        SaveData.CurrentSleepy = sleepy;
-    }
-
-    public void UpdateLove(float love)
-    {
-        SaveData.Love = love;
+        SaveData.JellyAge = jellyStats.JellyAge;
+        SaveData.CurrentHunger = jellyStats.CurrentHunger;
+        SaveData.CurrentMood = jellyStats.CurrentMood;
+        SaveData.CurrentSleepy = jellyStats.CurrentSleepy;
+        SaveData.Love = jellyStats.Love;
     }
 
     public void SaveLeftItem(int itemID)

@@ -19,7 +19,8 @@ public class LoadGame : MonoBehaviour
     [SerializeField] private Garden garden;
     [Space] 
     [SerializeField] private Shop shop;
-    
+    [Space]
+    [SerializeField] private JellyStats jellyStats;
     
     private void Start()
     {
@@ -41,6 +42,7 @@ public class LoadGame : MonoBehaviour
         LoadEvolutionData();
         LoadGardenData();
         LoadShopItems();
+        LoadJellyStats();
     }
 
     /// <summary>
@@ -83,5 +85,11 @@ public class LoadGame : MonoBehaviour
     private void LoadShopItems()
     {
         shop.LoadItems(SaveManager.Instance.SaveData.ShopItems);
+    }
+
+    private void LoadJellyStats()
+    {
+        SaveManager saveManager = SaveManager.Instance;
+        jellyStats.LoadStats();
     }
 }
