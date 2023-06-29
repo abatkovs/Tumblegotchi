@@ -39,7 +39,7 @@ public class ShopItem : MonoBehaviour
         spriteRenderer.sprite = itemSprite;
         if(CurrentItemPrice != 0) _priceUI.SetSpriteNumbers(CurrentItemPrice);
         ToggleSelection(false);
-        if (CurrentItemPrice == 0)
+        if (CurrentItemPrice == 0 && !IsItemBought)
         {
             CurrentItemPrice = ItemPrice;
             _priceUI.SetSpriteNumbers(CurrentItemPrice);
