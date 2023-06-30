@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ResetButton : MonoBehaviour
@@ -27,12 +25,17 @@ public class ResetButton : MonoBehaviour
     private void Button_OnOnButtonClicked()
     {
         Debug.Log("Button Clicked");
+        SaveManager.Instance.SaveGame();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else         
+        Application.Quit();
+#endif
     }
 
     private void Button_OnOnButtonReleased()
     {
         Debug.Log("Resize and move");
-        ToggleSize();
     }
 
     private void ToggleSize()
