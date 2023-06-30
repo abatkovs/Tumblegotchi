@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3598207809437810487}
   - component: {fileID: 7167027926392533515}
+  - component: {fileID: 4392200586851789912}
+  - component: {fileID: 2050523724946026131}
   m_Layer: 0
   m_Name: Hearts
   m_TagString: Untagged
@@ -39,7 +41,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071961357145787516}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -73,17 +75,47 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 120
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1602994382, guid: 431badcb2b8272e4484a3e4b78d86846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4392200586851789912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071961357145787516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 6.922049e-26
+  m_labelHash: 8.840178e-23
+  m_SpriteKey: 0
+  m_SpriteHash: 24181754
+--- !u!114 &2050523724946026131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071961357145787516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: b5c01dac740e4b546802c93b88c6deab, type: 3}
 --- !u!1 &1529151050397471962
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,15 +588,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca026d3e113405459e02881e86e1675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  code: {fileID: 0}
   spriteLibrary: {fileID: 0}
   evolutionData: {fileID: 0}
   jellyAge: 0
+  timeIntervalForJellyTriggers: 10
   maxHunger: 100
   currentHunger: 0
   hungerDecreaseAmount: 1
   hungerInterval: 1
+  hungerThreshold: 50
+  hungryCallSound: {fileID: 0}
+  refuseSound: {fileID: 0}
+  nextTimeHungerSoundCanTriggered: 0
   maxMood: 100
   currentMood: 0
+  moodIncreaseValue: 5
   moodState: 0
   moodRange: 20
   sleepyMax: 100
@@ -573,8 +612,10 @@ MonoBehaviour:
   sleepIncreaseAmount: 1
   sleepDecreaseAmount: 5
   sleepIntervals: 1
+  loveLevel: 0
   love: 0
   loveNeededForEvolution: 20
+  feedingLoveIncrease: 1
   feedValue: 5
   jellyDewAwardedForFeeding: 1
 --- !u!114 &629151397368406586
@@ -604,6 +645,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d2360a7bb79024d9330e5ea4a97185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heartSpriteLibrary: {fileID: 2050523724946026131}
+  heartSpriteLibAssets:
+  - {fileID: 7108339969198208228, guid: b5c01dac740e4b546802c93b88c6deab, type: 3}
+  - {fileID: 7108339969198208228, guid: 201e343801965be49a319ec0f3663ac2, type: 3}
+  - {fileID: 7108339969198208228, guid: 57e33724b798bbd498c4f078b86c1e36, type: 3}
+  - {fileID: 7108339969198208228, guid: f7ea9f6fe09cf4c45a1a5250cee15906, type: 3}
   eatSound: {fileID: 11400000, guid: 2815436eeb592a24b896da4e76c3051d, type: 2}
   dewDropSound: {fileID: 11400000, guid: 193f034e4ff21f34dbbe0fe9f36f6120, type: 2}
   pet1: {fileID: 11400000, guid: 8e3001ceb94307d4e8adfcf9f86fd298, type: 2}
@@ -625,6 +672,7 @@ MonoBehaviour:
   handItem: {fileID: 2613525536652944581}
   jellyStats: {fileID: 8743874594446733695}
   loveIncreaseAmount: 5
+  moodIncreaseAmount: 5
   shouldStartPettingAgain: 0
 --- !u!114 &3521829641985915877
 MonoBehaviour:

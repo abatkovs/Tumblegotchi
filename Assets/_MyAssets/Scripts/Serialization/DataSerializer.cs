@@ -37,6 +37,8 @@ public class DataSerializer
     [Key(2)] public int CurrentMood;
     [Key(3)] public float CurrentSleepy;
     [Key(4)] public float Love;
+
+    [Key(14)] public int LoveLevel;
     //Playground
     [Key(5)] public int LeftItemID;
     [Key(6)] public int RightItemID;
@@ -51,6 +53,7 @@ public class DataSerializer
     [Key(12)] public int UnlockedPlants;
     //Shop
     [Key(13)] public List<int> ShopItems;
+    
     /*[Key(13)] public bool TetherBall;
     [Key(14)] public bool TireSwing;
     [Key(15)] public bool SwingSet;

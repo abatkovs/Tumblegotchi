@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D.Animation;
 
 public class JellyAnimator : AnimatorCross
 {
+    [SerializeField] private SpriteLibrary heartSpriteLibrary;
+    [SerializeField] private List<SpriteLibraryAsset> heartSpriteLibAssets;
+    [Space]
     [SerializeField] private SoundData eatSound;
     [SerializeField] private SoundData dewDropSound;
     [SerializeField] private SoundData pet1;
@@ -42,8 +46,13 @@ public class JellyAnimator : AnimatorCross
         PlayAnim(_startPettingAnim);
     }
 
-    public void PlayPettingAnim()
+    /// <summary>
+    /// Changes how much hearts will be shown
+    /// </summary>
+    /// <param name="loveLevel">0 - 3</param>
+    public void PlayPettingAnim(int loveLevel)
     {
+        heartSpriteLibrary.spriteLibraryAsset = heartSpriteLibAssets[loveLevel];
         PlayAnim(_pettingAnim);
     }
     

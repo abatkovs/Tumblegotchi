@@ -64,7 +64,7 @@ public class Petting : MonoBehaviour
             return;
         }
         CurrentPettingState = PettingState.Petting;
-        _animator.PlayPettingAnim();
+        _animator.PlayPettingAnim(jellyStats.GetLoveLevel());
     }
 
     /// <summary>

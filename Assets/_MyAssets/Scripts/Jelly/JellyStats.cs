@@ -33,7 +33,7 @@ public class JellyStats : MonoBehaviour
         Adult,
     }
 
-    [SerializeField] private GameObject code;
+    [SerializeField] private GameObject code; //game code
 
     public JellyState CurrentJellyState { get; private set; }
     [SerializeField] private SpriteLibrary spriteLibrary;
@@ -64,7 +64,8 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float sleepIncreaseAmount = 1f;
     [SerializeField] private float sleepDecreaseAmount = 5f;
     [FormerlySerializedAs("sleepyIncreaseInterval")] [SerializeField] private float sleepIntervals = 1f;
-    [Space]
+    [Space] 
+    [SerializeField] private int loveLevel = 0;
     [SerializeField] private float love; //xp for all purposes
     [SerializeField] private float loveNeededForEvolution = 20;
     [SerializeField] private float feedingLoveIncrease = 1f;
@@ -90,7 +91,7 @@ public class JellyStats : MonoBehaviour
         _soundManager = SoundManager.Instance;
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
-        _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love);
+        _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love, loveLevel);
     }
 
     private void OnEnable()
@@ -111,6 +112,8 @@ public class JellyStats : MonoBehaviour
         if (love >= loveNeededForEvolution)
         {
             love = 0;
+            loveLevel++;
+            SaveManager.Instance.UpdateJellyStats(_savedStats);
             StartEvolving();
         }
     }
@@ -283,6 +286,11 @@ public class JellyStats : MonoBehaviour
         _savedStats.Love = love;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
+    
+    public int GetLoveLevel()
+    {
+        return loveLevel;
+    }
 
     public void LoadStats()
     {
@@ -292,20 +300,23 @@ public class JellyStats : MonoBehaviour
         currentMood = saveData.CurrentMood;
         currentSleepy = saveData.CurrentSleepy;
         love = saveData.Love;
+        loveLevel = saveData.LoveLevel;
         if(jellyAge == JellyAge.Young) SheetYoung();
         if(jellyAge == JellyAge.Adult) SheetAdult();
     }
+    
 }
 
 public class SavedJellyStats
 {
-    public SavedJellyStats(JellyStats.JellyAge jellyAge, float currentHunger, int currentMood, float currentSleepy, float love)
+    public SavedJellyStats(JellyStats.JellyAge jellyAge, float currentHunger, int currentMood, float currentSleepy, float love, int loveLevel)
     {
         JellyAge = jellyAge;
         CurrentHunger = currentHunger;
         CurrentMood = currentMood;
         CurrentSleepy = currentSleepy;
         Love = love;
+        LoveLevel = loveLevel;
     }
     
     public JellyStats.JellyAge JellyAge;
@@ -313,4 +324,5 @@ public class SavedJellyStats
     public int CurrentMood;
     public float CurrentSleepy;
     public float Love;
+    public int LoveLevel;
 }

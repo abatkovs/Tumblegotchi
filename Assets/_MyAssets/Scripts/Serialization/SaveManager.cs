@@ -84,6 +84,7 @@ public class SaveManager : MonoBehaviour
         SaveData.CurrentMood = jellyStats.CurrentMood;
         SaveData.CurrentSleepy = jellyStats.CurrentSleepy;
         SaveData.Love = jellyStats.Love;
+        SaveData.LoveLevel = jellyStats.LoveLevel;
     }
 
     public void SaveLeftItem(int itemID)
