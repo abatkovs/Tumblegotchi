@@ -73,7 +73,10 @@ public class GameManager : MonoBehaviour
     {
         SwitchActiveMenuSelection(CurrentlySelectedMenuOption);
     }
-
+    /// <summary>
+    /// Enable or dissable selection button
+    /// </summary>
+    /// <param name="value"></param>
     public void ToggleSelectionButton(bool value)
     {
         LockSelectionButton = value;

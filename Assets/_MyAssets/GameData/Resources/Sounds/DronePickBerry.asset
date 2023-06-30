@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d3df17580670948a0f740dae7e8112, type: 3}
+  m_Name: DronePickBerry
+  m_EditorClassIdentifier: 
+  <Sound>k__BackingField:
+    clip: {fileID: 8300000, guid: 73483b86ac3e1d941a6ef6bcd5f8a31c, type: 3}
+    loop: 0
+  <SoundEvent>k__BackingField:
+    Guid:
+      Data1: 1451461471
+      Data2: 1179612067
+      Data3: 1916732306
+      Data4: -746315841
+    Path: event:/Drone_Pick

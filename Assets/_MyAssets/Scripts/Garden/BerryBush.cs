@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class BerryBush : MonoBehaviour
     [SerializeField] private float growthTickInterval = 1f;
     [SerializeField] private List<BerryBushGrowthStages> growthStages;
     [SerializeField] private BerryBushGrowthStages currentGrowthStage;
+    [SerializeField] private SoundData berryPickSound;
     [Space]
     [SerializeField] private BerryBushGrowthStages growthAfterGathering;
     [SerializeField] private int ageAfterPickingBerries;
@@ -19,7 +21,10 @@ public class BerryBush : MonoBehaviour
     [SerializeField] public bool hasSeed;
     [SerializeField] private bool isDroneVisible;
 
+    [SerializeField] private GameObject animatedBerryTree;
 
+    public event Action OnBerryGather;
+    
     private void Start()
     {
         InitBush();
@@ -60,6 +65,10 @@ public class BerryBush : MonoBehaviour
             {
                 spriteRenderer.sprite = growthStage.Sprite;
                 currentGrowthStage = growthStage;
+                if (currentGrowthStage.IsFullyGrown)
+                {
+                    ToggleAnimatedBerryTree(true);
+                }
             }
         }
     }
@@ -80,7 +89,16 @@ public class BerryBush : MonoBehaviour
             currentGrowthStage = growthAfterGathering;
             spriteRenderer.sprite = currentGrowthStage.Sprite;
             StartGrowing();
+            OnBerryGather?.Invoke();
+            ToggleAnimatedBerryTree(false);
+            SoundManager.Instance.PlaySound(berryPickSound);
         }
+    }
+
+    private void ToggleAnimatedBerryTree(bool active)
+    {
+        spriteRenderer.enabled = !active;
+        animatedBerryTree.SetActive(active);
     }
 
     public void PlantSeed()

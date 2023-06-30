@@ -45,7 +45,14 @@ public class Feeding : MonoBehaviour
             _gameManager.ToggleSelectionButton(true);
             return;
         }
-        
+
+        if (_stats.IsJellyFull())
+        {
+            CurrentFeedingState = FeedingState.Idle;
+            foodItem.enabled = false;
+            _gameManager.ToggleSelectionButton(false);
+            return;
+        }
         _gameManager.AddBerries(-requiredBerriesForFeeding);
         _animator.PlayFeedAnim();
         foodItem.enabled = false;

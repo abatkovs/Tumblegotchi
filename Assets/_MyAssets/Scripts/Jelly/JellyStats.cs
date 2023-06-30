@@ -49,10 +49,12 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float hungerInterval = 1f;
     [SerializeField] private float hungerThreshold = 50f;
     [SerializeField] private SoundData hungryCallSound;
+    [SerializeField] private SoundData refuseSound;
     [SerializeField] private float nextTimeHungerSoundCanTriggered = 0; //how often hunger sound gets triggered
     [Space]
     [SerializeField] private int maxMood = 100;
     [SerializeField] private int currentMood = 0;
+    [SerializeField] private int moodIncreaseValue = 5;
     [SerializeField] private JellyMood moodState;
     [SerializeField] private int moodRange = 20;
     [Space]
@@ -166,24 +168,39 @@ public class JellyStats : MonoBehaviour
         if (jellyAge == JellyAge.Baby) SheetYoung();
         if(jellyAge == JellyAge.Young) SheetAdult();
     }
-    
-    public void FeedJelly()
+
+    public bool IsJellyFull()
     {
         if (currentHunger >= maxHunger)
         {
             RefuseFood();
-            return;
+            SaveManager.Instance.UpdateJellyStats(_savedStats);
+            return true;
         }
+        return false;
+    }
+    
+    public void FeedJelly()
+    {
         currentHunger += feedValue;
         _savedStats.CurrentHunger = currentHunger;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
         _gameManager.AddJellyDew(jellyDewAwardedForFeeding);
         IncreaseLove(feedingLoveIncrease);
+        IncreaseMoodIfHungry();
+    }
+
+    private void IncreaseMoodIfHungry()
+    {
+        if (currentHunger < hungerThreshold)
+        {
+            ChangeMoodLevel(moodIncreaseValue);
+        }
     }
 
     private void RefuseFood()
     {
-        throw new System.NotImplementedException();
+        _soundManager.PlaySound(refuseSound);
     }
 
     private IEnumerator BecomeHungrier()
@@ -250,7 +267,7 @@ public class JellyStats : MonoBehaviour
     public void ChangeMoodLevel(int amount)
     {
         var moodLevel = 0;
-        currentMood += amount;
+        currentMood = Mathf.Clamp(currentMood + amount, 0, maxMood);
 
         _savedStats.CurrentMood = currentMood;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
