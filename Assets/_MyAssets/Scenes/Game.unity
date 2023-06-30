@@ -2677,6 +2677,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   game: {fileID: 435116751}
   button: {fileID: 751431904}
+  draggingOffset: {x: 0, y: 0, z: 0}
+  minX: -6.5
+  maxX: 8
+  minY: -0.5
+  maxY: 4.8
 --- !u!1 &758733625
 GameObject:
   m_ObjectHideFlags: 0
