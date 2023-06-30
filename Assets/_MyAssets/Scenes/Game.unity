@@ -1195,7 +1195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &219271994
 Transform:
   m_ObjectHideFlags: 0
@@ -2048,7 +2048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &435116751
 Transform:
   m_ObjectHideFlags: 0
@@ -8118,6 +8118,10 @@ PrefabInstance:
       propertyPath: spriteLibrary
       value: 
       objectReference: {fileID: 1600596700636829912}
+    - target: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: hungryCallSound
+      value: 
+      objectReference: {fileID: 11400000, guid: b77aacc6d9bdb224e9f06895b349c0cd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d3df17580670948a0f740dae7e8112, type: 3}
+  m_Name: HungryCallPlayer
+  m_EditorClassIdentifier: 
+  <Sound>k__BackingField:
+    clip: {fileID: 8300000, guid: e6c5dc1a75090054493c38fdb2678513, type: 3}
+    loop: 0
+  <SoundEvent>k__BackingField:
+    Guid:
+      Data1: 41227867
+      Data2: 1141001340
+      Data3: -1182729062
+      Data4: -652514575
+    Path: event:/HungryCallPlayer

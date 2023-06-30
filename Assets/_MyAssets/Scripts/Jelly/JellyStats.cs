@@ -39,12 +39,17 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private SpriteLibrary spriteLibrary;
     [SerializeField] private JellyEvolutionData evolutionData;
     [SerializeField] private JellyAge jellyAge;
+    [Space] 
+    [Tooltip("How often diferent triggers can happen in seconds")]
+    [SerializeField]private float timeIntervalForJellyTriggers = 10;
     [Space(25)]
     [SerializeField] private float maxHunger = 100;
     [SerializeField] private float currentHunger;
     [SerializeField] private float hungerDecreaseAmount = 1;
     [SerializeField] private float hungerInterval = 1f;
     [SerializeField] private float hungerThreshold = 50f;
+    [SerializeField] private SoundData hungryCallSound;
+    [SerializeField] private float nextTimeHungerSoundCanTriggered = 0; //how often hunger sound gets triggered
     [Space]
     [SerializeField] private int maxMood = 100;
     [SerializeField] private int currentMood = 0;
@@ -65,11 +70,14 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
 
+    
+
 
     public bool IsJellyHungry { get; private set; }
     public bool IsJellyAsleep { get; private set; }
     
     private GameManager _gameManager;
+    private SoundManager _soundManager;
     private JellyAnimator _animator;
 
     private SavedJellyStats _savedStats;
@@ -77,6 +85,7 @@ public class JellyStats : MonoBehaviour
     private void Start()
     {
         _gameManager = GameManager.Instance;
+        _soundManager = SoundManager.Instance;
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
         _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love);
@@ -184,7 +193,16 @@ public class JellyStats : MonoBehaviour
         _savedStats.CurrentHunger = currentHunger;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
         StartCoroutine(BecomeHungrier());
-        if (currentHunger < hungerThreshold) IsJellyHungry = true;
+        if (currentHunger < hungerThreshold)
+        {
+            if (nextTimeHungerSoundCanTriggered < Time.time)
+            {
+                nextTimeHungerSoundCanTriggered = Time.time + timeIntervalForJellyTriggers;
+                _soundManager.PlaySound(hungryCallSound);
+            }
+            
+            IsJellyHungry = true;
+        }
         if (currentHunger > hungerThreshold) IsJellyHungry = false;
     }
 
