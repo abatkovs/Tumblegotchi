@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+//TODO: add some timers for holding down button etc.
 public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] private Color exitColor = Color.white;
@@ -57,18 +57,30 @@ public class Button : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
         
     }
 
+    /// <summary>
+    /// Button clicked
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
         OnButtonClicked?.Invoke();
         if(saveGame) SaveManager.Instance.SaveGame();
     }
 
+    /// <summary>
+    /// Button pressed down
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerDown(PointerEventData eventData)
     {
         transform.localPosition += (Vector3) posOffset;
         OnButtonDown?.Invoke();
     }
     
+    /// <summary>
+    /// Button released
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerUp(PointerEventData eventData)
     {
         OnButtonReleased?.Invoke();

@@ -4,6 +4,7 @@ using System.IO;
 using _MyAssets.Scripts.Playground;
 using MessagePack;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -126,5 +127,14 @@ public class SaveManager : MonoBehaviour
     public void SaveShopData(List<int> shopItems)
     {
         SaveData.ShopItems = shopItems;
+    }
+
+    public void DeleteSaveData()
+    {
+        if (File.Exists(_saveFilePath))
+        {
+            File.Delete(_saveFilePath);
+            SceneManager.LoadScene(0);
+        }
     }
 }

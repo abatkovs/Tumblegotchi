@@ -15,7 +15,6 @@ public class Petting : MonoBehaviour
     
     [SerializeField] private SpriteRenderer handItem;
     [SerializeField] private JellyStats jellyStats;
-    [SerializeField] private int loveIncreaseAmount = 5;
     [SerializeField] private int moodIncreaseAmount = 5;
 
     public PettingState CurrentPettingState { get; private set; } = PettingState.Idle;
