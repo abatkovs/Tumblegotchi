@@ -25,6 +25,7 @@ public class JellyBG : MonoBehaviour
     [SerializeField] private float currentPlayInterval;
     
     [FormerlySerializedAs("_animator")] [SerializeField] private JellyBGAnimator animator;
+    [SerializeField] private Animator handWaveAnimator;
 
     [SerializeField] private List<PlaygroundSide> playgrounds;
 
@@ -137,6 +138,12 @@ public class JellyBG : MonoBehaviour
         FlipSpriteToMoveDirection();
         animator.PlayWalkAnim();
         _isWalkingBack = true;
+        WaveAtJelly();
+    }
+
+    private void WaveAtJelly()
+    {
+        handWaveAnimator.CrossFade("Wave",0,0);
     }
 
     public void SetIdleState()

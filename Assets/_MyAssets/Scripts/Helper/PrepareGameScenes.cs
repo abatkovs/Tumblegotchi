@@ -10,11 +10,22 @@ public class PrepareGameScenes : MonoBehaviour
     [SerializeField] private List<GameObject> gameObjectsThatNeedToBeHidden; 
     
     [Button(InspectorButtonSize.Large)]
-    private void PrepareScenes()
+    private void HideGameObjects()
+    {
+        ToggleGameObjects(false);
+    }
+    
+    [Button(InspectorButtonSize.Small)]
+    private void ShowGameObjects()
+    {
+        ToggleGameObjects(true);
+    }
+    
+    private void ToggleGameObjects(bool value)
     {
         foreach (var go in gameObjectsThatNeedToBeHidden)
         {
-            go.SetActive(false);
+            go.SetActive(value);
         }
     }
 }
