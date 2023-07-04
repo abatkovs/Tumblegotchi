@@ -130,47 +130,46 @@ public class JellyStats : MonoBehaviour
     {
         _gameManager.LockButtons = false;
         _animator.PlayIdleAnim();
+        if (jellyAge == JellyAge.Egg)
+        {
+            EvolveJelly(evolutionData.Baby);
+            jellyAge = JellyAge.Baby;
+            return;
+        }
         if (jellyAge == JellyAge.Baby)
         {
-            SheetYoung();
+            EvolveJelly(evolutionData.Young);
             jellyAge = JellyAge.Young;
-            _savedStats.JellyAge = jellyAge;
-            SaveManager.Instance.UpdateJellyStats(_savedStats);
             return;
         }
 
         if (jellyAge == JellyAge.Young)
         {
-            SheetAdult();
+            EvolveJelly(evolutionData.Adult);
             jellyAge = JellyAge.Adult;
-            _savedStats.JellyAge = jellyAge;
-            SaveManager.Instance.UpdateJellyStats(_savedStats);
             code.SetActive(true);
             return;
         }
     }
 
-    private void SheetYoung()
+    private void EvolveJelly(SpriteLibraryAsset spriteLibraryAsset)
     {
-        spriteLibrary.spriteLibraryAsset = evolutionData.Young;
-    }
-
-    private void SheetAdult()
-    {
-        spriteLibrary.spriteLibraryAsset = evolutionData.Adult;
+        spriteLibrary.spriteLibraryAsset = spriteLibraryAsset;
+        _savedStats.JellyAge = jellyAge;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
 
     public void EvolutionAnimEvent1()
     {
         if (jellyAge == JellyAge.Baby) spriteLibrary.spriteLibraryAsset = evolutionData.Baby;
-        if(jellyAge == JellyAge.Young) SheetYoung();
-        if(jellyAge == JellyAge.Adult) SheetAdult();
+        if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Young);
+        if(jellyAge == JellyAge.Adult) EvolveJelly(evolutionData.Adult);
     }
     
     public void EvolutionAnimEvent2()
     {
-        if (jellyAge == JellyAge.Baby) SheetYoung();
-        if(jellyAge == JellyAge.Young) SheetAdult();
+        if (jellyAge == JellyAge.Baby) EvolveJelly(evolutionData.Young);
+        if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Adult);
     }
 
     public bool IsJellyFull()
@@ -271,6 +270,10 @@ public class JellyStats : MonoBehaviour
     public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)
     {
         evolutionData = newEvolutionData;
+        if (jellyAge == JellyAge.Egg)
+        {
+            spriteLibrary.spriteLibraryAsset = newEvolutionData.Egg;
+        }
     }
 
     public void ChangeMoodLevel(int amount)
@@ -307,8 +310,9 @@ public class JellyStats : MonoBehaviour
         currentSleepy = saveData.CurrentSleepy;
         love = saveData.Love;
         loveLevel = saveData.LoveLevel;
-        if(jellyAge == JellyAge.Young) SheetYoung();
-        if(jellyAge == JellyAge.Adult) SheetAdult();
+        if(jellyAge == JellyAge.Baby) EvolveJelly(evolutionData.Baby);
+        if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Young);
+        if(jellyAge == JellyAge.Adult) EvolveJelly(evolutionData.Adult);
     }
     
 }

@@ -8274,6 +8274,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1686541705}
     - target: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: jellyAge
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8743874594446733695, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: refuseSound
       value: 
       objectReference: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}

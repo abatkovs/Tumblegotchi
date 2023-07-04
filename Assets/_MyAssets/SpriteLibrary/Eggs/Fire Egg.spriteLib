@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Library:
-  - m_Name: Egg
-    m_Hash: 813342626
+  - m_Name: Jelly
+    m_Hash: 969240499
     m_CategoryList: []
     m_OverrideEntries:
     - m_Name: Idle
@@ -30,5 +30,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 2
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638198645803952041
+  m_ModificationHash: 638240936161254789
   m_Version: 1

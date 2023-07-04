@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Petra
   m_EditorClassIdentifier: 
   <ID>k__BackingField: 1
+  <Egg>k__BackingField: {fileID: 7108339969198208228, guid: 11eb5758597e050468db9a6a21acf4ae, type: 3}
   <Baby>k__BackingField: {fileID: 7108339969198208228, guid: a9e83d19257540d40ba5d6d0f5dab72e, type: 3}
   <Young>k__BackingField: {fileID: 7108339969198208228, guid: 7e288d996d84eea4e86b59d4bed70076, type: 3}
   <Adult>k__BackingField: {fileID: 7108339969198208228, guid: cc9abc3c99cb706448ebf79755620686, type: 3}
