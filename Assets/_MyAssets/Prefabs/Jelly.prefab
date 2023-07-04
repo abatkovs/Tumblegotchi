@@ -591,7 +591,7 @@ MonoBehaviour:
   code: {fileID: 0}
   spriteLibrary: {fileID: 0}
   evolutionData: {fileID: 0}
-  jellyAge: 0
+  jellyAge: 1
   timeIntervalForJellyTriggers: 10
   maxHunger: 100
   currentHunger: 0
@@ -615,7 +615,7 @@ MonoBehaviour:
   loveLevel: 0
   love: 0
   loveNeededForEvolution: 20
-  feedingLoveIncrease: 1
+  feedingLoveIncrease: 0
   feedValue: 5
   jellyDewAwardedForFeeding: 1
 --- !u!114 &629151397368406586
@@ -671,7 +671,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handItem: {fileID: 2613525536652944581}
   jellyStats: {fileID: 8743874594446733695}
-  loveIncreaseAmount: 5
   moodIncreaseAmount: 5
   shouldStartPettingAgain: 0
 --- !u!114 &3521829641985915877

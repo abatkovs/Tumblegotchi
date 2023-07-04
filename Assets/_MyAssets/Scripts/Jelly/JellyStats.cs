@@ -28,6 +28,7 @@ public class JellyStats : MonoBehaviour
     [Serializable]
     public enum JellyAge
     {
+        Egg,
         Baby,
         Young,
         Adult,
@@ -229,7 +230,7 @@ public class JellyStats : MonoBehaviour
     private IEnumerator BecomeSleepier()
     {
         yield return new WaitForSeconds(sleepIntervals);
-        currentSleepy += sleepIncreaseAmount;
+        ChangeSleepyLevel(+sleepIncreaseAmount);
         _savedStats.CurrentSleepy = currentSleepy;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
         if (currentSleepy >= sleepThreshold)
@@ -240,10 +241,15 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeSleepier());
     }
 
+    private void ChangeSleepyLevel(float value)
+    {
+        currentSleepy = Mathf.Clamp(currentSleepy + value, 0, sleepyMax);
+    }
+
     private IEnumerator Sleeping()
     {
         yield return new WaitForSeconds(sleepIntervals);
-        currentSleepy -= sleepDecreaseAmount;
+        ChangeSleepyLevel(-sleepDecreaseAmount);
         if (currentSleepy <= 0)
         {
             CurrentJellyState = JellyState.Idle;
