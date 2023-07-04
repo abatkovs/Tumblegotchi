@@ -4241,6 +4241,8 @@ MonoBehaviour:
   petting: {fileID: 1195776943}
   selectionSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
   jelly: {fileID: 1600596700636829914}
+  jellyStats: {fileID: 1600596700636829915}
+  cantMoveNowSound: {fileID: 11400000, guid: 21952b77c1aa02f4ab939ba010df9d3d, type: 2}
 --- !u!1 &1268164274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2858565806455962474, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
@@ -8189,10 +8191,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 90108362}
     m_Modifications:
+    - target: {fileID: 629151397368406586, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: cantFeedNowSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
     - target: {fileID: 806015301165775918, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -124301160, guid: 4585117d25f88144fa58e51ec0c7d95a, type: 3}
+    - target: {fileID: 851659193573564917, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
+      propertyPath: cantPetNowSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
     - target: {fileID: 1140230683979179784, guid: 11efbd2b48897564581f3804e4484d2a, type: 3}
       propertyPath: m_RootOrder
       value: -1

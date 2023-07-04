@@ -16,6 +16,8 @@ public class Feeding : MonoBehaviour
     [SerializeField] private int requiredBerriesForFeeding = 1;
     [SerializeField] private SpriteRenderer foodItem;
     [SerializeField] private Sprite food;
+    [Space] 
+    [SerializeField] private SoundData cantFeedNowSound;
     
     private GameManager _gameManager;
     private JellyStats _stats;
@@ -35,6 +37,11 @@ public class Feeding : MonoBehaviour
     [ContextMenu("Feed Anim")]
     public void StartFeedingJelly()
     {
+        if (_stats.GetJellyAge() == JellyStats.JellyAge.Egg)
+        {
+            SoundManager.Instance.PlaySound(cantFeedNowSound);
+            return;
+        }
         if(CurrentFeedingState == FeedingState.Feeding) return;
         if(_gameManager.Berries <= 0) return;
         //Show food before feeding

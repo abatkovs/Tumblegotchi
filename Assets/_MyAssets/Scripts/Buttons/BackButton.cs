@@ -10,7 +10,10 @@ public class BackButton : BaseActionButton
     [SerializeField] private Petting petting;
     [SerializeField] private SoundData selectionSound;
     [SerializeField] private Jelly jelly;
-
+    [SerializeField] private JellyStats jellyStats;
+    [Space] 
+    [SerializeField] private SoundData cantMoveNowSound;
+    
     private SoundManager _soundManager;
     private GameManager _gameManager;
 
@@ -52,6 +55,11 @@ public class BackButton : BaseActionButton
         
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Main)
         {
+            if (jellyStats.GetJellyAge() == JellyStats.JellyAge.Egg)
+            {
+                SoundManager.Instance.PlaySound(cantMoveNowSound);
+                return;
+            }
             sceneSwitcher.SwitchToPlayground();
             _gameManager.ToggleSelectionButton(true);
             return;

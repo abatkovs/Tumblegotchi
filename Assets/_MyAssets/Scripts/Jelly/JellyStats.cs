@@ -107,11 +107,25 @@ public class JellyStats : MonoBehaviour
         CheckIfJellyCanEvolve();
     }
 
+    /// <summary>
+    /// Jelly evolves from egg after X amount of time = love
+    /// For now just increase love over time so it triggers natural evolution
+    /// </summary>
+    private void EggTimer()
+    {
+        love += Time.deltaTime;
+    }
+
     private void CheckIfJellyCanEvolve()
     {
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
         if (love >= loveNeededForEvolution)
         {
+            if (jellyAge == JellyAge.Egg)
+            {
+                EggTimer();
+                return;
+            }
             love = 0;
             loveLevel++;
             SaveManager.Instance.UpdateJellyStats(_savedStats);
@@ -314,7 +328,11 @@ public class JellyStats : MonoBehaviour
         if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Young);
         if(jellyAge == JellyAge.Adult) EvolveJelly(evolutionData.Adult);
     }
-    
+
+    public JellyAge GetJellyAge()
+    {
+        return jellyAge;
+    }
 }
 
 public class SavedJellyStats
