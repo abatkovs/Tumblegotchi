@@ -119,13 +119,14 @@ public class JellyStats : MonoBehaviour
     private void CheckIfJellyCanEvolve()
     {
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
+        if (jellyAge == JellyAge.Egg && love < loveNeededForEvolution)
+        {
+            EggTimer();
+            return;
+        }
         if (love >= loveNeededForEvolution)
         {
-            if (jellyAge == JellyAge.Egg)
-            {
-                EggTimer();
-                return;
-            }
+
             love = 0;
             loveLevel++;
             SaveManager.Instance.UpdateJellyStats(_savedStats);
