@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cee3983110c47d198edfd6485de65e9, type: 3}
   m_Name: Ball
   m_EditorClassIdentifier: 
+  <ItemID>k__BackingField: 0
   <ItemSprite>k__BackingField: {fileID: 1836174656, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <EnterAnimationString>k__BackingField: BallWaitPlayerInput
-  <WaitAnimationString>k__BackingField: BallWaitPlayerInput
-  <PlayAnimationString>k__BackingField: BallKick
-  <DizzyAnimationString>k__BackingField: BallKick
+  <IdleAnimationString>k__BackingField: BallIdle
+  <EnterAnimationString>k__BackingField: BallKick
+  <WaitAnimationString>k__BackingField: BallKick
+  <PlayAnimationString>k__BackingField: BallPlayerKick
+  <DizzyAnimationString>k__BackingField: BallUpset
   <UpsetAnimationString>k__BackingField: BallUpset
+  <IsPlayerInteractionRequired>k__BackingField: 1
+  <IsPlayerInteractionRepeatable>k__BackingField: 1
+  <TimeUntilJellyGetsBored>k__BackingField: 10
+  <AwardedLove>k__BackingField: 1

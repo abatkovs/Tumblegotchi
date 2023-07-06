@@ -8,8 +8,6 @@ public class PlaygroundSide : MonoBehaviour
 {
 
     [field: SerializeField] public PlaygroundItem CurrentItem { get; private set; }
-
-    
     
     private SpriteRenderer _spriteRenderer;
     private PlaygroundAnimator _pgAnimator;
@@ -28,16 +26,21 @@ public class PlaygroundSide : MonoBehaviour
     {
         _spriteRenderer.sprite = item.ItemSprite;
         CurrentItem = item;
+        item.SetPlaygroundAnimator(_pgAnimator);
         _pgAnimator.SetSprite(item.ItemSprite);
+        _pgAnimator.SetPlaygroundItem(CurrentItem);
     }
 
     public void StartAnimation(JellyBG jellyBg)
     {
         _pgAnimator.JellyBG = jellyBg;
+        _pgAnimator.ResetNextAnim();
+        _pgAnimator.SetJellyBoredTimers(CurrentItem.TimeUntilJellyGetsBored);
         _pgAnimator.PlayEnterAnimation(CurrentItem.EnterAnimationString);
-        _pgAnimator.WaitAnimationString = CurrentItem.WaitAnimationString;
-        _pgAnimator.PlayAnimationString = CurrentItem.PlayAnimationString;
-        _pgAnimator.DizzyAnimationString = CurrentItem.DizzyAnimationString;
-        _pgAnimator.UpsetAnimationString = CurrentItem.UpsetAnimationString;
+    }
+
+    public void TryPlayWithJelly()
+    {
+        _pgAnimator.PlayWithJelly();
     }
 }

@@ -49,9 +49,9 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private float hungerDecreaseAmount = 1;
     [SerializeField] private float hungerInterval = 1f;
     [SerializeField] private float hungerThreshold = 50f;
+    [SerializeField] private float nextTimeHungerSoundCanTriggered = 0; //how often hunger sound gets triggered
     [SerializeField] private SoundData hungryCallSound;
     [SerializeField] private SoundData refuseSound;
-    [SerializeField] private float nextTimeHungerSoundCanTriggered = 0; //how often hunger sound gets triggered
     [Space]
     [SerializeField] private int maxMood = 100;
     [SerializeField] private int currentMood = 0;
@@ -113,7 +113,7 @@ public class JellyStats : MonoBehaviour
     /// </summary>
     private void EggTimer()
     {
-        love += Time.deltaTime;
+        IncreaseLove(Time.deltaTime);
     }
 
     private void CheckIfJellyCanEvolve()
@@ -170,6 +170,8 @@ public class JellyStats : MonoBehaviour
     private void EvolveJelly(SpriteLibraryAsset spriteLibraryAsset)
     {
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset;
+        
+        if(_savedStats == null) return;
         _savedStats.JellyAge = jellyAge;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
@@ -306,7 +308,7 @@ public class JellyStats : MonoBehaviour
 
     public void IncreaseLove(float amount)
     {
-        love += amount;
+        love = Mathf.Clamp(love + amount, 0, loveNeededForEvolution);
         _savedStats.Love = love;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
     }

@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842680467772298307, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
   m_PrefabInstance: {fileID: 2321255696160607056}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1712836229}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94309b81b03d68e4d8af59e4473a2102, type: 3}
@@ -3951,6 +3951,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8310312016967012731, guid: 9a83739df469a6a4f814f6e0b0592e41, type: 3}
   m_PrefabInstance: {fileID: 1088902965}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1145587283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 803703590755578451, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+  m_PrefabInstance: {fileID: 1821707974}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1156393839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5800,6 +5805,11 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &1712836229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 803703590755578451, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+  m_PrefabInstance: {fileID: 2321255696160607056}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1727453067
 GameObject:
   m_ObjectHideFlags: 0
@@ -6528,6 +6538,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: JellyBG
+      value: 
+      objectReference: {fileID: 1002574657}
+    - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: jellyStats
+      value: 
+      objectReference: {fileID: 1600596700636829915}
+    - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 953974026}
@@ -6541,6 +6559,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5527162741123504789, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5527162741123504789, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5527162741123504789, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
@@ -6583,6 +6605,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8393588364593126549, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1570449413, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6598,7 +6624,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2842680467772298307, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
   m_PrefabInstance: {fileID: 1821707974}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1145587283}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94309b81b03d68e4d8af59e4473a2102, type: 3}
@@ -8183,6 +8209,7 @@ MonoBehaviour:
   petting: {fileID: 1195776943}
   shop: {fileID: 376832085}
   selectionSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
+  playground: {fileID: 1870538059}
 --- !u!1001 &1600596700636829910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8389,6 +8416,14 @@ PrefabInstance:
       propertyPath: m_SpriteLibraryAsset
       value: 
       objectReference: {fileID: 7108339969198208228, guid: 52197bcb643141746a9ded21f761fdfb, type: 3}
+    - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: JellyBG
+      value: 
+      objectReference: {fileID: 1002574657}
+    - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
+      propertyPath: jellyStats
+      value: 
+      objectReference: {fileID: 1600596700636829915}
     - target: {fileID: 5209889938254365874, guid: 588b8618624d3b34982b4dafb8ee7ed4, type: 3}
       propertyPath: spriteRenderer
       value: 
@@ -8757,11 +8792,11 @@ PrefabInstance:
     - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: playgrounds.Array.data[0]
       value: 
-      objectReference: {fileID: 297049221}
+      objectReference: {fileID: 1712836229}
     - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: playgrounds.Array.data[1]
       value: 
-      objectReference: {fileID: 1821707976}
+      objectReference: {fileID: 1145587283}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

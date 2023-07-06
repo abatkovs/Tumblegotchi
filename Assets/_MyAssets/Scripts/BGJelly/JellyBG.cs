@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Playground;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
@@ -18,22 +20,24 @@ public class JellyBG : MonoBehaviour
     
     [SerializeField] private Vector2 edgeOffset;
 
+    [Tooltip("For how long jelly will stay still")]
     [SerializeField] private float walkInterval = 5f;
     [SerializeField] private float currentWalkInterval;
-    
+    [Tooltip("After what time jelly will go to play")]
     [SerializeField] private float playInterval = 20f;
     [SerializeField] private float currentPlayInterval;
     
-    [FormerlySerializedAs("_animator")] [SerializeField] private JellyBGAnimator animator;
+    [SerializeField] private JellyBGAnimator animator;
     [SerializeField] private Animator handWaveAnimator;
 
-    [SerializeField] private List<PlaygroundSide> playgrounds;
+    [SerializeField] private List<GameObject> playgrounds;
 
     [SerializeField] private BGJellyState state;
     
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    
     private Vector2 _startingPosition = new Vector2(-0.71f, 0.01f);
-    private bool _isWalkingBack;
+    private bool _isWalkingBack; //walking back to foreground
 
     public event Action OnFinishMovingBack;
     
@@ -111,15 +115,45 @@ public class JellyBG : MonoBehaviour
         _spriteRenderer.flipX = transform.position.x > moveToTarget.position.x;
     }
 
+    //called rarely
     [ContextMenu("Play")]
     private void InteractWithPlayground()
     {
-        if(playgrounds[0].CurrentItem == null) return;
+        var targetPlayground = GetClosestPlayground(playgrounds);
+        if(targetPlayground.GetComponent<PlaygroundSide>().CurrentItem == null) return;
         state = BGJellyState.Playing;
         _spriteRenderer.enabled = false;
-        playgrounds[0].StartAnimation(this);
+        targetPlayground.GetComponent<PlaygroundSide>().StartAnimation(this);
+    }
+    
+    /// <summary>
+    /// Get closest playground to background jelly
+    /// </summary>
+    /// <param name="playgrounds"></param>
+    /// <returns></returns>
+    public GameObject GetClosestPlayground(List<GameObject> playgrounds)
+    {
+        GameObject bestTarget = null;
+        float closestDistance = Mathf.Infinity;
+        Vector3 currentPosition = transform.position;
+
+        foreach (var playground in playgrounds)
+        {
+            Vector3 direction = playground.transform.position - currentPosition;
+            float distance = direction.sqrMagnitude; //using square magnitude is faster than using normal magnitude. 
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                bestTarget = playground;
+            }
+        }
+
+        return bestTarget;
     }
 
+    /// <summary>
+    /// Enable bg jelly
+    /// </summary>
     public void ActivateJelly()
     {
         state = BGJellyState.Walking;
@@ -131,6 +165,9 @@ public class JellyBG : MonoBehaviour
         animator.PlayWalkAnim();
     }
     
+    /// <summary>
+    /// Move bg jelly back to foreground
+    /// </summary>
     public void MoveJellyBack()
     {
         state = BGJellyState.Walking;

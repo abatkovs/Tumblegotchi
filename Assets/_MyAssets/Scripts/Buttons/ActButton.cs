@@ -11,6 +11,7 @@ public class ActButton : BaseActionButton
     [SerializeField] private Petting petting;
     [SerializeField] private Shop shop;
     [SerializeField] private SoundData selectionSound;
+    [SerializeField] private Playground playground;
     
     private GameManager _gameManager;
     private SoundManager _soundManager;
@@ -57,6 +58,11 @@ public class ActButton : BaseActionButton
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Shop)
         {
             shop.TryBuyItem();
+        }
+
+        if (_gameManager.CurrentlyActiveScene == ActiveScene.Playground)
+        {
+            playground.PlayWithJelly();
         }
     }
 }

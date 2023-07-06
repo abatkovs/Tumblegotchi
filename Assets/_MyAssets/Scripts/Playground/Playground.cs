@@ -25,4 +25,10 @@ public class Playground : MonoBehaviour
         playgroundLeft.SetPlaygroundItem(item);
         SaveManager.Instance.SaveLeftItem(playgroundLeft.CurrentItem.ItemID);
     }
+    
+    public void PlayWithJelly()
+    {
+        playgroundLeft.TryPlayWithJelly();
+        playgroundRight.TryPlayWithJelly();
+    }
 }

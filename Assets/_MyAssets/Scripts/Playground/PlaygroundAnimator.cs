@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Playground;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -8,6 +9,7 @@ public class PlaygroundAnimator : MonoBehaviour
 {
     public enum NextAnimToPlay
     {
+        None,
         Wait,
         Play,
         Dizzy,
@@ -20,18 +22,50 @@ public class PlaygroundAnimator : MonoBehaviour
     [SerializeField] private Sprite sprite;
 
     [SerializeField] public JellyBG JellyBG;
+    [SerializeField] private JellyStats jellyStats;
     
-    public string WaitAnimationString { get; set; }
-    public string PlayAnimationString { get; set; }
-    public string DizzyAnimationString { get; set; }
-    public string UpsetAnimationString { get; set; }
+    [SerializeField] private float timeUntilJellyWillGetBored;
+    [SerializeField] private float currentBoredTimer;
 
     private bool _lastAnim;
+    private PlaygroundItem _playgroundItem;
+    private bool _jellyWaitingForInput;
+
+
     
     private void Awake()
     {
         _animator = GetComponent<Animator>();
         _animator.enabled = false;
+        nextAnim = NextAnimToPlay.None;
+    }
+
+    private void Update()
+    {
+        if(nextAnim == NextAnimToPlay.None) return;
+        UpdateBoredTimer();
+    }
+
+    private void UpdateBoredTimer()
+    {
+        currentBoredTimer -= Time.deltaTime;
+        if (currentBoredTimer < 0)
+        {
+            nextAnim = NextAnimToPlay.Dizzy;
+            if(_jellyWaitingForInput) IncreaseLove();
+            _jellyWaitingForInput = false;
+        }
+    }
+
+    private void IncreaseLove()
+    {
+        jellyStats.IncreaseLove(_playgroundItem.AwardedLove);
+    }
+
+    public void SetJellyBoredTimers(float time)
+    {
+        timeUntilJellyWillGetBored = time;
+        currentBoredTimer = timeUntilJellyWillGetBored;
     }
 
     public void PlayStr(string animationName)
@@ -42,13 +76,17 @@ public class PlaygroundAnimator : MonoBehaviour
 
     public void FinishAnimation()
     {
-        _animator.enabled = false;
         if (_lastAnim)
         {
-            spriteRenderer.sprite = sprite;
+            //spriteRenderer.sprite = sprite;
+            PlayStr(_playgroundItem.IdleAnimationString);
             JellyBG.ActivateJelly();
+            _lastAnim = false;
+            //_animator.enabled = false;
+            nextAnim = NextAnimToPlay.None;
             return;
         }
+        if(_jellyWaitingForInput) return;
         PlayNextAnim();
     }
     
@@ -66,24 +104,35 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if (nextAnim == NextAnimToPlay.Wait)
         {
-            PlayStr(WaitAnimationString);
+            if (_playgroundItem.IsPlayerInteractionRequired)
+            {
+                PlayStr(_playgroundItem.WaitAnimationString);
+                _jellyWaitingForInput = true;
+                IncreaseLove(); //If interacted with jelly increase love
+                return;
+            }
+            PlayStr(_playgroundItem.WaitAnimationString);
             nextAnim = NextAnimToPlay.Play;
             return;
         }
 
         if (nextAnim == NextAnimToPlay.Play)
         {
-            PlayStr(PlayAnimationString);
+            if (_playgroundItem.IsPlayerInteractionRepeatable)
+            {
+                nextAnim = NextAnimToPlay.Wait;
+                return;
+            }
+            PlayStr(_playgroundItem.PlayAnimationString);
             nextAnim = NextAnimToPlay.Dizzy;
             return;
         }
 
         if (nextAnim == NextAnimToPlay.Dizzy)
         {
-            PlayStr(DizzyAnimationString);
+            PlayStr(_playgroundItem.DizzyAnimationString);
             _lastAnim = true;
             spriteRenderer.sprite = sprite;
-            JellyBG.ActivateJelly();
             return;
         }
 
@@ -93,5 +142,24 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         spriteRenderer.sprite = itemSprite;
         sprite = itemSprite;
+    }
+
+    public void ResetNextAnim()
+    {
+        nextAnim = NextAnimToPlay.Wait;
+    }
+
+    public void SetPlaygroundItem(PlaygroundItem playgroundItem)
+    {
+        _playgroundItem = playgroundItem;
+    }
+
+    public void PlayWithJelly()
+    {
+        if(!_jellyWaitingForInput) return;
+        currentBoredTimer = timeUntilJellyWillGetBored;
+        PlayStr(_playgroundItem.PlayAnimationString);
+        nextAnim = NextAnimToPlay.Wait;
+        _jellyWaitingForInput = false;
     }
 }
