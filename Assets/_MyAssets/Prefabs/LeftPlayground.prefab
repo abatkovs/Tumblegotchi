@@ -126,6 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentItem>k__BackingField: {fileID: 0}
+  spriteRenderer: {fileID: 5381594664687298177}
+  pgAnimator: {fileID: 5209889938254365874}
 --- !u!114 &5209889938254365874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +144,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5381594664687298177}
   sprite: {fileID: 0}
   JellyBG: {fileID: 0}
+  jellyStats: {fileID: 0}
+  timeUntilJellyWillGetBored: 0
+  currentBoredTimer: 0
 --- !u!114 &2932406293701649734
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using _MyAssets.Scripts.Jelly;
+using _MyAssets.Scripts.Playground;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,6 +22,8 @@ public class LoadGame : MonoBehaviour
     [SerializeField] private Shop shop;
     [Space]
     [SerializeField] private JellyStats jellyStats;
+    [Space]
+    [SerializeField] private Playground playground;
     
     private void Start()
     {
@@ -43,6 +46,7 @@ public class LoadGame : MonoBehaviour
         LoadGardenData();
         LoadShopItems();
         LoadJellyStats();
+        LoadPlaygroundItems();
     }
 
     /// <summary>
@@ -85,6 +89,28 @@ public class LoadGame : MonoBehaviour
     private void LoadShopItems()
     {
         shop.LoadItems(SaveManager.Instance.SaveData.ShopItems);
+    }
+
+    private void LoadPlaygroundItems()
+    {
+        var playgroundItems = Resources.LoadAll<PlaygroundItem>("Playground");
+        var leftSideItemID = SaveManager.Instance.SaveData.LeftItemID;
+        var rightSideItemID = SaveManager.Instance.SaveData.RightItemID;
+        PlaygroundItem leftSideItem = null;
+        PlaygroundItem rightSideItem = null;
+        foreach (var playgroundItem in playgroundItems)
+        {
+            if (leftSideItemID == playgroundItem.ItemID)
+            {
+                leftSideItem = playgroundItem;
+            }
+
+            if (rightSideItemID == playgroundItem.ItemID)
+            {
+                rightSideItem = playgroundItem;
+            }
+        }
+        playground.LoadItems(leftSideItem, rightSideItem);
     }
 
     private void LoadJellyStats()

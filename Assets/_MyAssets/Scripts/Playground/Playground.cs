@@ -31,4 +31,10 @@ public class Playground : MonoBehaviour
         playgroundLeft.TryPlayWithJelly();
         playgroundRight.TryPlayWithJelly();
     }
+
+    public void LoadItems(PlaygroundItem saveDataLeftItem, PlaygroundItem saveDataRightItem)
+    {
+        playgroundLeft.SetPlaygroundItem(saveDataLeftItem);
+        playgroundRight.SetPlaygroundItem(saveDataRightItem);
+    }
 }

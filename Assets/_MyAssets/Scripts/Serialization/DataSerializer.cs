@@ -17,8 +17,9 @@ public class DataSerializer
         CurrentMood = 0;
         CurrentSleepy = 0;
         Love = 0;
-        LeftItemID = 0;
-        RightItemID = 0;
+        LoveLevel = 0;
+        LeftItemID = -1;
+        RightItemID = -1;
         JellyDew = 0;
         Berries = 0;
         SelectedShell = 0;
