@@ -120,6 +120,7 @@ public class PlaygroundAnimator : MonoBehaviour
         {
             if (_playgroundItem.IsPlayerInteractionRepeatable)
             {
+                PlayStr(_playgroundItem.PlayAnimationString);
                 nextAnim = NextAnimToPlay.Wait;
                 return;
             }
@@ -158,8 +159,8 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if(!_jellyWaitingForInput) return;
         currentBoredTimer = timeUntilJellyWillGetBored;
-        PlayStr(_playgroundItem.PlayAnimationString);
-        nextAnim = NextAnimToPlay.Wait;
+        //if(_playgroundItem.IsPlayerInteractionRepeatable) PlayStr(_playgroundItem.PlayAnimationString);
+        nextAnim = NextAnimToPlay.Play;
         _jellyWaitingForInput = false;
     }
 }

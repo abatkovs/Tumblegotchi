@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 3
   <ItemSprite>k__BackingField: {fileID: 1329661803, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <IdleAnimationString>k__BackingField: 
+  <IdleAnimationString>k__BackingField: SlideIdle
   <EnterAnimationString>k__BackingField: SlideEnter
   <WaitAnimationString>k__BackingField: SlideWaitPlayerInput
   <PlayAnimationString>k__BackingField: SlideDown
@@ -22,5 +22,5 @@ MonoBehaviour:
   <UpsetAnimationString>k__BackingField: SlideUpset
   <IsPlayerInteractionRequired>k__BackingField: 1
   <IsPlayerInteractionRepeatable>k__BackingField: 0
-  <TimeUntilJellyGetsBored>k__BackingField: 0
+  <TimeUntilJellyGetsBored>k__BackingField: 10
   <AwardedLove>k__BackingField: 1
