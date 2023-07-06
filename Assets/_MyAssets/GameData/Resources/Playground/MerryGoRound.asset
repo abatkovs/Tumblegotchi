@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 1
   <ItemSprite>k__BackingField: {fileID: -906049258, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <IdleAnimationString>k__BackingField: MeryGoRoundIdle
   <EnterAnimationString>k__BackingField: MerryGoRoundEnter
   <WaitAnimationString>k__BackingField: MerryGoRoundWaitPlayerInput
   <PlayAnimationString>k__BackingField: MerryGoRoundSpin
   <DizzyAnimationString>k__BackingField: MerryGoRoundDizzy
   <UpsetAnimationString>k__BackingField: MerryGoRoundUpset
+  <IsPlayerInteractionRequired>k__BackingField: 1
+  <IsPlayerInteractionRepeatable>k__BackingField: 1
+  <TimeUntilJellyGetsBored>k__BackingField: 10
+  <AwardedLove>k__BackingField: 1
