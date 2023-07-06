@@ -54,7 +54,7 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private SoundData refuseSound;
     [Space]
     [SerializeField] private int maxMood = 100;
-    [SerializeField] private int currentMood = 0;
+    [SerializeField] private int currentMood = 100;
     [SerializeField] private int moodIncreaseValue = 5;
     [SerializeField] private JellyMood moodState;
     [SerializeField] private int moodRange = 20;
@@ -284,6 +284,11 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(Sleeping());
     }
 
+    private void RandomJellySounds()
+    {
+        
+    }
+    
     public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)
     {
         evolutionData = newEvolutionData;
