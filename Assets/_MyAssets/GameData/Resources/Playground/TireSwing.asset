@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 6
   <ItemSprite>k__BackingField: {fileID: 1307519392, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <IdleAnimationString>k__BackingField: TireSwingIdle
   <EnterAnimationString>k__BackingField: TireSwingEnter
   <WaitAnimationString>k__BackingField: TireSwingWaitPlayerInput
   <PlayAnimationString>k__BackingField: TireSwingPush
   <DizzyAnimationString>k__BackingField: TireSwingJump
   <UpsetAnimationString>k__BackingField: TireSwingUpset
+  <IsPlayerInteractionRequired>k__BackingField: 1
+  <IsPlayerInteractionRepeatable>k__BackingField: 1
+  <TimeUntilJellyGetsBored>k__BackingField: 10
+  <AwardedLove>k__BackingField: 1

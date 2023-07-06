@@ -14,8 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 5
   <ItemSprite>k__BackingField: {fileID: 652962640, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
+  <IdleAnimationString>k__BackingField: TetherBallIdle
   <EnterAnimationString>k__BackingField: TetherballHit
   <WaitAnimationString>k__BackingField: TetherballWaitPlayerInput
   <PlayAnimationString>k__BackingField: TetherballLoop
   <DizzyAnimationString>k__BackingField: TetherballStop
   <UpsetAnimationString>k__BackingField: TetherballUpset
+  <IsPlayerInteractionRequired>k__BackingField: 1
+  <IsPlayerInteractionRepeatable>k__BackingField: 1
+  <TimeUntilJellyGetsBored>k__BackingField: 10
+  <AwardedLove>k__BackingField: 1
