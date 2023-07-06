@@ -52,7 +52,11 @@ public class PlaygroundAnimator : MonoBehaviour
         if (currentBoredTimer < 0)
         {
             nextAnim = NextAnimToPlay.Dizzy;
-            if(_jellyWaitingForInput) IncreaseLove();
+            if (_jellyWaitingForInput)
+            {
+                IncreaseLove();
+                IncreaseMood();
+            }
             _jellyWaitingForInput = false;
         }
     }
@@ -60,6 +64,11 @@ public class PlaygroundAnimator : MonoBehaviour
     private void IncreaseLove()
     {
         jellyStats.IncreaseLove(_playgroundItem.AwardedLove);
+    }
+
+    private void IncreaseMood()
+    {
+        jellyStats.ChangeMoodLevel(_playgroundItem.AwardedMood);
     }
 
     public void SetJellyBoredTimers(float time)
@@ -109,6 +118,7 @@ public class PlaygroundAnimator : MonoBehaviour
                 PlayStr(_playgroundItem.WaitAnimationString);
                 _jellyWaitingForInput = true;
                 IncreaseLove(); //If interacted with jelly increase love
+                IncreaseMood();
                 return;
             }
             PlayStr(_playgroundItem.WaitAnimationString);

@@ -18,7 +18,9 @@ namespace _MyAssets.Scripts.Playground
         [field: SerializeField] public bool IsPlayerInteractionRepeatable { get; private set; }
         [field: SerializeField] public float TimeUntilJellyGetsBored { get; private set; }
         [field: Space] 
+        [field: Header("Awarded stat points")]
         [field: SerializeField] public int AwardedLove { get; private set; } = 1;
+        [field: SerializeField] public int AwardedMood { get; private set; } = 5;
 
         private PlaygroundAnimator playgroundAnimator;
 
