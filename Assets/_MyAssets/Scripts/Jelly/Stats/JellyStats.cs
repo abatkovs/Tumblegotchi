@@ -23,6 +23,7 @@ public class JellyStats : MonoBehaviour
         Pet,
         Walking,
         Sleeping,
+        Singing,
     }
 
     [Serializable]
@@ -36,12 +37,12 @@ public class JellyStats : MonoBehaviour
 
     [SerializeField] private GameObject code; //game code
 
-    public JellyState CurrentJellyState { get; private set; }
+    [field: SerializeField]public JellyState CurrentJellyState { get; private set; }
     [SerializeField] private SpriteLibrary spriteLibrary;
     [SerializeField] private JellyEvolutionData evolutionData;
     [SerializeField] private JellyAge jellyAge;
     [Space] 
-    [Tooltip("How often diferent triggers can happen in seconds")]
+    [Tooltip("How often diferent triggers can happen in seconds value is multiplied for diferent events")]
     [SerializeField]private float timeIntervalForJellyTriggers = 10;
     [Space(25)]
     [SerializeField] private float maxHunger = 100;
@@ -73,7 +74,10 @@ public class JellyStats : MonoBehaviour
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
-
+    [Space] 
+    [SerializeField] private MoodData moodData;
+    [SerializeField] private float nextTimeForRandomSound = 100f;
+    [SerializeField] private AnimationEvents animationEvents;
     
 
 
@@ -93,6 +97,7 @@ public class JellyStats : MonoBehaviour
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
         _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love, loveLevel);
+        animationEvents.OnFinishSinging += AnimationEvents_OnFinishSinging;
     }
 
     private void OnEnable()
@@ -102,9 +107,15 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeSleepier());
     }
 
+    private void OnDestroy()
+    {
+        animationEvents.OnFinishSinging -= AnimationEvents_OnFinishSinging;
+    }
+
     private void Update()
     {
         CheckIfJellyCanEvolve();
+        RandomJellySounds();
     }
 
     /// <summary>
@@ -165,6 +176,13 @@ public class JellyStats : MonoBehaviour
             code.SetActive(true);
             return;
         }
+    }
+    
+    
+    private void AnimationEvents_OnFinishSinging()
+    {
+        CurrentJellyState = JellyState.Idle;
+        _animator.PlayIdleAnim();
     }
 
     private void EvolveJelly(SpriteLibraryAsset spriteLibraryAsset)
@@ -232,9 +250,9 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeHungrier());
         if (currentHunger < hungerThreshold)
         {
-            if (nextTimeHungerSoundCanTriggered < Time.time)
+            if (nextTimeHungerSoundCanTriggered < Time.realtimeSinceStartup)
             {
-                nextTimeHungerSoundCanTriggered = Time.time + timeIntervalForJellyTriggers;
+                nextTimeHungerSoundCanTriggered = Time.realtimeSinceStartup + UnityEngine.Random.Range(timeIntervalForJellyTriggers, timeIntervalForJellyTriggers * 2);
                 _soundManager.PlaySound(hungryCallSound);
             }
             
@@ -284,9 +302,28 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(Sleeping());
     }
 
+    //TODO: Check for bugs add randomness
     private void RandomJellySounds()
     {
-        
+        if(CurrentJellyState != JellyState.Idle) return;
+        if (nextTimeForRandomSound < Time.realtimeSinceStartup)
+        {
+            nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(moodData.MinRandomIntervalForAction, moodData.MaxRandomIntervalForAction);
+
+            foreach (var moodAction in moodData.JellyMoodActions)
+            {
+                int randomRange = UnityEngine.Random.Range(0, moodData.JellyMoodActions.Count * 2 - 1);
+                //Randomise actions a bit sometimes will not do anything
+                if (moodData.JellyMoodActions.Count > randomRange)
+                {
+                    CurrentJellyState = JellyState.Singing;
+                    SoundManager.Instance.PlaySound(moodAction.AudioClip);
+                    _animator.PlayAnim(moodAction.AnimationClip.name);
+                    return;
+                }
+                
+            }
+        }
     }
     
     public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)

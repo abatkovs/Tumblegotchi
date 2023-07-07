@@ -17,8 +17,8 @@ MonoBehaviour:
     loop: 0
   <SoundEvent>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1081961172
+      Data2: 1139144802
+      Data3: 1377434283
+      Data4: -198986761
+    Path: event:/BonusSong

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49cb25cdde79fcf43a1208f4f59fb72e, type: 3}
+  m_Name: Happy
+  m_EditorClassIdentifier: 
+  <MinRandomIntervalForAction>k__BackingField: 20
+  <MaxRandomIntervalForAction>k__BackingField: 40
+  <JellyMoodActions>k__BackingField:
+  - actionName: Bonus
+    <AnimationClip>k__BackingField: {fileID: 7400000, guid: b38f67ba04a39ed46963a6db7742b088, type: 2}
+    <AudioClip>k__BackingField: {fileID: 11400000, guid: 9da4437d15c69634bb77a51682804058, type: 2}
+  - actionName: Happy
+    <AnimationClip>k__BackingField: {fileID: 7400000, guid: 38bcaf5434eaa0d48a8894773fd59a17, type: 2}
+    <AudioClip>k__BackingField: {fileID: 11400000, guid: 8a174c50423fac94aa57325577ccd0b8, type: 2}

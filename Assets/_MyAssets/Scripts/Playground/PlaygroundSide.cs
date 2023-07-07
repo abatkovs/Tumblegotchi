@@ -24,6 +24,7 @@ public class PlaygroundSide : MonoBehaviour
 
     public void SetPlaygroundItem(PlaygroundItem item)
     {
+        if(item is null) return;
         spriteRenderer.sprite = item.ItemSprite;
         CurrentItem = item;
         item.SetPlaygroundAnimator(pgAnimator);

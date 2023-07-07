@@ -14,4 +14,9 @@ public class AnimatorCross : MonoBehaviour
     {
         _animator.CrossFade(animToPlay,0,0);
     }
+
+    public void PlayAnim(string animString)
+    {
+        _animator.CrossFade(animString, 0,0);
+    }
 }
