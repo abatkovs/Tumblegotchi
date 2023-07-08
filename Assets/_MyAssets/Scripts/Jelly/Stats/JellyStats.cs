@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Drawing;
 using _MyAssets.Scripts.Jelly;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -74,8 +75,10 @@ public class JellyStats : MonoBehaviour
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
+    [FormerlySerializedAs("moodData")]
     [Space] 
-    [SerializeField] private MoodData moodData;
+    [SerializeField] private MoodData happyMoodData;
+    [SerializeField] private MoodData sadMoodData;
     [SerializeField] private float nextTimeForRandomSound = 100f;
     [SerializeField] private AnimationEvents animationEvents;
     
@@ -308,20 +311,19 @@ public class JellyStats : MonoBehaviour
         if(CurrentJellyState != JellyState.Idle) return;
         if (nextTimeForRandomSound < Time.realtimeSinceStartup)
         {
-            nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(moodData.MinRandomIntervalForAction, moodData.MaxRandomIntervalForAction);
+            nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(happyMoodData.MinRandomIntervalForAction, happyMoodData.MaxRandomIntervalForAction);
 
-            foreach (var moodAction in moodData.JellyMoodActions)
+            foreach (var moodAction in happyMoodData.JellyMoodActions)
             {
-                int randomRange = UnityEngine.Random.Range(0, moodData.JellyMoodActions.Count * 2 - 1);
+                int randomRange = UnityEngine.Random.Range(0, happyMoodData.JellyMoodActions.Count * 2 - 1);
                 //Randomise actions a bit sometimes will not do anything
-                if (moodData.JellyMoodActions.Count > randomRange)
+                if (happyMoodData.JellyMoodActions.Count > randomRange)
                 {
                     CurrentJellyState = JellyState.Singing;
                     SoundManager.Instance.PlaySound(moodAction.AudioClip);
                     _animator.PlayAnim(moodAction.AnimationClip.name);
                     return;
                 }
-                
             }
         }
     }
