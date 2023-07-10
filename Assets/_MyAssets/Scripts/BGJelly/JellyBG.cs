@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using _MyAssets.Scripts.Jelly;
 using _MyAssets.Scripts.Playground;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.U2D.Animation;
 using Random = UnityEngine.Random;
 
 public class JellyBG : MonoBehaviour
@@ -26,7 +28,11 @@ public class JellyBG : MonoBehaviour
     [Tooltip("After what time jelly will go to play")]
     [SerializeField] private float playInterval = 20f;
     [SerializeField] private float currentPlayInterval;
-    
+    [Space]
+    [SerializeField] private SpriteLibrary spriteLibraryBG;
+    [SerializeField] private List<JellyEvolutionData> evolutionData;
+    [SerializeField] private JellyStats jellyStats;
+    [SerializeField] private JellyStats.JellyAge jellyAge;
     [SerializeField] private JellyBGAnimator animator;
     [SerializeField] private Animator handWaveAnimator;
 
@@ -38,6 +44,13 @@ public class JellyBG : MonoBehaviour
     
     private Vector2 _startingPosition = new Vector2(-0.71f, 0.01f);
     private bool _isWalkingBack; //walking back to foreground
+    
+    [Space] 
+    [SerializeField] private MoodData happyMoodData;
+    [SerializeField] private MoodData sadMoodData;
+    [SerializeField] private float nextTimeForRandomSound = 100f;
+    [SerializeField] private AnimationEvents animationEvents;
+    
 
     public event Action OnFinishMovingBack;
     
@@ -49,11 +62,48 @@ public class JellyBG : MonoBehaviour
         currentPlayInterval = playInterval;
     }
 
+    private void Start()
+    {
+        animationEvents.OnFinishSinging += AnimationEvents_OnFinishSinging;
+    }
+
+    private void OnDestroy()
+    {
+        animationEvents.OnFinishSinging -= AnimationEvents_OnFinishSinging;
+    }
+
     private void Update()
     {
         MoveJelly();
         CountdownForNewWalkPosition();
         CountDownForPlaying();
+    }
+
+    private void UpdateSpriteLibrary()
+    {
+        foreach (var evolution in evolutionData)
+        {
+            if (evolution.JellyType == jellyStats.GetJellyType())
+            {
+                switch (jellyStats.GetJellyAge())
+                {
+                    case JellyStats.JellyAge.Baby:
+                        SetLibraryAsset(evolution.Baby);
+                        break;
+                    case JellyStats.JellyAge.Young:
+                        SetLibraryAsset(evolution.Young);
+                        break;
+                    case JellyStats.JellyAge.Adult:
+                        SetLibraryAsset(evolution.Adult);
+                        break;
+                }
+            }
+        }
+    }
+
+    private void SetLibraryAsset(SpriteLibraryAsset asset)
+    {
+        spriteLibraryBG.spriteLibraryAsset = asset;
     }
 
     private void CountDownForPlaying()
@@ -150,11 +200,38 @@ public class JellyBG : MonoBehaviour
 
         return bestTarget;
     }
+    
+    //TODO: Check for bugs add randomness
+    private void RandomJellySounds()
+    {
+        if (nextTimeForRandomSound < Time.realtimeSinceStartup)
+        {
+            nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(happyMoodData.MinRandomIntervalForAction, happyMoodData.MaxRandomIntervalForAction);
+
+            foreach (var moodAction in happyMoodData.JellyMoodActions)
+            {
+                int randomRange = UnityEngine.Random.Range(0, happyMoodData.JellyMoodActions.Count * 2 - 1);
+                //Randomise actions a bit sometimes will not do anything
+                if (happyMoodData.JellyMoodActions.Count > randomRange)
+                {
+                    SoundManager.Instance.PlaySound(moodAction.AudioClip);
+                    animator.PlayAnim(moodAction.AnimationClip.name);
+                    return;
+                }
+            }
+        }
+    }
+    
+    private void AnimationEvents_OnFinishSinging()
+    {
+
+        animator.PlayIdleAnim();
+    }
 
     /// <summary>
     /// Enable bg jelly
     /// </summary>
-    public void ActivateJelly()
+    public void ActivateBGJelly()
     {
         state = BGJellyState.Walking;
         _isWalkingBack = false;
@@ -163,6 +240,7 @@ public class JellyBG : MonoBehaviour
         transform.localPosition = _startingPosition;
         SetRandomMovePosition();
         animator.PlayWalkAnim();
+        UpdateSpriteLibrary();
     }
     
     /// <summary>

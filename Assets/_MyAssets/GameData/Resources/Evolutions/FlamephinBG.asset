@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1ee6473b5c54bc4a20ba57e1f400bf5, type: 3}
-  m_Name: Flamephin
+  m_Name: FlamephinBG
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 0
+  <ID>k__BackingField: 10
   <JellyType>k__BackingField: 2
   <Egg>k__BackingField: {fileID: 7108339969198208228, guid: f0989960186c2e1429dd708f9ee98e5b, type: 3}
-  <Baby>k__BackingField: {fileID: 7108339969198208228, guid: a9e83d19257540d40ba5d6d0f5dab72e, type: 3}
-  <Young>k__BackingField: {fileID: 7108339969198208228, guid: 9042931c61fa10645aebfb4954559693, type: 3}
-  <Adult>k__BackingField: {fileID: 7108339969198208228, guid: b93e022a7c4a2ce4ba7c8cd7ff77c62c, type: 3}
+  <Baby>k__BackingField: {fileID: 7108339969198208228, guid: 52197bcb643141746a9ded21f761fdfb, type: 3}
+  <Young>k__BackingField: {fileID: 7108339969198208228, guid: b803bc3ffde11c84c9f784e923a3495f, type: 3}
+  <Adult>k__BackingField: {fileID: 7108339969198208228, guid: 31ac96666c506e74aa46d3f0b9c76d5e, type: 3}

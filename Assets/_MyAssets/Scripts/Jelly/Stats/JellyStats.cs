@@ -75,14 +75,6 @@ public class JellyStats : MonoBehaviour
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
-    [FormerlySerializedAs("moodData")]
-    [Space] 
-    [SerializeField] private MoodData happyMoodData;
-    [SerializeField] private MoodData sadMoodData;
-    [SerializeField] private float nextTimeForRandomSound = 100f;
-    [SerializeField] private AnimationEvents animationEvents;
-    
-
 
     public bool IsJellyHungry { get; private set; }
     public bool IsJellyAsleep { get; private set; }
@@ -100,7 +92,6 @@ public class JellyStats : MonoBehaviour
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
         _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love, loveLevel);
-        animationEvents.OnFinishSinging += AnimationEvents_OnFinishSinging;
     }
 
     private void OnEnable()
@@ -110,15 +101,9 @@ public class JellyStats : MonoBehaviour
         StartCoroutine(BecomeSleepier());
     }
 
-    private void OnDestroy()
-    {
-        animationEvents.OnFinishSinging -= AnimationEvents_OnFinishSinging;
-    }
-
     private void Update()
     {
         CheckIfJellyCanEvolve();
-        RandomJellySounds();
     }
 
     /// <summary>
@@ -181,13 +166,6 @@ public class JellyStats : MonoBehaviour
         }
     }
     
-    
-    private void AnimationEvents_OnFinishSinging()
-    {
-        CurrentJellyState = JellyState.Idle;
-        _animator.PlayIdleAnim();
-    }
-
     private void EvolveJelly(SpriteLibraryAsset spriteLibraryAsset)
     {
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset;
@@ -304,29 +282,6 @@ public class JellyStats : MonoBehaviour
         CurrentJellyState = JellyState.Sleeping;
         StartCoroutine(Sleeping());
     }
-
-    //TODO: Check for bugs add randomness
-    private void RandomJellySounds()
-    {
-        if(CurrentJellyState != JellyState.Idle) return;
-        if (nextTimeForRandomSound < Time.realtimeSinceStartup)
-        {
-            nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(happyMoodData.MinRandomIntervalForAction, happyMoodData.MaxRandomIntervalForAction);
-
-            foreach (var moodAction in happyMoodData.JellyMoodActions)
-            {
-                int randomRange = UnityEngine.Random.Range(0, happyMoodData.JellyMoodActions.Count * 2 - 1);
-                //Randomise actions a bit sometimes will not do anything
-                if (happyMoodData.JellyMoodActions.Count > randomRange)
-                {
-                    CurrentJellyState = JellyState.Singing;
-                    SoundManager.Instance.PlaySound(moodAction.AudioClip);
-                    _animator.PlayAnim(moodAction.AnimationClip.name);
-                    return;
-                }
-            }
-        }
-    }
     
     public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)
     {
@@ -379,6 +334,11 @@ public class JellyStats : MonoBehaviour
     public JellyAge GetJellyAge()
     {
         return jellyAge;
+    }
+
+    public JellyType GetJellyType()
+    {
+        return evolutionData.JellyType;
     }
 }
 

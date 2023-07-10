@@ -6513,6 +6513,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1611517790679506852, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
   m_PrefabInstance: {fileID: 7475371371456169452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800580668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5544470540164211567, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+  m_PrefabInstance: {fileID: 7475371371456169452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc1393d89df98343918ba7e39539ebc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1821707974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8747,6 +8758,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+      propertyPath: jellyStats
+      value: 
+      objectReference: {fileID: 1600596700636829915}
+    - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: moveToTarget
       value: 
       objectReference: {fileID: 1515500877}
@@ -8754,6 +8769,10 @@ PrefabInstance:
       propertyPath: _spriteRenderer
       value: 
       objectReference: {fileID: 1800580665}
+    - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+      propertyPath: animationEvents
+      value: 
+      objectReference: {fileID: 1800580668}
     - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: handWaveAnimator
       value: 

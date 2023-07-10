@@ -16,8 +16,8 @@ MonoBehaviour:
   <MaxRandomIntervalForAction>k__BackingField: 40
   <JellyMoodActions>k__BackingField:
   - actionName: Bonus
-    <AnimationClip>k__BackingField: {fileID: 7400000, guid: b38f67ba04a39ed46963a6db7742b088, type: 2}
+    <AnimationClip>k__BackingField: {fileID: 7400000, guid: a7683869368f7414ab61d691c7ac9d3a, type: 2}
     <AudioClip>k__BackingField: {fileID: 11400000, guid: 9da4437d15c69634bb77a51682804058, type: 2}
   - actionName: Happy
-    <AnimationClip>k__BackingField: {fileID: 7400000, guid: 38bcaf5434eaa0d48a8894773fd59a17, type: 2}
+    <AnimationClip>k__BackingField: {fileID: 7400000, guid: 6341ee84ac2a7134f8f2b6e09b182a0a, type: 2}
     <AudioClip>k__BackingField: {fileID: 11400000, guid: 8a174c50423fac94aa57325577ccd0b8, type: 2}

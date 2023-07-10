@@ -89,7 +89,7 @@ public class PlaygroundAnimator : MonoBehaviour
         {
             //spriteRenderer.sprite = sprite;
             PlayStr(_playgroundItem.IdleAnimationString);
-            JellyBG.ActivateJelly();
+            JellyBG.ActivateBGJelly();
             _lastAnim = false;
             //_animator.enabled = false;
             nextAnim = NextAnimToPlay.None;

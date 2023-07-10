@@ -7,10 +7,18 @@ namespace _MyAssets.Scripts.Jelly
     public class JellyEvolutionData : ScriptableObject
     {
         [field: SerializeField] public int ID { get; private set; }
+        [field: SerializeField] public JellyType JellyType { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Egg { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Baby { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Young { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Adult { get; private set; }
         
+    }
+
+    public enum JellyType
+    {
+        Tumble,
+        Petra,
+        Flamephin,
     }
 }

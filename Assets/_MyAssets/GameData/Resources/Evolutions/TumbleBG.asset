@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ee6473b5c54bc4a20ba57e1f400bf5, type: 3}
+  m_Name: TumbleBG
+  m_EditorClassIdentifier: 
+  <ID>k__BackingField: 12
+  <JellyType>k__BackingField: 0
+  <Egg>k__BackingField: {fileID: 7108339969198208228, guid: 18234dd0ed629d14bbbd7e50db913033, type: 3}
+  <Baby>k__BackingField: {fileID: 7108339969198208228, guid: 52197bcb643141746a9ded21f761fdfb, type: 3}
+  <Young>k__BackingField: {fileID: 7108339969198208228, guid: e24845cb3bc73d5488518df8e7c2bc18, type: 3}
+  <Adult>k__BackingField: {fileID: 7108339969198208228, guid: be2b385eaac884e4981c77399f1459d1, type: 3}

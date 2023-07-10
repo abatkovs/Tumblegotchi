@@ -25,7 +25,7 @@ public class Jelly : MonoBehaviour
 
     public void ActivateBGJelly()
     {
-        bgJelly.ActivateJelly();
+        bgJelly.ActivateBGJelly();
     }
 
     public void MoveBGJellyToForeground()
