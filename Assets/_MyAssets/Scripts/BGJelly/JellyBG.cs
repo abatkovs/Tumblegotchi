@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 
 public class JellyBG : MonoBehaviour
 {
-    public enum BGJellyState
+    private enum BGJellyState
     {
         Inactive,
         Idle,
@@ -209,18 +209,25 @@ public class JellyBG : MonoBehaviour
         if (nextTimeForRandomSound < Time.realtimeSinceStartup)
         {
             nextTimeForRandomSound = Time.realtimeSinceStartup + UnityEngine.Random.Range(happyMoodData.MinRandomIntervalForAction, happyMoodData.MaxRandomIntervalForAction);
+            
+            if(jellyStats.GetMoodLevel() >= jellyStats.GetMoodThreshold()) JellyMoodSounds(happyMoodData.JellyMoodActions);
+            if (jellyStats.GetMoodLevel() < jellyStats.GetMoodThreshold()) JellyMoodSounds(sadMoodData.JellyMoodActions);
 
-            foreach (var moodAction in happyMoodData.JellyMoodActions)
+        }
+    }
+
+    private void JellyMoodSounds(List<JellyMoodActions> moodActions)
+    {
+        foreach (var moodAction in moodActions)
+        {
+            int randomRange = UnityEngine.Random.Range(0, happyMoodData.JellyMoodActions.Count * 2 - 1);
+            //Randomise actions a bit sometimes will not do anything
+            if (happyMoodData.JellyMoodActions.Count > randomRange)
             {
-                int randomRange = UnityEngine.Random.Range(0, happyMoodData.JellyMoodActions.Count * 2 - 1);
-                //Randomise actions a bit sometimes will not do anything
-                if (happyMoodData.JellyMoodActions.Count > randomRange)
-                {
-                    state = BGJellyState.Singing;
-                    SoundManager.Instance.PlaySound(moodAction.AudioClip);
-                    animator.PlayAnim(moodAction.AnimationClip.name);
-                    return;
-                }
+                state = BGJellyState.Singing;
+                SoundManager.Instance.PlaySound(moodAction.AudioClip);
+                animator.PlayAnim(moodAction.AnimationClip.name);
+                return;
             }
         }
     }

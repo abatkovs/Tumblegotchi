@@ -8705,6 +8705,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1870538057}
     m_Modifications:
+    - target: {fileID: 1611517790679506852, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1019579918, guid: 145bd0c39aa2de44ab3aa0c3521ad114, type: 3}
     - target: {fileID: 1964941856088572194, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: m_Name
       value: BGJelly
@@ -8761,6 +8765,10 @@ PrefabInstance:
       propertyPath: jellyStats
       value: 
       objectReference: {fileID: 1600596700636829915}
+    - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
+      propertyPath: sadMoodData
+      value: 
+      objectReference: {fileID: 11400000, guid: 803f94969f4493347af0b7debc7a8afe, type: 2}
     - target: {fileID: 3217457147731737396, guid: 334815d79ceaf0c46ac4440c7086e689, type: 3}
       propertyPath: moveToTarget
       value: 

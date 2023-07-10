@@ -60,6 +60,7 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private int moodIncreaseValue = 5;
     [SerializeField] private JellyMood moodState;
     [SerializeField] private int moodRange = 20;
+    [SerializeField] private int moodThreshold = 50;
     [Space]
     [SerializeField] private float sleepyMax = 100;
     [SerializeField] private float sleepThreshold = 60; //goes to sleep at this value
@@ -339,6 +340,16 @@ public class JellyStats : MonoBehaviour
     public JellyType GetJellyType()
     {
         return evolutionData.JellyType;
+    }
+
+    public int GetMoodLevel()
+    {
+        return currentMood;
+    }
+
+    public int GetMoodThreshold()
+    {
+        return moodThreshold;
     }
 }
 
