@@ -12,9 +12,11 @@ public class JellyBG : MonoBehaviour
 {
     public enum BGJellyState
     {
+        Inactive,
         Idle,
         Walking,
         Playing,
+        Singing
     }
 
     [SerializeField] private float moveSpeed = 1f;
@@ -75,6 +77,8 @@ public class JellyBG : MonoBehaviour
     private void Update()
     {
         MoveJelly();
+        if (state != BGJellyState.Idle) return;
+        RandomJellySounds();
         CountdownForNewWalkPosition();
         CountDownForPlaying();
     }
@@ -108,7 +112,6 @@ public class JellyBG : MonoBehaviour
 
     private void CountDownForPlaying()
     {
-        if(state != BGJellyState.Idle) return;
         currentPlayInterval -= Time.deltaTime;
         if (currentPlayInterval <= 0)
         {
@@ -119,7 +122,6 @@ public class JellyBG : MonoBehaviour
 
     private void CountdownForNewWalkPosition()
     {
-        if(state != BGJellyState.Idle) return;
         currentWalkInterval -= Time.deltaTime;
         if (currentWalkInterval < 0)
         {
@@ -214,6 +216,7 @@ public class JellyBG : MonoBehaviour
                 //Randomise actions a bit sometimes will not do anything
                 if (happyMoodData.JellyMoodActions.Count > randomRange)
                 {
+                    state = BGJellyState.Singing;
                     SoundManager.Instance.PlaySound(moodAction.AudioClip);
                     animator.PlayAnim(moodAction.AnimationClip.name);
                     return;
@@ -224,7 +227,7 @@ public class JellyBG : MonoBehaviour
     
     private void AnimationEvents_OnFinishSinging()
     {
-
+        state = BGJellyState.Idle;
         animator.PlayIdleAnim();
     }
 
