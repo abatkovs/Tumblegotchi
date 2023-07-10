@@ -46,6 +46,7 @@ public class AudioLevels : MonoBehaviour
         {
             pips[i].enabled = true;
         }
+        SaveManager.Instance.SaveData.SoundLevel = currentSoundLevel;
     }
     
     public void StartCountdown()
@@ -57,5 +58,10 @@ public class AudioLevels : MonoBehaviour
     private void CountDownTimer()
     {
         timer -= Time.deltaTime;
+    }
+
+    public void LoadAudioLevels()
+    {
+        SoundManager.Instance.ChangeAudioLevel(SaveManager.Instance.SaveData.SoundLevel);
     }
 }

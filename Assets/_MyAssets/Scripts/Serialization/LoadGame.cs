@@ -24,6 +24,8 @@ public class LoadGame : MonoBehaviour
     [SerializeField] private JellyStats jellyStats;
     [Space]
     [SerializeField] private Playground playground;
+    [Space] 
+    [SerializeField] private AudioLevels audioLevels;
     
     private void Start()
     {
@@ -47,6 +49,7 @@ public class LoadGame : MonoBehaviour
         LoadShopItems();
         LoadJellyStats();
         LoadPlaygroundItems();
+        LoadAudioLevels();
     }
 
     /// <summary>
@@ -115,7 +118,12 @@ public class LoadGame : MonoBehaviour
 
     private void LoadJellyStats()
     {
-        SaveManager saveManager = SaveManager.Instance;
         jellyStats.LoadStats();
+    }
+    
+    
+    private void LoadAudioLevels()
+    {
+        audioLevels.LoadAudioLevels();
     }
 }

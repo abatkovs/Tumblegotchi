@@ -26,6 +26,7 @@ public class DataSerializer
         SelectedEvolution = 0;
         SelectedBush = 0;
         UnlockedPlants = 0;
+        SoundLevel = 2;
         ShopItems = new List<int>(8)
         {
             0,0,0,0,0,0,0,0,
@@ -54,13 +55,6 @@ public class DataSerializer
     [Key(12)] public int UnlockedPlants;
     //Shop
     [Key(13)] public List<int> ShopItems;
-    
-    /*[Key(13)] public bool TetherBall;
-    [Key(14)] public bool TireSwing;
-    [Key(15)] public bool SwingSet;
-    [Key(16)] public bool Slide;
-    [Key(17)] public bool Ball;
-    [Key(18)] public bool SeeSaw;
-    [Key(19)] public bool MerryGoRound;
-    [Key(20)] public int Sapling;*/
+
+    [Key(14)] public int SoundLevel;
 }
