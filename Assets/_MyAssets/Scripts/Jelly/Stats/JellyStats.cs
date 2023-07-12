@@ -126,12 +126,16 @@ public class JellyStats : MonoBehaviour
         }
         if (love >= loveNeededForEvolution)
         {
-
-            love = 0;
-            loveLevel++;
-            SaveManager.Instance.UpdateJellyStats(_savedStats);
+            LevelUpJelly();
             StartEvolving();
         }
+    }
+
+    private void LevelUpJelly()
+    {
+        love = 0;
+        loveLevel++;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
 
     private void StartEvolving()
