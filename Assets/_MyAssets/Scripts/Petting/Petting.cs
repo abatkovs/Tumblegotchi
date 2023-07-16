@@ -44,13 +44,12 @@ public class Petting : MonoBehaviour
             SoundManager.Instance.PlaySound(cantPetNowSound);
             jellyStats.ChangeMoodLevel(moodDecreaseAmount);
             jellyStats.WakeUpJelly();
+            PetJelly();
             return;
         }
         if (CurrentPettingState == PettingState.Idle)
         {
-            CurrentPettingState = PettingState.InitPetting;
-            handItem.enabled = true;
-            _gameManager.ToggleSelectionButton(true);
+            PetJelly();
             return;
         }
 
@@ -67,6 +66,13 @@ public class Petting : MonoBehaviour
         {
             shouldStartPettingAgain = true;
         }
+    }
+
+    private void PetJelly()
+    {
+        CurrentPettingState = PettingState.InitPetting;
+        handItem.enabled = true;
+        _gameManager.ToggleSelectionButton(true);
     }
 
     public void ContinuePetting()
