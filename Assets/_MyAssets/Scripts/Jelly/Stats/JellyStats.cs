@@ -90,7 +90,8 @@ public class JellyStats : MonoBehaviour
 
     private SavedJellyStats _savedStats;
 
-    public event Action<JellyMood> OnMoodChange; 
+    public event Action<JellyMood> OnMoodChange;
+    public event Action<bool> OnJellyHideToggleFace;
     
     private void Start()
     {
@@ -173,6 +174,7 @@ public class JellyStats : MonoBehaviour
     //TODO: add animations/sounds 
     private void StartSpawningEgg()
     {
+        OnJellyHideToggleFace?.Invoke(true);
         _animator.PlayAdultWalkOffAnim();
     }
 
@@ -358,6 +360,7 @@ public class JellyStats : MonoBehaviour
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
         IsJellyAsleep = true;
         _animator.PlaySleepAnim();
+        OnJellyHideToggleFace?.Invoke(true);
         CurrentJellyState = JellyState.Sleeping;
         StartCoroutine(Sleeping());
     }
@@ -365,6 +368,7 @@ public class JellyStats : MonoBehaviour
     public void WakeUpJelly()
     {
         CurrentJellyState = JellyState.Idle;
+        OnJellyHideToggleFace?.Invoke(false);
         StartCoroutine(BecomeSleepier());
     }
     
