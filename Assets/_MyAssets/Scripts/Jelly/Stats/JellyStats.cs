@@ -440,6 +440,12 @@ public class JellyStats : MonoBehaviour
         return moodThreshold;
     }
 
+    public bool IsJellySleepy()
+    {
+        return currentSleepy >= sleepyMax;
+    }
+
+
     [Button]
     private void IncreaseMood()
     {
@@ -450,6 +456,11 @@ public class JellyStats : MonoBehaviour
     private void DecreaseMood()
     {
         ChangeMoodLevel(moodDecreaseValue);
+    }
+
+    public void GoToSleep()
+    {
+        StartCoroutine(Sleeping());
     }
 }
 

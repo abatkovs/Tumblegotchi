@@ -78,9 +78,18 @@ public class JellyBG : MonoBehaviour
     {
         MoveJelly();
         if (state != BGJellyState.Idle) return;
+        CheckHowSleepyIsJelly();
         RandomJellySounds();
         CountdownForNewWalkPosition();
         CountDownForPlaying();
+    }
+
+    private void CheckHowSleepyIsJelly()
+    {
+        if (jellyStats.IsJellySleepy())
+        {
+            WalkBackToForeground();
+        }
     }
 
     private void UpdateSpriteLibrary()

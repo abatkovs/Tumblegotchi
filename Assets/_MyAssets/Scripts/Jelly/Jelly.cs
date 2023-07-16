@@ -7,6 +7,7 @@ using UnityEngine.U2D.Animation;
 public class Jelly : MonoBehaviour
 {
     [SerializeField] private JellyBG bgJelly;
+    [SerializeField] private JellyStats jellyStats;
 
     private GameManager _gameManager;
     private JellyAnimator _animator;
@@ -23,7 +24,6 @@ public class Jelly : MonoBehaviour
 
     private void BgJelly_OnOnFinishMovingBack()
     {
-        OnFinishComingBack?.Invoke();
         _animator.PlayWalkOnScreenAnim();
     }
 
@@ -47,5 +47,10 @@ public class Jelly : MonoBehaviour
         _gameManager.ToggleSelectionButton(false);
         _gameManager.SwitchActiveScene(ActiveScene.Main);
         _animator.PlayIdleAnim();
+        OnFinishComingBack?.Invoke();
+        if (jellyStats.IsJellySleepy())
+        {
+            jellyStats.GoToSleep();
+        }
     }
 }

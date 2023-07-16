@@ -34,7 +34,7 @@ public class JellyFace : MonoBehaviour
 
     private void JellyStatsOnOnJellyHideToggleFace(bool value)
     {
-        spriteRenderer.enabled = value;
+        spriteRenderer.enabled = !value;
     }
 
     private void JellyStatsOnOnMoodChange(JellyStats.JellyMood jellyMood)
