@@ -7289,6 +7289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 589349345}
+  saveAsJson: 0
 --- !u!114 &1944250698
 MonoBehaviour:
   m_ObjectHideFlags: 0

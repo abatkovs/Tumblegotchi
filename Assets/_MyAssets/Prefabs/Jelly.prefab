@@ -210,7 +210,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4274300989299060937}
   - component: {fileID: 1578767222957517464}
-  - component: {fileID: 3976199433867722746}
   m_Layer: 0
   m_Name: JellyFace
   m_TagString: Untagged
@@ -240,7 +239,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2206002189432812267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -285,31 +284,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
---- !u!114 &3976199433867722746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206002189432812267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1620ed8d67e4354f98054ceca822a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentJellyFace: 2
-  jellyFaces:
-  - State: 0
-    Face: {fileID: 0}
-  - State: 1
-    Face: {fileID: 1981167111, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
-  - State: 2
-    Face: {fileID: 242832104, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
-  - State: 3
-    Face: {fileID: -904700462, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
-  - State: 4
-    Face: {fileID: -1134211593, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
-  spriteRenderer: {fileID: 1578767222957517464}
 --- !u!1 &2424544876427782344
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CategoryHash: 0.0003765799
-  m_labelHash: 4.2955134e-18
+  m_labelHash: 1.3971405e-28
   m_SpriteKey: 0
   m_SpriteHash: 939498561
 --- !u!1 &3844043494754726142
@@ -618,6 +592,7 @@ Transform:
   - {fileID: 2303495086874928690}
   - {fileID: 7409741253706831305}
   - {fileID: 4274300989299060937}
+  - {fileID: 8598742375829915148}
   - {fileID: 2265036223283241095}
   - {fileID: 2145871613029090313}
   - {fileID: 4505005863707136832}
@@ -692,8 +667,8 @@ MonoBehaviour:
   maxMood: 100
   currentMood: 80
   moodIncreaseValue: 5
-  moodState: 4
-  moodRange: 20
+  moodDecreaseValue: -5
+  moodState: 1
   moodThreshold: 50
   sleepyMax: 100
   sleepThreshold: 100
@@ -977,6 +952,117 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 6762979778866012468}
+--- !u!1 &7577519606539961701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8598742375829915148}
+  - component: {fileID: 8147327721582283962}
+  - component: {fileID: 9191787902074268737}
+  m_Layer: 0
+  m_Name: IdleFaces
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8598742375829915148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577519606539961701}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1140230683979179784}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8147327721582283962
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577519606539961701}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 101
+  m_Sprite: {fileID: 242832104, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 1
+  m_SpriteSortPoint: 0
+--- !u!114 &9191787902074268737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577519606539961701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1620ed8d67e4354f98054ceca822a53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jellyStats: {fileID: 8743874594446733695}
+  currentJellyFace: 2
+  jellyFaces:
+  - State: 0
+    Face: {fileID: 0}
+  - State: 1
+    Face: {fileID: 1981167111, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
+  - State: 2
+    Face: {fileID: 242832104, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
+  - State: 3
+    Face: {fileID: -904700462, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
+  - State: 4
+    Face: {fileID: -1134211593, guid: adab6ae53809e594f8e5a4f7e720e7e4, type: 3}
+  spriteRenderer: {fileID: 8147327721582283962}
 --- !u!1 &8089834930404508477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1141,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.28, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0

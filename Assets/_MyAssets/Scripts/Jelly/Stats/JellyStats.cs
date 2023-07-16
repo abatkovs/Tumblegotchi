@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _MyAssets.Scripts.Jelly;
+using AnnulusGames.LucidTools.Inspector;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.U2D.Animation;
@@ -10,11 +11,10 @@ public class JellyStats : MonoBehaviour
 {
     public enum JellyMood
     {
-        Angry,
         Sad,
         Neutral,
+        Smiling,
         Happy,
-        Happier,
     }
 
     public enum JellyState
@@ -59,8 +59,8 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private int maxMood = 100;
     [SerializeField] private int currentMood = 100;
     [SerializeField] private int moodIncreaseValue = 5;
+    [SerializeField] private int moodDecreaseValue = -5;
     [SerializeField] private JellyMood moodState;
-    [SerializeField] private int moodRange = 20;
     [SerializeField] private int moodThreshold = 50;
     [Space]
     [SerializeField] private float sleepyMax = 100;
@@ -89,6 +89,8 @@ public class JellyStats : MonoBehaviour
     private JellyAnimator _animator;
 
     private SavedJellyStats _savedStats;
+
+    public event Action<JellyMood> OnMoodChange; 
     
     private void Start()
     {
@@ -379,13 +381,13 @@ public class JellyStats : MonoBehaviour
     {
         var moodLevel = 0;
         currentMood = Mathf.Clamp(currentMood + amount, 0, maxMood);
-
-        _savedStats.CurrentMood = currentMood;
-        SaveManager.Instance.UpdateJellyStats(_savedStats);
-
-        moodLevel = currentMood / moodRange;
+        
+        moodLevel = currentMood / 25;
 
         moodState = (JellyMood)moodLevel;
+        OnMoodChange?.Invoke(moodState);
+        _savedStats.CurrentMood = currentMood;
+        SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
 
     public void IncreaseLove(float amount)
@@ -432,6 +434,18 @@ public class JellyStats : MonoBehaviour
     public int GetMoodThreshold()
     {
         return moodThreshold;
+    }
+
+    [Button]
+    private void IncreaseMood()
+    {
+        ChangeMoodLevel(moodIncreaseValue);
+    }
+
+    [Button]
+    private void DecreaseMood()
+    {
+        ChangeMoodLevel(moodDecreaseValue);
     }
 }
 

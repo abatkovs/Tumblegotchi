@@ -5,7 +5,7 @@ using UnityEngine;
 public class JellyFace : MonoBehaviour
 {
 
-    
+    [SerializeField] private JellyStats jellyStats;
     [SerializeField] private FaceState currentJellyFace;
     [SerializeField] private List<JellyFaces> jellyFaces;
 
@@ -13,8 +13,31 @@ public class JellyFace : MonoBehaviour
 
     private void Awake()
     {
+        jellyStats.OnMoodChange += JellyStatsOnOnMoodChange;
         if(spriteRenderer != null) return;
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void JellyStatsOnOnMoodChange(JellyStats.JellyMood jellyMood)
+    {
+        switch (jellyMood)
+        {
+            case JellyStats.JellyMood.Sad:
+                ChangeJellyFace(FaceState.Sad);
+                break;
+            case JellyStats.JellyMood.Smiling:
+                ChangeJellyFace(FaceState.Smiling);
+                break;
+            case JellyStats.JellyMood.Neutral:
+                ChangeJellyFace(FaceState.Neutral);
+                break;
+            case JellyStats.JellyMood.Happy:
+                ChangeJellyFace(FaceState.Happy);
+                break;
+            default:
+                ChangeJellyFace(FaceState.Happy);
+                break;
+        }
     }
 
     public void ChangeJellyFace(FaceState newFace)
