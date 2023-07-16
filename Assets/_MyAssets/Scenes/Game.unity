@@ -4917,7 +4917,7 @@ MonoBehaviour:
   - {fileID: 878344074}
   - {fileID: 336653654}
   - {fileID: 892840443}
-  currentSoundLevel: 5
+  currentSoundLevel: 0
   visibilityTimer: 1
   timer: 0
 --- !u!1 &1515500876

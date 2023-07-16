@@ -19,15 +19,21 @@ public class SoundManager : MonoBehaviour
 
     [SerializeField] private string audioBusPath = "bus:/SFX";
     private Bus _fmodAudioBus;
-    private int _selectedSoundLevel = 5;
+    private int _selectedSoundLevel;
+    private bool _loaded;
     
     private void Awake()
     {
         Instance = this;
         _fmodAudioBus = RuntimeManager.GetBus(audioBusPath);
-        ChangeAudioLevel(_selectedSoundLevel);
     }
-    
+
+    private void Start()
+    {
+        if(_loaded) return;
+        ChangeAudioLevel(5);
+    }
+
     private void PlayAudioFromSource(StudioEventEmitter eventEmiter, SoundData soundToPlay)
     {
         RuntimeManager.PlayOneShot(soundToPlay.SoundEvent);
@@ -49,7 +55,11 @@ public class SoundManager : MonoBehaviour
         audioLevels.ChangeSoundLevel(amount);
         _fmodAudioBus.setVolume(mixerSoundLevels[_selectedSoundLevel].soundLevel);
     }
-    
+
+    public void Load()
+    {
+        _loaded = true;
+    }
 }
 
 [Serializable]

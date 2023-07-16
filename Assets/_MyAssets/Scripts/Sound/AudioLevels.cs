@@ -47,6 +47,7 @@ public class AudioLevels : MonoBehaviour
             pips[i].enabled = true;
         }
         SaveManager.Instance.SaveData.SoundLevel = currentSoundLevel;
+        SaveManager.Instance.SaveGame();
     }
     
     public void StartCountdown()
@@ -62,6 +63,8 @@ public class AudioLevels : MonoBehaviour
 
     public void LoadAudioLevels()
     {
+        currentSoundLevel = 0;
         SoundManager.Instance.ChangeAudioLevel(SaveManager.Instance.SaveData.SoundLevel);
+        SoundManager.Instance.Load();
     }
 }
