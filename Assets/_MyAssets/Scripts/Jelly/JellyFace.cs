@@ -14,8 +14,14 @@ public class JellyFace : MonoBehaviour
     private void Awake()
     {
         jellyStats.OnMoodChange += JellyStatsOnOnMoodChange;
+        jellyStats.OnJellyHideToggleFace += JellyStatsOnOnJellyHideToggleFace;
         if(spriteRenderer != null) return;
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void JellyStatsOnOnJellyHideToggleFace(bool value)
+    {
+        spriteRenderer.enabled = value;
     }
 
     private void JellyStatsOnOnMoodChange(JellyStats.JellyMood jellyMood)
