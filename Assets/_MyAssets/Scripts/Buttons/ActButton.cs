@@ -12,6 +12,7 @@ public class ActButton : BaseActionButton
     [SerializeField] private Shop shop;
     [SerializeField] private SoundData selectionSound;
     [SerializeField] private Playground playground;
+    [SerializeField] private Intro intro;
     
     private GameManager _gameManager;
     private SoundManager _soundManager;
@@ -25,6 +26,11 @@ public class ActButton : BaseActionButton
 
     protected override void Action()
     {
+        if (intro.IntroPlaying)
+        {
+            intro.FinishIntro();
+            return;
+        }
         if(GameManager.Instance.LockButtons) return;
         
         var selectedMenuOption = _gameManager.CurrentlySelectedMenuOption;

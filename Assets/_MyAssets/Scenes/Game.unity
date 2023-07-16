@@ -399,7 +399,7 @@ Transform:
   - {fileID: 260154480}
   - {fileID: 174206616}
   - {fileID: 50026394}
-  m_Father: {fileID: 219271994}
+  m_Father: {fileID: 2034420222}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &88535923
@@ -1211,9 +1211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 589349344}
   - {fileID: 1156393840}
-  - {fileID: 86219346}
   - {fileID: 1603575280}
   - {fileID: 1557104741}
   m_Father: {fileID: 435116751}
@@ -2170,6 +2168,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 589349344}
   - {fileID: 751431902}
   - {fileID: 1981871052}
   - {fileID: 2034420222}
@@ -2469,7 +2468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 219271994}
+  m_Father: {fileID: 435116751}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &589349345
@@ -2486,7 +2485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Playground>k__BackingField: {fileID: 1870538059}
   <LockButtons>k__BackingField: 0
-  <LockSelectionButton>k__BackingField: 0
+  <LockSelectionButton>k__BackingField: 1
   <CurrentlySelectedMenuOption>k__BackingField: 1
   <CurrentlyActiveScene>k__BackingField: 0
   <Berries>k__BackingField: 5
@@ -7703,7 +7702,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721642cd58cf5994f8bfd5aa76aa5f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <IntroPlaying>k__BackingField: 1
   game: {fileID: 219271993}
+  eventEmitter: {fileID: 2022012468}
 --- !u!95 &2022012466
 Animator:
   serializedVersion: 5
@@ -7855,6 +7856,7 @@ Transform:
   - {fileID: 1882611565}
   - {fileID: 1686541706}
   - {fileID: 195065616}
+  - {fileID: 86219346}
   m_Father: {fileID: 435116751}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8266,6 +8268,7 @@ MonoBehaviour:
   shop: {fileID: 376832085}
   selectionSound: {fileID: 11400000, guid: 91e650d7febe38d499b47ac807391741, type: 2}
   playground: {fileID: 1870538059}
+  intro: {fileID: 2022012465}
 --- !u!1001 &1600596700636829910
 PrefabInstance:
   m_ObjectHideFlags: 0

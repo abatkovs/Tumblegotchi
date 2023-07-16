@@ -33,8 +33,8 @@ public class LoadGame : MonoBehaviour
         if (SaveManager.Instance.SaveFileExists)
         {
             gameScene.SetActive(true);
-            tamagotchiScene.SetActive(true);
-            introScene.SetActive(false);
+            //tamagotchiScene.SetActive(true);
+            //introScene.SetActive(false);
             SetLoadData();
         }
         if(!SaveManager.Instance.SaveFileExists) selectionScene.SetActive(true);
