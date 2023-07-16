@@ -10,6 +10,7 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private bool saveAsJson; //TODO: enable json toggle
     public DataSerializer SaveData { get; private set; }
     public bool SaveFileExists { get; private set; }
 
@@ -32,7 +33,16 @@ public class SaveManager : MonoBehaviour
         byte[] bytes = MessagePackSerializer.Serialize<DataSerializer>(SaveData);
         var json = MessagePackSerializer.ConvertToJson(bytes);
         var file = OpenSaveFile(false);
-        file.Write(bytes);
+        if (saveAsJson)
+        {
+            using StreamWriter writer = new StreamWriter(file);
+            writer.Write(json);
+        }
+        else
+        {
+            file.Write(bytes);
+        }
+        
         file.Close();
     }
 

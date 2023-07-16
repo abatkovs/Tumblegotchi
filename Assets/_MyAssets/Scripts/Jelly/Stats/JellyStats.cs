@@ -212,21 +212,21 @@ public class JellyStats : MonoBehaviour
         CurrentJellyState = JellyState.Idle;
         if (jellyAge == JellyAge.Egg)
         {
-            EvolveJelly(evolutionData.Baby);
             jellyAge = JellyAge.Baby;
+            EvolveJelly(evolutionData.Baby);
             return;
         }
         if (jellyAge == JellyAge.Baby)
         {
-            EvolveJelly(evolutionData.Young);
             jellyAge = JellyAge.Young;
+            EvolveJelly(evolutionData.Young);
             return;
         }
 
         if (jellyAge == JellyAge.Young)
         {
-            EvolveJelly(evolutionData.Adult);
             jellyAge = JellyAge.Adult;
+            EvolveJelly(evolutionData.Adult);
             code.SetActive(true);
             return;
         }
@@ -242,7 +242,10 @@ public class JellyStats : MonoBehaviour
         
         if(_savedStats == null) return;
         _savedStats.JellyAge = jellyAge;
+        _savedStats.Love = love;
+        _savedStats.LoveLevel = loveLevel;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
+        SaveManager.Instance.SaveGame();
     }
 
     /// <summary>

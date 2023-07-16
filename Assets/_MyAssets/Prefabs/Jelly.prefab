@@ -690,7 +690,7 @@ MonoBehaviour:
   hungryCallSound: {fileID: 11400000, guid: b77aacc6d9bdb224e9f06895b349c0cd, type: 2}
   refuseSound: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
   maxMood: 100
-  currentMood: 100
+  currentMood: 80
   moodIncreaseValue: 5
   moodState: 4
   moodRange: 20
