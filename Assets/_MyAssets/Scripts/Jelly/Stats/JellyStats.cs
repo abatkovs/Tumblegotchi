@@ -342,8 +342,7 @@ public class JellyStats : MonoBehaviour
         ChangeSleepyLevel(-sleepDecreaseAmount);
         if (currentSleepy <= 0)
         {
-            CurrentJellyState = JellyState.Idle;
-            StartCoroutine(BecomeSleepier());
+            WakeUpJelly();
             yield break;
         }
         StartCoroutine(Sleeping());
@@ -356,6 +355,12 @@ public class JellyStats : MonoBehaviour
         _animator.PlaySleepAnim();
         CurrentJellyState = JellyState.Sleeping;
         StartCoroutine(Sleeping());
+    }
+
+    public void WakeUpJelly()
+    {
+        CurrentJellyState = JellyState.Idle;
+        StartCoroutine(BecomeSleepier());
     }
     
     public void ChangeEvolutionData(JellyEvolutionData newEvolutionData)

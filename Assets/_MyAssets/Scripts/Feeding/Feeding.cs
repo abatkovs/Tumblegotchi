@@ -16,11 +16,12 @@ public class Feeding : MonoBehaviour
     [SerializeField] private int requiredBerriesForFeeding = 1;
     [SerializeField] private SpriteRenderer foodItem;
     [SerializeField] private Sprite food;
+    [SerializeField] private JellyStats jellyStats;
     [Space] 
     [SerializeField] private SoundData cantFeedNowSound;
     
     private GameManager _gameManager;
-    private JellyStats _stats;
+    
     private JellyAnimator _animator;
 
     public FeedingState CurrentFeedingState { get; private set; }
@@ -31,13 +32,18 @@ public class Feeding : MonoBehaviour
     {
         _gameManager = GameManager.Instance;
         _animator = GetComponent<JellyAnimator>();
-        _stats = GetComponent<JellyStats>();
+        jellyStats = GetComponent<JellyStats>();
     }
 
     [ContextMenu("Feed Anim")]
     public void StartFeedingJelly()
     {
-        if (_stats.GetJellyAge() == JellyStats.JellyAge.Egg)
+        if (jellyStats.GetJellyAge() == JellyStats.JellyAge.Egg)
+        {
+            SoundManager.Instance.PlaySound(cantFeedNowSound);
+            return;
+        }
+        if (jellyStats.CurrentJellyState == JellyStats.JellyState.Sleeping)
         {
             SoundManager.Instance.PlaySound(cantFeedNowSound);
             return;
@@ -53,7 +59,7 @@ public class Feeding : MonoBehaviour
             return;
         }
 
-        if (_stats.IsJellyFull())
+        if (jellyStats.IsJellyFull())
         {
             CurrentFeedingState = FeedingState.Idle;
             foodItem.enabled = false;
@@ -72,7 +78,7 @@ public class Feeding : MonoBehaviour
     public void FinishFeedingAnimation()
     {
         Debug.Log("Finish feeding");
-        _stats.FeedJelly();
+        jellyStats.FeedJelly();
         _animator.PlayIdleAnim();
         CurrentFeedingState = FeedingState.Idle;
         _gameManager.ToggleSelectionButton(false);

@@ -724,7 +724,8 @@ MonoBehaviour:
   requiredBerriesForFeeding: 1
   foodItem: {fileID: 3410298040140307627}
   food: {fileID: -1667850683, guid: 7c22f9271f780d442b18dd00da25b99e, type: 3}
-  cantFeedNowSound: {fileID: 0}
+  jellyStats: {fileID: 8743874594446733695}
+  cantFeedNowSound: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
 --- !u!114 &183415341566375844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +765,7 @@ MonoBehaviour:
   handItem: {fileID: 2613525536652944581}
   jellyStats: {fileID: 8743874594446733695}
   moodIncreaseAmount: 5
-  cantPetNowSound: {fileID: 0}
+  cantPetNowSound: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
   shouldStartPettingAgain: 0
 --- !u!114 &3521829641985915877
 MonoBehaviour:

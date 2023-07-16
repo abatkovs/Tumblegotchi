@@ -27,6 +27,17 @@ public class BackButton : BaseActionButton
     {
         if(_gameManager.LockButtons) return;
 
+        if (_gameManager.CurrentlyActiveScene is ActiveScene.Garden or ActiveScene.Shop)
+        {
+            sceneSwitcher.BackToMain();
+            return;
+        }
+
+        if (jellyStats.CurrentJellyState == JellyStats.JellyState.Sleeping)
+        {
+            SoundManager.Instance.PlaySound(cantMoveNowSound);
+            return;
+        }
 
 
         if (_gameManager.CurrentlyActiveScene == ActiveScene.Playground)

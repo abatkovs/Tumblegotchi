@@ -16,6 +16,7 @@ public class Petting : MonoBehaviour
     [SerializeField] private SpriteRenderer handItem;
     [SerializeField] private JellyStats jellyStats;
     [SerializeField] private int moodIncreaseAmount = 5;
+    [SerializeField] private int moodDecreaseAmount = 5;
     [SerializeField] private SoundData cantPetNowSound;
     [SerializeField] private bool shouldStartPettingAgain;
     
@@ -35,6 +36,14 @@ public class Petting : MonoBehaviour
         if (jellyStats.GetJellyAge() == JellyStats.JellyAge.Egg)
         {
             SoundManager.Instance.PlaySound(cantPetNowSound);
+            return;
+        }
+
+        if (jellyStats.CurrentJellyState == JellyStats.JellyState.Sleeping)
+        {
+            SoundManager.Instance.PlaySound(cantPetNowSound);
+            jellyStats.ChangeMoodLevel(moodDecreaseAmount);
+            jellyStats.WakeUpJelly();
             return;
         }
         if (CurrentPettingState == PettingState.Idle)
