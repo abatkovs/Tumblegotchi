@@ -51,13 +51,18 @@ public class PlaygroundAnimator : MonoBehaviour
         currentBoredTimer -= Time.deltaTime;
         if (currentBoredTimer < 0)
         {
+            _jellyWaitingForInput = false;
             nextAnim = NextAnimToPlay.Dizzy;
+            if(!_playgroundItem.DidPlayerPlayWithJelly())
+            {
+              jellyStats.ChangeMoodLevel(_playgroundItem.DecreasedMoodIfNoInteraction);
+              return;
+            }
             if (_jellyWaitingForInput)
             {
                 IncreaseLove();
                 IncreaseMood();
             }
-            _jellyWaitingForInput = false;
         }
     }
 
@@ -79,6 +84,10 @@ public class PlaygroundAnimator : MonoBehaviour
 
     public void PlayStr(string animationName)
     {
+        if (animationName == _playgroundItem.PlayAnimationString)
+        {
+            _playgroundItem.TogglePlayedWithJelly(true);
+        }
         _animator.enabled = true;
         _animator.CrossFade(animationName,0,0);
     }

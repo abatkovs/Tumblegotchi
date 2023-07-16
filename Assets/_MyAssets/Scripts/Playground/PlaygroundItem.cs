@@ -21,12 +21,29 @@ namespace _MyAssets.Scripts.Playground
         [field: Header("Awarded stat points")]
         [field: SerializeField] public int AwardedLove { get; private set; } = 1;
         [field: SerializeField] public int AwardedMood { get; private set; } = 5;
+        [field: SerializeField] public int DecreasedMoodIfNoInteraction { get; private set; } = -5;
 
-        private PlaygroundAnimator playgroundAnimator;
+        private PlaygroundAnimator _playgroundAnimator;
+        private bool _playedWithJelly;
+
+        public void InitPlayingValues()
+        {
+            TogglePlayedWithJelly(false);
+        }
+
+        public void TogglePlayedWithJelly(bool value)
+        {
+            _playedWithJelly = value;
+        }
+
+        public bool DidPlayerPlayWithJelly()
+        {
+            return _playedWithJelly;
+        }
 
         public void SetPlaygroundAnimator(PlaygroundAnimator animator)
         {
-            playgroundAnimator = animator;
+            _playgroundAnimator = animator;
         }
     }
 }
