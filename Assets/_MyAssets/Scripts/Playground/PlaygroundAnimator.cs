@@ -87,11 +87,9 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if (_lastAnim)
         {
-            //spriteRenderer.sprite = sprite;
             PlayStr(_playgroundItem.IdleAnimationString);
             JellyBG.ActivateBGJelly();
             _lastAnim = false;
-            //_animator.enabled = false;
             nextAnim = NextAnimToPlay.None;
             return;
         }
@@ -169,7 +167,14 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if(!_jellyWaitingForInput) return;
         currentBoredTimer = timeUntilJellyWillGetBored;
-        //if(_playgroundItem.IsPlayerInteractionRepeatable) PlayStr(_playgroundItem.PlayAnimationString);
+        //Start playing instantly
+        if (_playgroundItem.IsPlayerInteractionRepeatable)
+        {
+            PlayStr(_playgroundItem.PlayAnimationString);
+            _jellyWaitingForInput = false;
+            nextAnim = NextAnimToPlay.Wait;
+            return;
+        }
         nextAnim = NextAnimToPlay.Play;
         _jellyWaitingForInput = false;
     }
