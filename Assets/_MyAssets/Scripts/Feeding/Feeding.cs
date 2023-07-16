@@ -12,6 +12,8 @@ public class Feeding : MonoBehaviour
         StartFeeding,
         Feeding,
     }
+
+    [SerializeField] private int decreaseMoodAmount = 5;
     
     [SerializeField] private int requiredBerriesForFeeding = 1;
     [SerializeField] private SpriteRenderer foodItem;
@@ -70,6 +72,11 @@ public class Feeding : MonoBehaviour
         _animator.PlayFeedAnim();
         foodItem.enabled = false;
         CurrentFeedingState = FeedingState.Feeding;
+    }
+
+    public void DecreaseMoodIfTeasedWhenHungry()
+    {
+        jellyStats.ChangeMoodLevel(decreaseMoodAmount);
     }
 
     /// <summary>

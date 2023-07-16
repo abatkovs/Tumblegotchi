@@ -53,6 +53,11 @@ public class BackButton : BaseActionButton
             feeding.ResetFeedingState();
             _soundManager.PlaySound(selectionSound);
             _gameManager.ToggleSelectionButton(false);
+            //Decrease mood only if jelly is bellow hungry threshold
+            if (jellyStats.IsJellyHungry)
+            {
+                feeding.DecreaseMoodIfTeasedWhenHungry();
+            }
             return;
         }
 

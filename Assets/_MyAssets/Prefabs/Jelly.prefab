@@ -699,8 +699,8 @@ MonoBehaviour:
   sleepThreshold: 100
   currentSleepy: 0
   sleepIncreaseAmount: 1
-  sleepDecreaseAmount: 5
-  sleepIntervals: 1
+  sleepDecreaseAmount: 4
+  sleepIntervals: 3
   loveLevel: 0
   love: 0
   loveNeededForEvolution: 20
@@ -721,6 +721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d10374c42db074badfa567c4a47999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  decreaseMoodAmount: -5
   requiredBerriesForFeeding: 1
   foodItem: {fileID: 3410298040140307627}
   food: {fileID: -1667850683, guid: 7c22f9271f780d442b18dd00da25b99e, type: 3}
@@ -765,6 +766,7 @@ MonoBehaviour:
   handItem: {fileID: 2613525536652944581}
   jellyStats: {fileID: 8743874594446733695}
   moodIncreaseAmount: 5
+  moodDecreaseAmount: -5
   cantPetNowSound: {fileID: 11400000, guid: 710e8aa1699fc9e4f84d435c0dad55c4, type: 2}
   shouldStartPettingAgain: 0
 --- !u!114 &3521829641985915877
