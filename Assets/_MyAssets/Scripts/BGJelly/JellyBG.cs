@@ -256,19 +256,20 @@ public class JellyBG : MonoBehaviour
     /// <summary>
     /// Move bg jelly back to foreground
     /// </summary>
-    public void MoveJellyBack()
+    public void JellyWavedAt()
+    {
+        state = BGJellyState.Inactive;
+        handWaveAnimator.CrossFade("Wave",0,0);
+        animator.PlayWavedAtAnim();
+    }
+
+    public void WalkBackToForeground()
     {
         state = BGJellyState.Walking;
         moveToTarget.localPosition = _startingPosition;
         FlipSpriteToMoveDirection();
         animator.PlayWalkAnim();
         _isWalkingBack = true;
-        WaveAtJelly();
-    }
-
-    private void WaveAtJelly()
-    {
-        handWaveAnimator.CrossFade("Wave",0,0);
     }
 
     public void SetIdleState()

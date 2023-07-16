@@ -11,6 +11,9 @@ public class Jelly : MonoBehaviour
     private GameManager _gameManager;
     private JellyAnimator _animator;
 
+    public event Action OnFinishComingBack;
+    public event Action OnStartWalkingToBG;
+
     private void Start()
     {
         _gameManager = GameManager.Instance;
@@ -20,7 +23,13 @@ public class Jelly : MonoBehaviour
 
     private void BgJelly_OnOnFinishMovingBack()
     {
+        OnFinishComingBack?.Invoke();
         _animator.PlayWalkOnScreenAnim();
+    }
+
+    private void StartWalkingToBG()
+    {
+        OnStartWalkingToBG?.Invoke();
     }
 
     public void ActivateBGJelly()
@@ -30,7 +39,7 @@ public class Jelly : MonoBehaviour
 
     public void MoveBGJellyToForeground()
     {
-        bgJelly.MoveJellyBack();
+        bgJelly.JellyWavedAt();
     }
 
     public void FinishTransition()

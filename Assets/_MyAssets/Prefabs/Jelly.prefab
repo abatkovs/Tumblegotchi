@@ -1050,6 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jellyStats: {fileID: 8743874594446733695}
+  jelly: {fileID: 3226887219251903814}
   currentJellyFace: 2
   jellyFaces:
   - State: 0

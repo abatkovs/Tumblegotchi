@@ -8,6 +8,7 @@ public class JellyBGAnimator : AnimatorCross
     private int _idleAnim = Animator.StringToHash("Idle");
     private int _walkAnim = Animator.StringToHash("Walk");
     private int _walkInAnim = Animator.StringToHash("WalkIn");
+    private int _wavedAtAnim = Animator.StringToHash("WavedAt");
 
     public void PlayIdleAnim()
     {
@@ -22,5 +23,10 @@ public class JellyBGAnimator : AnimatorCross
     public void PlayWalkInAnim()
     {
         PlayAnim(_walkInAnim);
+    }
+
+    public void PlayWavedAtAnim()
+    {
+        PlayAnim(_wavedAtAnim);
     }
 }

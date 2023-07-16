@@ -6,6 +6,7 @@ public class JellyFace : MonoBehaviour
 {
 
     [SerializeField] private JellyStats jellyStats;
+    [SerializeField] private Jelly jelly;
     [SerializeField] private FaceState currentJellyFace;
     [SerializeField] private List<JellyFaces> jellyFaces;
 
@@ -15,8 +16,20 @@ public class JellyFace : MonoBehaviour
     {
         jellyStats.OnMoodChange += JellyStatsOnOnMoodChange;
         jellyStats.OnJellyHideToggleFace += JellyStatsOnOnJellyHideToggleFace;
+        jelly.OnFinishComingBack += JellyOnOnFinishComingBack;
+        jelly.OnStartWalkingToBG += JellyOnOnStartWalkingToBG;
         if(spriteRenderer != null) return;
         spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void JellyOnOnStartWalkingToBG()
+    {
+        spriteRenderer.enabled = false;
+    }
+
+    private void JellyOnOnFinishComingBack()
+    {
+        spriteRenderer.enabled = true;
     }
 
     private void JellyStatsOnOnJellyHideToggleFace(bool value)
