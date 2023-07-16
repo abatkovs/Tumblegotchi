@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Drawing;
 using _MyAssets.Scripts.Jelly;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -143,6 +142,7 @@ public class JellyStats : MonoBehaviour
     /// </summary>
     private void EggTimer()
     {
+        if(CurrentJellyState == JellyState.Evolving) return;
         IncreaseLove(Time.deltaTime);
     }
 
