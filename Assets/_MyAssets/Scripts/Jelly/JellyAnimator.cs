@@ -23,6 +23,7 @@ public class JellyAnimator : AnimatorCross
     private int _walkOnScreenAnim = Animator.StringToHash("WalkOnScreen");
     private int _sleepAnim = Animator.StringToHash("Sleep");
     private int _evolutionAnim = Animator.StringToHash("Evolution");
+    private int _adultWalkOffAnim = Animator.StringToHash("AdultWalkOff");
 
     private SoundManager _soundManager;
     void Start()
@@ -74,6 +75,11 @@ public class JellyAnimator : AnimatorCross
     public void PlayEvolutionAnim()
     {
         PlayAnim(_evolutionAnim);
+    }
+
+    public void PlayAdultWalkOffAnim()
+    {
+        PlayAnim(_adultWalkOffAnim);
     }
     
 #region sound

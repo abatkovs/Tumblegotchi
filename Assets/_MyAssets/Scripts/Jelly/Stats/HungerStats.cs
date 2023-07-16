@@ -2,12 +2,12 @@
 //TODO: Finish refactoring
 public class HungerStats
 {
-    private float maxHunger = 100;
+    /*private float maxHunger = 100;
     private float currentHunger;
     private float hungerDecreaseAmount = 1;
     private float hungerInterval = 1f;
     private float hungerThreshold = 50f;
-    private float nextTimeHungerSoundCanTriggered = 0; //how often hunger sound gets triggered
+    private float nextTimeHungerSoundCanTriggered = 0;*/ //how often hunger sound gets triggered
     
     /*public bool IsJellyFull()
     {

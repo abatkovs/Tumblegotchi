@@ -125,7 +125,7 @@ public class JellyBG : MonoBehaviour
         currentWalkInterval -= Time.deltaTime;
         if (currentWalkInterval < 0)
         {
-            SetRandomMovePosition();
+            SetRandomMovePositionAndStartWalking();
             currentWalkInterval = walkInterval;
         }
     }
@@ -154,7 +154,7 @@ public class JellyBG : MonoBehaviour
     }
 
     //TODO: Make sure he moves considerable amount for tamagochi like effect
-    private void SetRandomMovePosition()
+    private void SetRandomMovePositionAndStartWalking()
     {
         state = BGJellyState.Walking;
         animator.PlayWalkAnim();
@@ -248,7 +248,7 @@ public class JellyBG : MonoBehaviour
         _spriteRenderer.enabled = true;
         gameObject.SetActive(true);
         transform.localPosition = _startingPosition;
-        SetRandomMovePosition();
+        SetRandomMovePositionAndStartWalking();
         animator.PlayWalkAnim();
         UpdateSpriteLibrary();
     }

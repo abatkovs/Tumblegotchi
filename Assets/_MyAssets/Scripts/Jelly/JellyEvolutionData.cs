@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.U2D.Animation;
 
 namespace _MyAssets.Scripts.Jelly
@@ -12,7 +13,13 @@ namespace _MyAssets.Scripts.Jelly
         [field: SerializeField] public SpriteLibraryAsset Baby { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Young { get; private set; }
         [field: SerializeField] public SpriteLibraryAsset Adult { get; private set; }
-        
+
+        public JellyEvolutionData[] GetPossibleEvolutions()
+        {
+            var evolutions = Resources.LoadAll<JellyEvolutionData>("Evolutions");
+
+            return evolutions;
+        }
     }
 
     public enum JellyType

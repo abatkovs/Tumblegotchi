@@ -5,6 +5,7 @@ using _MyAssets.Scripts.Jelly;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.U2D.Animation;
+using Random = UnityEngine.Random;
 
 public class JellyStats : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class JellyStats : MonoBehaviour
         Walking,
         Sleeping,
         Singing,
+        Evolving
     }
 
     [Serializable]
@@ -43,7 +45,7 @@ public class JellyStats : MonoBehaviour
     [SerializeField] private JellyEvolutionData evolutionData;
     [SerializeField] private JellyAge jellyAge;
     [Space] 
-    [Tooltip("How often diferent triggers can happen in seconds value is multiplied for diferent events")]
+    [Tooltip("How often diferent triggers can happen in seconds value is multiplied for different events")]
     [SerializeField]private float timeIntervalForJellyTriggers = 10;
     [Space(25)]
     [SerializeField] private float maxHunger = 100;
@@ -76,7 +78,10 @@ public class JellyStats : MonoBehaviour
     [Space]
     [SerializeField] private float feedValue = 5;
     [SerializeField] private int jellyDewAwardedForFeeding = 1;
-
+    [Space (25)] 
+    [SerializeField] private GrownJelly fullyGrownJellyPf;
+    [SerializeField] private Transform grownJellyParent;
+    
     public bool IsJellyHungry { get; private set; }
     public bool IsJellyAsleep { get; private set; }
     
@@ -108,6 +113,31 @@ public class JellyStats : MonoBehaviour
     }
 
     /// <summary>
+    /// Base stats for new eggs
+    /// </summary>
+    private void InitializeEggStats()
+    {
+        CurrentJellyState = JellyState.Idle;
+        evolutionData = GetRandomEvolutionData();
+        jellyAge = JellyAge.Egg;
+        currentHunger = maxHunger;
+        currentMood = maxMood;
+        moodState = JellyMood.Happy;
+        currentSleepy = 0;
+        loveLevel = 0;
+        love = 0;
+        
+        _animator.PlayIdleAnim();
+    }
+
+    private JellyEvolutionData GetRandomEvolutionData()
+    {
+        var evolutions = evolutionData.GetPossibleEvolutions();
+        evolutionData = evolutions[Random.Range(0, evolutions.Length)];
+        return evolutionData;
+    }
+
+    /// <summary>
     /// Jelly evolves from egg after X amount of time = love
     /// For now just increase love over time so it triggers natural evolution
     /// </summary>
@@ -119,6 +149,13 @@ public class JellyStats : MonoBehaviour
     private void CheckIfJellyCanEvolve()
     {
         if(_gameManager.CurrentlyActiveScene != ActiveScene.Main) return;
+
+        if (love > loveNeededForEvolution && loveLevel == 3)
+        {
+            StartSpawningEgg();
+            return;
+        }
+        
         if (jellyAge == JellyAge.Egg && love < loveNeededForEvolution)
         {
             EggTimer();
@@ -131,16 +168,39 @@ public class JellyStats : MonoBehaviour
         }
     }
 
+    //TODO: add animations/sounds 
+    private void StartSpawningEgg()
+    {
+        _animator.PlayAdultWalkOffAnim();
+    }
+
+    /// <summary>
+    /// Animation event when jelly is fully grown and goes of to background
+    /// </summary>
+    private void GrownJellyWalksAway()
+    {
+        InitializeEggStats();
+        EvolveJelly(evolutionData.Egg);
+        SpawnNewFullyEvolvedJellyOnBG();
+    }
+
+    private void SpawnNewFullyEvolvedJellyOnBG()
+    {
+        Instantiate(fullyGrownJellyPf, grownJellyParent);
+    }
+
     private void LevelUpJelly()
     {
         love = 0;
         loveLevel++;
+        _savedStats.LoveLevel = loveLevel;
         SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
 
     private void StartEvolving()
     {
         //start playing evolve animation
+        CurrentJellyState = JellyState.Evolving;
         _gameManager.LockButtons = true;
         _animator.PlayEvolutionAnim();
     }
@@ -149,6 +209,7 @@ public class JellyStats : MonoBehaviour
     {
         _gameManager.LockButtons = false;
         _animator.PlayIdleAnim();
+        CurrentJellyState = JellyState.Idle;
         if (jellyAge == JellyAge.Egg)
         {
             EvolveJelly(evolutionData.Baby);
@@ -171,6 +232,10 @@ public class JellyStats : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Swaps how jelly looks to different sprite library asset
+    /// </summary>
+    /// <param name="spriteLibraryAsset"></param>
     private void EvolveJelly(SpriteLibraryAsset spriteLibraryAsset)
     {
         spriteLibrary.spriteLibraryAsset = spriteLibraryAsset;
@@ -180,16 +245,21 @@ public class JellyStats : MonoBehaviour
         SaveManager.Instance.UpdateJellyStats(_savedStats);
     }
 
+    /// <summary>
+    /// During evolution animation swaps sprites between event1 and 2, to avoid making multiple animations for each evolution stage
+    /// </summary>
     public void EvolutionAnimEvent1()
     {
-        if (jellyAge == JellyAge.Baby) spriteLibrary.spriteLibraryAsset = evolutionData.Baby;
+        if(jellyAge == JellyAge.Egg) EvolveJelly(evolutionData.Egg);
+        if(jellyAge == JellyAge.Baby) EvolveJelly(evolutionData.Baby);
         if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Young);
         if(jellyAge == JellyAge.Adult) EvolveJelly(evolutionData.Adult);
     }
     
     public void EvolutionAnimEvent2()
     {
-        if (jellyAge == JellyAge.Baby) EvolveJelly(evolutionData.Young);
+        if(jellyAge == JellyAge.Egg) EvolveJelly(evolutionData.Baby);
+        if(jellyAge == JellyAge.Baby) EvolveJelly(evolutionData.Young);
         if(jellyAge == JellyAge.Young) EvolveJelly(evolutionData.Adult);
     }
 

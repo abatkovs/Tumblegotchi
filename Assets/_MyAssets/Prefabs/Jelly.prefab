@@ -694,6 +694,7 @@ MonoBehaviour:
   moodIncreaseValue: 5
   moodState: 4
   moodRange: 20
+  moodThreshold: 50
   sleepyMax: 100
   sleepThreshold: 100
   currentSleepy: 0
@@ -706,9 +707,8 @@ MonoBehaviour:
   feedingLoveIncrease: 0
   feedValue: 5
   jellyDewAwardedForFeeding: 1
-  moodData: {fileID: 11400000, guid: abdef6e2a4bf2824787eb66ac7f51544, type: 2}
-  nextTimeForRandomSound: 50
-  animationEvents: {fileID: 4594205242589915160}
+  fullyGrownJellyPf: {fileID: 6493348651146836584, guid: 28fce00dcacc3344fa190d8a2c79d581, type: 3}
+  grownJellyParent: {fileID: 0}
 --- !u!114 &629151397368406586
 MonoBehaviour:
   m_ObjectHideFlags: 0
