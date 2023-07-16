@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using _MyAssets.Scripts.Playground;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.U2D.Animation;
 
 public class PlaygroundAnimator : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class PlaygroundAnimator : MonoBehaviour
     
     [SerializeField] private float timeUntilJellyWillGetBored;
     [SerializeField] private float currentBoredTimer;
+
+    [SerializeField] private SpriteLibrary spriteLibrary;
 
     private bool _lastAnim;
     private PlaygroundItem _playgroundItem;
@@ -84,6 +87,7 @@ public class PlaygroundAnimator : MonoBehaviour
 
     public void PlayStr(string animationName)
     {
+        spriteLibrary.spriteLibraryAsset = JellyBG.GetSpriteLibAsset();
         if (animationName == _playgroundItem.PlayAnimationString)
         {
             _playgroundItem.TogglePlayedWithJelly(true);

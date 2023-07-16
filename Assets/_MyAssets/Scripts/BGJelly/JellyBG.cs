@@ -283,4 +283,9 @@ public class JellyBG : MonoBehaviour
         transform.localPosition = (Vector2)transform.localPosition + nudgeOffset;
     }
 
+    public SpriteLibraryAsset GetSpriteLibAsset()
+    {
+        return spriteLibraryBG.spriteLibraryAsset;
+    }
+
 }

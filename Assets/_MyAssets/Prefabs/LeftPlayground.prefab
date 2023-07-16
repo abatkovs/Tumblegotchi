@@ -147,6 +147,7 @@ MonoBehaviour:
   jellyStats: {fileID: 0}
   timeUntilJellyWillGetBored: 0
   currentBoredTimer: 0
+  spriteLibrary: {fileID: 2932406293701649734}
 --- !u!114 &2932406293701649734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,13 +441,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6732996897430361632}
   - component: {fileID: 2128706641097814979}
+  - component: {fileID: 3960286238416726764}
   m_Layer: 0
   m_Name: LocalMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6732996897430361632
 Transform:
   m_ObjectHideFlags: 0
@@ -513,3 +515,17 @@ SpriteMask:
   m_BackSortingOrder: 0
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3960286238416726764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7593877458212028631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719513948f1bdfd43b2bfc3b6a97f616, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObjects:
+  - {fileID: 7593877458212028631}
