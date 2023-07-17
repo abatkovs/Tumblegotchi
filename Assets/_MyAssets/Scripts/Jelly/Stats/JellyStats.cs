@@ -80,6 +80,8 @@ public class JellyStats : MonoBehaviour
     [Space (25)] 
     [SerializeField] private GrownJelly fullyGrownJellyPf;
     [SerializeField] private Transform grownJellyParent;
+    [SerializeField] private float afterHowLongJellyBecomesBored = 60f;
+    [SerializeField] private float nextTimeJellyGetsBored = 10000f;
     
     public bool IsJellyHungry { get; private set; }
     public bool IsJellyAsleep { get; private set; }
@@ -100,6 +102,7 @@ public class JellyStats : MonoBehaviour
         _animator = GetComponent<JellyAnimator>();
         currentHunger = maxHunger;
         _savedStats = new SavedJellyStats(jellyAge, currentHunger, currentMood, currentSleepy, love, loveLevel);
+        nextTimeJellyGetsBored = Time.realtimeSinceStartup + afterHowLongJellyBecomesBored;
     }
 
     private void OnEnable()
@@ -112,6 +115,21 @@ public class JellyStats : MonoBehaviour
     private void Update()
     {
         CheckIfJellyCanEvolve();
+        JellyBoredTimer();
+    }
+
+    private void JellyBoredTimer()
+    {
+        if (CurrentJellyState != JellyState.Idle)
+        {
+            nextTimeJellyGetsBored = Time.realtimeSinceStartup + afterHowLongJellyBecomesBored;
+            return;
+        }
+        if (nextTimeJellyGetsBored < Time.realtimeSinceStartup)
+        {
+            nextTimeJellyGetsBored = Time.realtimeSinceStartup + afterHowLongJellyBecomesBored;
+            _animator.PlayWalkOffScreenAnim();
+        }
     }
 
     /// <summary>
