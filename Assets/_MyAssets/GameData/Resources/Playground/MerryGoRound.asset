@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 1
   <ItemSprite>k__BackingField: {fileID: -906049258, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <IdleAnimationString>k__BackingField: MeryGoRoundIdle
-  <EnterAnimationString>k__BackingField: MerryGoRoundEnter
-  <WaitAnimationString>k__BackingField: MerryGoRoundWaitPlayerInput
-  <PlayAnimationString>k__BackingField: MerryGoRoundSpin
-  <DizzyAnimationString>k__BackingField: MerryGoRoundDizzy
-  <UpsetAnimationString>k__BackingField: MerryGoRoundUpset
+  <IdleAnimation>k__BackingField: {fileID: 7400000, guid: 2cea5217a55734d47a6440b0f0bda798, type: 2}
+  <EnterAnimation>k__BackingField: {fileID: 7400000, guid: 994910f8a4f22784b9643ed1b1858712, type: 2}
+  <WaitPlayerInputAnimation>k__BackingField: {fileID: 7400000, guid: beeec790823e6994c856d8a53e2d1298, type: 2}
+  <PlayWithJellyAnimation>k__BackingField: {fileID: 7400000, guid: 0d41707bcea2c084f93d42b0c13b8388, type: 2}
+  <DizzyAnimation>k__BackingField: {fileID: 7400000, guid: 7e1cb55e0aa094240b9ffb421aa581f2, type: 2}
+  <UpsetAnimation>k__BackingField: {fileID: 7400000, guid: 0c0e13e8997230343bceed8d535494a4, type: 2}
+  <ExitAnimation>k__BackingField: {fileID: 0}
   <IsPlayerInteractionRequired>k__BackingField: 1
   <IsPlayerInteractionRepeatable>k__BackingField: 1
   <TimeUntilJellyGetsBored>k__BackingField: 10
   <AwardedLove>k__BackingField: 1
+  <AwardedMood>k__BackingField: 5
+  <DecreasedMoodIfNoInteraction>k__BackingField: -5
+  <ExitPoint>k__BackingField: {fileID: 0}

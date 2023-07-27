@@ -37,7 +37,7 @@ public class PlaygroundSide : MonoBehaviour
         pgAnimator.JellyBG = jellyBg;
         pgAnimator.ResetNextAnim();
         pgAnimator.SetJellyBoredTimers(CurrentItem.TimeUntilJellyGetsBored);
-        pgAnimator.PlayEnterAnimation(CurrentItem.EnterAnimationString);
+        pgAnimator.PlayEnterAnimation(CurrentItem.EnterAnimation.name);
         CurrentItem.InitPlayingValues();
     }
 

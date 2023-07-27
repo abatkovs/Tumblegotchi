@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 0
   <ItemSprite>k__BackingField: {fileID: 1836174656, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <IdleAnimationString>k__BackingField: BallIdle
-  <EnterAnimationString>k__BackingField: BallKick
-  <WaitAnimationString>k__BackingField: BallKick
-  <PlayAnimationString>k__BackingField: BallPlayerKick
-  <DizzyAnimationString>k__BackingField: BallUpset
-  <UpsetAnimationString>k__BackingField: BallUpset
+  <IdleAnimation>k__BackingField: {fileID: 7400000, guid: cb2ab9cae8af1374bbc9257df33d40a9, type: 2}
+  <EnterAnimation>k__BackingField: {fileID: 7400000, guid: 8d5f608d5d6ea5a4783addc5421ede21, type: 2}
+  <WaitPlayerInputAnimation>k__BackingField: {fileID: 7400000, guid: f2353b00bc582104786f60fc3d93b207, type: 2}
+  <PlayWithJellyAnimation>k__BackingField: {fileID: 7400000, guid: c337bf452f48f7040aa9353f39bce0c1, type: 2}
+  <DizzyAnimation>k__BackingField: {fileID: 0}
+  <UpsetAnimation>k__BackingField: {fileID: 7400000, guid: 113b415bae24fdc409b21c162dcac491, type: 2}
+  <ExitAnimation>k__BackingField: {fileID: 0}
   <IsPlayerInteractionRequired>k__BackingField: 1
   <IsPlayerInteractionRepeatable>k__BackingField: 1
   <TimeUntilJellyGetsBored>k__BackingField: 10
   <AwardedLove>k__BackingField: 1
+  <AwardedMood>k__BackingField: 5
+  <DecreasedMoodIfNoInteraction>k__BackingField: -5
+  <ExitPoint>k__BackingField: {fileID: 0}

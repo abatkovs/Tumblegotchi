@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ItemID>k__BackingField: 5
   <ItemSprite>k__BackingField: {fileID: 652962640, guid: e42b373c715fc4846a39de79d839bbb7, type: 3}
-  <IdleAnimationString>k__BackingField: TetherBallIdle
-  <EnterAnimationString>k__BackingField: TetherballHit
-  <WaitAnimationString>k__BackingField: TetherballWaitPlayerInput
-  <PlayAnimationString>k__BackingField: TetherballLoop
-  <DizzyAnimationString>k__BackingField: TetherballStop
-  <UpsetAnimationString>k__BackingField: TetherballUpset
+  <IdleAnimation>k__BackingField: {fileID: 7400000, guid: ea79dba24e240b647a24a5cbc9aca48b, type: 2}
+  <EnterAnimation>k__BackingField: {fileID: 7400000, guid: 1018ad7d67ee8814486d8e91c40e480f, type: 2}
+  <WaitPlayerInputAnimation>k__BackingField: {fileID: 7400000, guid: 19ba03410517a274f97d491b3bc6d3c6, type: 2}
+  <PlayWithJellyAnimation>k__BackingField: {fileID: 7400000, guid: f2fe01066023a4d4d8ca2eee59ff5db6, type: 2}
+  <DizzyAnimation>k__BackingField: {fileID: 0}
+  <UpsetAnimation>k__BackingField: {fileID: 7400000, guid: d319df0544a45df4ab8f70fe6287fab7, type: 2}
+  <ExitAnimation>k__BackingField: {fileID: 7400000, guid: d79ea830e9b2d4a48ac71ba8b83e760d, type: 2}
   <IsPlayerInteractionRequired>k__BackingField: 1
   <IsPlayerInteractionRepeatable>k__BackingField: 1
   <TimeUntilJellyGetsBored>k__BackingField: 10
   <AwardedLove>k__BackingField: 1
+  <AwardedMood>k__BackingField: 5
+  <DecreasedMoodIfNoInteraction>k__BackingField: -5
+  <ExitPoint>k__BackingField: {fileID: 0}

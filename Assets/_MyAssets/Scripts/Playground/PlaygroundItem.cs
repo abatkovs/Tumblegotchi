@@ -7,12 +7,13 @@ namespace _MyAssets.Scripts.Playground
     {
         [field: SerializeField] public int ItemID { get; private set; }
         [field: SerializeField] public Sprite ItemSprite { get; private set; }
-        [field: SerializeField] public string IdleAnimationString { get; private set; }
-        [field: SerializeField] public string EnterAnimationString { get; private set; }
-        [field: SerializeField] public string WaitAnimationString { get; private set; }
-        [field: SerializeField] public string PlayAnimationString { get; private set; }
-        [field: SerializeField] public string DizzyAnimationString { get; private set; }
-        [field: SerializeField] public string UpsetAnimationString { get; private set; }
+        [field: SerializeField] public AnimationClip IdleAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip EnterAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip WaitPlayerInputAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip PlayWithJellyAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip DizzyAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip UpsetAnimation { get; private set; }
+        [field: SerializeField] public AnimationClip ExitAnimation { get; private set; }
         [field: Space]
         [field: SerializeField] public bool IsPlayerInteractionRequired { get; private set; }
         [field: SerializeField] public bool IsPlayerInteractionRepeatable { get; private set; }
@@ -22,6 +23,7 @@ namespace _MyAssets.Scripts.Playground
         [field: SerializeField] public int AwardedLove { get; private set; } = 1;
         [field: SerializeField] public int AwardedMood { get; private set; } = 5;
         [field: SerializeField] public int DecreasedMoodIfNoInteraction { get; private set; } = -5;
+        [field: SerializeField] public Transform ExitPoint { get; private set; }
 
         private PlaygroundAnimator _playgroundAnimator;
         private bool _playedWithJelly;
@@ -44,6 +46,11 @@ namespace _MyAssets.Scripts.Playground
         public void SetPlaygroundAnimator(PlaygroundAnimator animator)
         {
             _playgroundAnimator = animator;
+        }
+
+        public void SetExitTransform(Transform exitTransform)
+        {
+            ExitPoint = exitTransform;
         }
     }
 }

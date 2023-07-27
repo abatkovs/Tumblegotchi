@@ -30,6 +30,9 @@ public class PlaygroundAnimator : MonoBehaviour
 
     [SerializeField] private SpriteLibrary spriteLibrary;
 
+    [Space]
+    [SerializeField] private Transform exitPoint;
+
     private bool _lastAnim;
     private PlaygroundItem _playgroundItem;
     private bool _jellyWaitingForInput;
@@ -88,7 +91,7 @@ public class PlaygroundAnimator : MonoBehaviour
     public void PlayStr(string animationName)
     {
         spriteLibrary.spriteLibraryAsset = JellyBG.GetSpriteLibAsset();
-        if (animationName == _playgroundItem.PlayAnimationString)
+        if (animationName == _playgroundItem.PlayWithJellyAnimation.name)
         {
             _playgroundItem.TogglePlayedWithJelly(true);
         }
@@ -100,8 +103,8 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if (_lastAnim)
         {
-            PlayStr(_playgroundItem.IdleAnimationString);
-            JellyBG.ActivateBGJelly();
+            PlayStr(_playgroundItem.IdleAnimation.name);
+            JellyBG.ExitPlayground(_playgroundItem.ExitPoint);
             _lastAnim = false;
             nextAnim = NextAnimToPlay.None;
             return;
@@ -126,13 +129,13 @@ public class PlaygroundAnimator : MonoBehaviour
         {
             if (_playgroundItem.IsPlayerInteractionRequired)
             {
-                PlayStr(_playgroundItem.WaitAnimationString);
+                PlayStr(_playgroundItem.WaitPlayerInputAnimation.name);
                 _jellyWaitingForInput = true;
                 IncreaseLove(); //If interacted with jelly increase love
                 IncreaseMood();
                 return;
             }
-            PlayStr(_playgroundItem.WaitAnimationString);
+            PlayStr(_playgroundItem.WaitPlayerInputAnimation.name);
             nextAnim = NextAnimToPlay.Play;
             return;
         }
@@ -141,18 +144,19 @@ public class PlaygroundAnimator : MonoBehaviour
         {
             if (_playgroundItem.IsPlayerInteractionRepeatable)
             {
-                PlayStr(_playgroundItem.PlayAnimationString);
+                PlayStr(_playgroundItem.PlayWithJellyAnimation.name);
                 nextAnim = NextAnimToPlay.Wait;
                 return;
             }
-            PlayStr(_playgroundItem.PlayAnimationString);
+            PlayStr(_playgroundItem.PlayWithJellyAnimation.name);
             nextAnim = NextAnimToPlay.Dizzy;
             return;
         }
 
         if (nextAnim == NextAnimToPlay.Dizzy)
         {
-            PlayStr(_playgroundItem.DizzyAnimationString);
+            PlayStr(_playgroundItem.DizzyAnimation.name);
+            _playgroundItem.SetExitTransform(exitPoint);
             _lastAnim = true;
             spriteRenderer.sprite = sprite;
             return;
@@ -183,7 +187,7 @@ public class PlaygroundAnimator : MonoBehaviour
         //Start playing instantly
         if (_playgroundItem.IsPlayerInteractionRepeatable)
         {
-            PlayStr(_playgroundItem.PlayAnimationString);
+            PlayStr(_playgroundItem.PlayWithJellyAnimation.name);
             _jellyWaitingForInput = false;
             nextAnim = NextAnimToPlay.Wait;
             return;

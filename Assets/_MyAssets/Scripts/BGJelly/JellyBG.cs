@@ -261,6 +261,18 @@ public class JellyBG : MonoBehaviour
         animator.PlayWalkAnim();
         UpdateSpriteLibrary();
     }
+
+    public void ExitPlayground(Transform exitPosition)
+    {
+        state = BGJellyState.Walking;
+        _isWalkingBack = false;
+        _spriteRenderer.enabled = true;
+        gameObject.SetActive(true);
+        transform.position = exitPosition.position;
+        SetRandomMovePositionAndStartWalking();
+        animator.PlayWalkAnim();
+        UpdateSpriteLibrary();
+    }
     
     /// <summary>
     /// Move bg jelly back to foreground
