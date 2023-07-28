@@ -463,6 +463,15 @@ public class JellyStats : MonoBehaviour
         return currentSleepy >= sleepyMax;
     }
 
+    public float GetSleepyLevel()
+    {
+        return currentSleepy;
+    }
+
+    public float GetCurrentHunger()
+    {
+        return currentHunger;
+    }
 
     [Button]
     private void IncreaseMood()
@@ -479,6 +488,11 @@ public class JellyStats : MonoBehaviour
     public void GoToSleep()
     {
         StartCoroutine(Sleeping());
+    }
+
+    public float GetCurrentLove()
+    {
+        return love;
     }
 }
 

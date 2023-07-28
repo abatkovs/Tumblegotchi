@@ -10,7 +10,7 @@ using Random = UnityEngine.Random;
 
 public class JellyBG : MonoBehaviour
 {
-    private enum BGJellyState
+    public enum BGJellyState
     {
         Inactive,
         Idle,
@@ -310,4 +310,18 @@ public class JellyBG : MonoBehaviour
         return spriteLibraryBG.spriteLibraryAsset;
     }
 
+    public float GetCurrentPlayInterval()
+    {
+        return currentPlayInterval;
+    }
+
+    public float GetCurrentWalkInterval()
+    {
+        return walkInterval;
+    }
+
+    public JellyBG.BGJellyState GetJellyState()
+    {
+        return state;
+    }
 }
