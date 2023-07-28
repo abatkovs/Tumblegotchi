@@ -184,7 +184,7 @@ public class JellyBG : MonoBehaviour
         if(targetPlayground.GetComponent<PlaygroundSide>().CurrentItem == null) return;
         state = BGJellyState.Playing;
         _spriteRenderer.enabled = false;
-        targetPlayground.GetComponent<PlaygroundSide>().StartAnimation(this);
+        targetPlayground.GetComponent<PlaygroundSide>().EntryAnimation(this);
     }
     
     /// <summary>

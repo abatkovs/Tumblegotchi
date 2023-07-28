@@ -32,7 +32,7 @@ public class PlaygroundSide : MonoBehaviour
         pgAnimator.SetPlaygroundItem(CurrentItem);
     }
 
-    public void StartAnimation(JellyBG jellyBg)
+    public void EntryAnimation(JellyBG jellyBg)
     {
         pgAnimator.JellyBG = jellyBg;
         pgAnimator.ResetNextAnim();

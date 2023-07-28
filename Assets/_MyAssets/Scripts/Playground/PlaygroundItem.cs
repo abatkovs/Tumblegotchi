@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AnnulusGames.LucidTools.Inspector;
+using UnityEngine;
 
 namespace _MyAssets.Scripts.Playground
 {
@@ -7,6 +8,7 @@ namespace _MyAssets.Scripts.Playground
     {
         [field: SerializeField] public int ItemID { get; private set; }
         [field: SerializeField] public Sprite ItemSprite { get; private set; }
+        [field: Space]
         [field: SerializeField] public AnimationClip IdleAnimation { get; private set; }
         [field: SerializeField] public AnimationClip EnterAnimation { get; private set; }
         [field: SerializeField] public AnimationClip WaitPlayerInputAnimation { get; private set; }
@@ -25,12 +27,25 @@ namespace _MyAssets.Scripts.Playground
         [field: SerializeField] public int DecreasedMoodIfNoInteraction { get; private set; } = -5;
         [field: SerializeField] public Transform ExitPoint { get; private set; }
 
+        [Space(25)]
         private PlaygroundAnimator _playgroundAnimator;
         private bool _playedWithJelly;
+        [ReadOnly] [SerializeField] private bool _loopAnimation;
 
         public void InitPlayingValues()
         {
             TogglePlayedWithJelly(false);
+            ToggleAnimationLoop(false);
+        }
+
+        public void ToggleAnimationLoop(bool value)
+        {
+            _loopAnimation = value;
+        }
+
+        public bool ShouldAnimationLoop()
+        {
+            return _loopAnimation;
         }
 
         public void TogglePlayedWithJelly(bool value)

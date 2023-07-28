@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using _MyAssets.Scripts.Playground;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.U2D.Animation;
 
+//TODO: Not really an animator...
 public class PlaygroundAnimator : MonoBehaviour
 {
     public enum NextAnimToPlay
@@ -15,6 +15,7 @@ public class PlaygroundAnimator : MonoBehaviour
         Play,
         Dizzy,
         Upset,
+        Exit,
     }
     private Animator _animator;
 
@@ -42,7 +43,6 @@ public class PlaygroundAnimator : MonoBehaviour
     private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _animator.enabled = false;
         nextAnim = NextAnimToPlay.None;
     }
 
@@ -50,9 +50,35 @@ public class PlaygroundAnimator : MonoBehaviour
     {
         if(nextAnim == NextAnimToPlay.None) return;
         UpdateBoredTimer();
+        CheckIfJellyIsBored();
     }
 
     private void UpdateBoredTimer()
+    {
+        currentBoredTimer -= Time.deltaTime;
+    }
+
+    private void CheckIfJellyIsBored()
+    {
+        if (currentBoredTimer < 0)
+        {
+            _jellyWaitingForInput = false;
+            nextAnim = NextAnimToPlay.Dizzy;
+            if(!_playgroundItem.DidPlayerPlayWithJelly())
+            {
+                jellyStats.ChangeMoodLevel(_playgroundItem.DecreasedMoodIfNoInteraction);
+                nextAnim = NextAnimToPlay.Upset;
+                return;
+            }
+            if (_playgroundItem.DidPlayerPlayWithJelly())
+            {
+                IncreaseLove();
+                IncreaseMood();
+            }
+        }
+    }
+
+    /*private void UpdateBoredTimer()
     {
         currentBoredTimer -= Time.deltaTime;
         if (currentBoredTimer < 0)
@@ -70,7 +96,7 @@ public class PlaygroundAnimator : MonoBehaviour
                 IncreaseMood();
             }
         }
-    }
+    }*/
 
     private void IncreaseLove()
     {
@@ -93,7 +119,11 @@ public class PlaygroundAnimator : MonoBehaviour
         spriteLibrary.spriteLibraryAsset = JellyBG.GetSpriteLibAsset();
         if (animationName == _playgroundItem.PlayWithJellyAnimation.name)
         {
-            _playgroundItem.TogglePlayedWithJelly(true);
+            _playgroundItem.TogglePlayedWithJelly(true); //Player interacted with jelly
+            if (_playgroundItem.IsPlayerInteractionRepeatable)
+            {
+                _playgroundItem.ToggleAnimationLoop(true);
+            }
         }
         _animator.enabled = true;
         _animator.CrossFade(animationName,0,0);
@@ -112,15 +142,15 @@ public class PlaygroundAnimator : MonoBehaviour
         if(_jellyWaitingForInput) return;
         PlayNextAnim();
     }
-    
-    public void RemoveController()
-    {
-        _animator.runtimeAnimatorController = null;
-    }
 
     public void PlayEnterAnimation(string name)
     {
         PlayStr(name);
+    }
+
+    private void ExitAnimation()
+    {
+        
     }
 
     private void PlayNextAnim()
@@ -145,6 +175,12 @@ public class PlaygroundAnimator : MonoBehaviour
             if (_playgroundItem.IsPlayerInteractionRepeatable)
             {
                 PlayStr(_playgroundItem.PlayWithJellyAnimation.name);
+                if (_playgroundItem.ShouldAnimationLoop())
+                {
+                    nextAnim = NextAnimToPlay.Play;
+                    _playgroundItem.ToggleAnimationLoop(false);
+                    return;
+                }
                 nextAnim = NextAnimToPlay.Wait;
                 return;
             }
@@ -156,6 +192,15 @@ public class PlaygroundAnimator : MonoBehaviour
         if (nextAnim == NextAnimToPlay.Dizzy)
         {
             PlayStr(_playgroundItem.DizzyAnimation.name);
+            _playgroundItem.SetExitTransform(exitPoint);
+            _lastAnim = true;
+            spriteRenderer.sprite = sprite;
+            return;
+        }
+
+        if (nextAnim == NextAnimToPlay.Upset)
+        {
+            PlayStr(_playgroundItem.UpsetAnimation.name);
             _playgroundItem.SetExitTransform(exitPoint);
             _lastAnim = true;
             spriteRenderer.sprite = sprite;
@@ -189,6 +234,12 @@ public class PlaygroundAnimator : MonoBehaviour
         {
             PlayStr(_playgroundItem.PlayWithJellyAnimation.name);
             _jellyWaitingForInput = false;
+            if (_playgroundItem.ShouldAnimationLoop())
+            {
+                nextAnim = NextAnimToPlay.Play;
+                _playgroundItem.ToggleAnimationLoop(false);
+                return;
+            }
             nextAnim = NextAnimToPlay.Wait;
             return;
         }
